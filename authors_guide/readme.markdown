@@ -18,25 +18,26 @@ Thank you for willing to partake in the writing of this book. Whatever your leve
 
 *In order to work on this project you will need the following:*
 
-1. A good understanding of Markdown
+1. Sign the [author's agreement](https://github.com/bostonphp/PHP-Beginners-Book/blob/master/authors_guide/agreement.markdown)
+2. A good understanding of Markdown
 	- A Markdown-formatted document should be publishable as-is, as plain text, without looking like it?s been marked up with tags or formatting instructions. Markdown?s syntax is comprised entirely of punctuation characters, which punctuation characters have been carefully chosen so as to look like what they mean. E.g., asterisks around a word actually look like \*emphasis\*. Markdown lists look like, well, lists. Even blockquotes look like quoted passages of text, assuming you?ve ever used email.
 	- Markdown is a wonderfully simple approach to creating rich content with plain text. Written by John Gruber of Daring Fireball. You get on with the business of writing (without any fancy code) and Markdown takes care of producing clean textual outout suitable for different output formats.
 	- Here is an [overview of the syntax](http://daringfireball.net/projects/markdown/syntax)  
-2. A good understanding of Git and GitHub
+3. A good understanding of Git and GitHub
 	- You will need to a GitHub account, and Git installed on your computer
 	- Learn about [Git here](http://progit.org/book/ch1-3.html) 
-3. A good markdown editor
+4. A good markdown editor
 	- I like to use iaWriter for the Mac. This is a distraction free writing tool that creates pure Markdown. You can get [iaWriter from the App Store](http://itunes.apple.com/us/app/ia-writer/id439623248?mt=12) 
-4. A good understanding of collaboration through Agile with Pivotal Tracker
+5. A good understanding of collaboration through Agile with Pivotal Tracker
 	- Here is our [Pivotal Tracker Project](https://www.pivotaltracker.com/projects/322967) 
-4. A writing style that is compatible with the book
+6. A writing style that is compatible with the book
 	- Friendly, Conversational language
 	- Explain concepts by telling stories, analagies, examples
 	- Be funny and amusing at times
-5. Give code examples along the way
+7. Give code examples along the way
 	- Do not give all the code to the learner all at once. Layer on the code a little at a time so they can see cause and affect.
 	- Code needs to be well formatted and commented
-6. A fun attitude
+8. A fun attitude
 	- If you have fun writing this, then it will show. I don't want this to be another boring PHP book. So promiss me you wont write if your not having fun. Take breaks, and don't take yourself too seriously. 
 
 ## The writing process
