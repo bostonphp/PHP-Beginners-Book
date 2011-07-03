@@ -1,4 +1,3 @@
-# Chapter 1: What is PHP?
 PHP stands for **P**HP **H**ypertext **P**rotocol. The initials originally were for **P**ersonal **H**ome **P**age, but as the language started to evolve and become more robust, the creators decided to change it.
 
 PHP is perhaps one of the most popular and widely used web application programming language. I say web application here because in most cases, PHP is used create web applications. Many popular websites and applications are written in PHP.
