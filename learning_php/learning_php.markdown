@@ -10,11 +10,10 @@ In order to collect user data, you will need an HTML form that contains a form a
 
 The code above does a few things. It tells the web browser that you plan to collect some data from the user starting and ending with the <form> tags. 
 
-**<form>**
+- **<form>**
 In order to collect data from the user, you need to create an html form. This is done with the *<form>* tag. This tag tells the browser that to send collected data to the server. You need to have an open and close form tag. There are a few important form elements you should know what they do:
 
-**type='Post'**
-
+- **type='Post'**
 The __type='post'__, describes the way we send the data to the server. In this case we want to post (send) the data so we will us post.  
 
 ### Variables
