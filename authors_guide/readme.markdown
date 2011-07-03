@@ -2,9 +2,9 @@
 The PHP Beginner book is a collaborative writing project by Boston PHP. This guide will show you what you need to contribute to the project.
 
 ## Our philosophy
-The PHP Beginner book is designed to get people learning PHP by explaining concepts in a very easy to understand way, as well as giving them small challenges to use and apply what they are leanring.
+The PHP Beginner book is designed to get people learning PHP by explaining concepts in a very easy to understand way, as well as giving them small challenges to use and apply what they are learning.
 
-A fundemental flaw in all the books I have seen, is that they teach you what to do step by step. The learner never has to think for themselves. My beleif is that you cannot actually teach something to anyone, what you should do is provide them experiences for them to learn. 
+A fundamental flaw in all the books I have seen, is that they teach you what to do step by step. The learner never has to think for themselves. My belief is that you cannot actually teach something to anyone, what you should do is provide them experiences for them to learn. 
 
 The point is to give the reader an experience to learn
 
@@ -20,8 +20,8 @@ Thank you for willing to partake in the writing of this book. Whatever your leve
 
 1. Sign the [author's agreement](https://github.com/bostonphp/PHP-Beginners-Book/blob/master/authors_guide/agreement.markdown)
 2. A good understanding of Markdown
-	- A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or formatting instructions. Markdown?s syntax is comprised entirely of punctuation characters, which punctuation characters have been carefully chosen so as to look like what they mean. E.g., asterisks around a word actually look like \*emphasis\*. Markdown lists look like, well, lists. Even blockquotes look like quoted passages of text, assuming you?ve ever used email.
-	- Markdown is a wonderfully simple approach to creating rich content with plain text. Written by John Gruber of Daring Fireball. You get on with the business of writing (without any fancy code) and Markdown takes care of producing clean textual outout suitable for different output formats.
+	- A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or formatting instructions. Markdown's syntax is comprised entirely of punctuation characters, which punctuation characters have been carefully chosen so as to look like what they mean. E.g., asterisks around a word actually look like \*emphasis\*. Markdown lists look like, well, lists. Even blockquotes look like quoted passages of text, assuming you've ever used email.
+	- Markdown is a wonderfully simple approach to creating rich content with plain text. Written by John Gruber of Daring Fireball. You get on with the business of writing (without any fancy code) and Markdown takes care of producing clean textual output suitable for different output formats.
 	- Here is an [overview of the syntax](http://daringfireball.net/projects/markdown/syntax)  
 3. A good understanding of Git and GitHub
 	- You will need to a GitHub account, and Git installed on your computer
@@ -32,19 +32,19 @@ Thank you for willing to partake in the writing of this book. Whatever your leve
 	- Here is our [Pivotal Tracker Project](https://www.pivotaltracker.com/projects/322967) 
 6. A writing style that is compatible with the book
 	- Friendly, Conversational language
-	- Explain concepts by telling stories, analagies, examples
+	- Explain concepts by telling stories, analogies, examples
 	- Be funny and amusing at times
 7. Give code examples along the way
 	- Do not give all the code to the learner all at once. Layer on the code a little at a time so they can see cause and affect.
 	- Code needs to be well formatted and commented
 8. A fun attitude
-	- If you have fun writing this, then it will show. I don't want this to be another boring PHP book. So promiss me you wont write if your not having fun. Take breaks, and don't take yourself too seriously. 
+	- If you have fun writing this, then it will show. I don't want this to be another boring PHP book. So promise me you wont write if you're not having fun. Take breaks, and don't take yourself too seriously. 
 
 ## The writing process
 You will be assigned a certain part of the book that will be merged in at a later date. This will allow you to work independently without worrying about anyone else. However, you will be expected to commit your work often to GitHub. This way we can see the work evolve and adjust accordingly, as well backup your work.
 
 ### Outlining
-Before you go off and start writing your part of the book, I will be asking each writer to send me an rough outline scaffold of their work. This can be a list of topics you plan to cover in the order you feel is good for a valuable lesson. This rough outline shoudl also contain a sample section of code you want to show within the book.
+Before you go off and start writing your part of the book, I will be asking each writer to send me a rough outline scaffold of their work. This can be a list of topics you plan to cover in the order you feel is good for a valuable lesson. This rough outline should also contain a sample section of code you want to show within the book.
 
 ### Will I get credit for my work?
 Yes, you will get credit for your work in terms of you as the author of that section. But please do not expect more than that. This is an open source project, and this book is free to the public. You should only be doing this because you believe in the project and the philosophy, and want to teach the world how to code.

@@ -2,9 +2,9 @@
 The PHP Beginner book is a collaborative writing project by Boston PHP.
 
 ## Our philosophy
-The PHP Beginner book is designed to get people learning PHP by explaining concepts in a very easy to understand way, as well as giving them small challenges to use and apply what they are leanring.
+The PHP Beginner book is designed to get people learning PHP by explaining concepts in a very easy to understand way, as well as giving them small challenges to use and apply what they are learning.
 
-A fundemental flaw in all the books I have seen, is that they teach you what to do step by step. The learner never has to think for themselves. My beleif is that you cannot actually teach something to anyone, what you should do is provide them experiences for them to learn. 
+A fundamental flaw in all the books I have seen, is that they teach you what to do step by step. The learner never has to think for themselves. My belief is that you cannot actually teach something to anyone, what you should do is provide them experiences for them to learn. 
 
 The point is to give the reader an experience to learn
 

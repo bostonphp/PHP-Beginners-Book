@@ -13,7 +13,7 @@ The idea was born out of using a writing tool known as iaWriter. This is a distr
 - Collaborators
 
 ## What is Markdown?
-A Markdown-formatted document should be publishable as-is, as plain text, without looking like it?s been marked up with tags or formatting instructions. Markdown?s syntax is comprised entirely of punctuation characters, which punctuation characters have been carefully chosen so as to look like what they mean. E.g., asterisks around a word actually look like \*emphasis\*. Markdown lists look like, well, lists. Even blockquotes look like quoted passages of text, assuming you?ve ever used email.
+A Markdown-formatted document should be publishable as-is, as plain text, without looking like it?s been marked up with tags or formatting instructions. Markdown?s syntax is comprised entirely of punctuation characters, which punctuation characters have been carefully chosen so as to look like what they mean. E.g., asterisks around a word actually look like \*emphasis\*. Markdown lists look like, well, lists. Even blockquotes look like quoted passages of text, assuming you've ever used email.
 
 ## Bookshelv is for those people who want to write and share their work online with others:
 
@@ -22,8 +22,8 @@ A Markdown-formatted document should be publishable as-is, as plain text, withou
 - Upload your Markdown text file and see it live in a format suitable for publishing
 - Include images, videos, and interactive content within your book
 - Online writing guides with great tips
-- Use tools like iwWriter, or the built-in Markdown editor
-- Seemlessly integrate your desktop authoring tools with Bookshelv with your Dropbox account
+- Use tools like iawriter, or the built-in Markdown editor
+- Seamlessly integrate your desktop authoring tools with Bookshelv with your Dropbox account
 - Convert your existing work to Markdown. Word, PDF, Text, HTML, Latex, etc
 - Revision control, and merge
 - Find out how long it will take to read your book
@@ -43,7 +43,7 @@ Choose from many templates for varying types of published content
 
 - Make money online and sell your book online
 - Share your work online with others
-- Compatible output formats for eBok readers such as iPad, iPod, Kindle, Nook, etc
+- Compatible output formats for ebook readers such as iPad, iPod, Kindle, Nook, etc
 - Never overwrite each others work with revision control and merge
 
 **Interactive**
@@ -64,10 +64,10 @@ Choose from many templates for varying types of published content
 - Get voted and ranked as a popular writer
 
 ## Something for everyone
-Bookshelv is for anyone wanting to write and their wrting content. Perhaps it's been your dream to write that book. Or to publish a book on technology that you are passionate about. It doesn't matter, Bookshelv has you covered.
+Bookshelv is for anyone wanting to write and their writing content. Perhaps it's been your dream to write that book. Or to publish a book on technology that you are passionate about. It doesn't matter, Bookshelv has you covered.
 
 ### Technical books on programing
-Bookshelv automatically detects when your giving source code examples in your book. These sections are formatted appropriatly with monospace fonts, sytax highlighting, and line numbers. Example:
+Bookshelv automatically detects when your giving source code examples in your book. These sections are formatted appropriately with monospace fonts, syntax highlighting, and line numbers. Example:
 
 	// index.php
 	010 <?php
@@ -92,10 +92,10 @@ Make software? Use Agile? Write your UserStories as Markdown and publish a techn
 Create your own online magazine and news articles
 
 ### eLearning & Tutorials
-Teach the world something your and expert in. Become the formidible expert and get your name out there.
+Teach the world something your and expert in. Become the formidable expert and get your name out there.
 
 ### Cooking and recipes
-Have enough recipies to create your own cookbook?
+Have enough recipes to create your own cookbook?
 
 ## Examples
 

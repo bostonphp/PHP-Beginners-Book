@@ -56,7 +56,7 @@ Let's look at the worlds most simple PHP script. Just three lines is all you nee
 
 	Hello PHP
 
-Notice that the script above starts with **<?php**. We call this an opening PHP tag. It's a lot like an opening HTML tag. This tag tells your webserver that what follows is now going to be interpreted as PHP. On the last line, we close the PHP tag which tells the server to switch back to HTML. The midde line, we use a command called **echo**, which is a PHP function to print something to the screen. We put what we want to print between quotes, so that there is no confusion on what to print. Also notice we end each command with a **;**. This tells PHP that we are done with that command and there is no more code on that line to process.
+Notice that the script above starts with **<?php**. We call this an opening PHP tag. It's a lot like an opening HTML tag. This tag tells your webserver that what follows is now going to be interpreted as PHP. On the last line, we close the PHP tag which tells the server to switch back to HTML. The middle line, we use a command called **echo**, which is a PHP function to print something to the screen. We put what we want to print between quotes, so that there is no confusion on what to print. Also notice we end each command with a **;**. This tells PHP that we are done with that command and there is no more code on that line to process.
 
 ## Example of mixing PHP and HTML together
 One of the more powerful concepts with this approach is that you can mix HTML and PHP together in one file.
@@ -185,7 +185,7 @@ I would recommend that you download and install one of the following browsers:
 - Apple Safari
 
 ### Web developer toolbar
-If your using Firefox, I highly reccomend this the addon/extension. It will allow you to do various things like disable javascript, disable/enable styles, as well as a number of other great features
+If your using Firefox, I highly recommend this the add-on/extension. It will allow you to do various things like disable javascript, disable/enable styles, as well as a number of other great features
 
 ### Firebug
 
@@ -295,7 +295,7 @@ It is very important to keep your code and your projects in good shape. It's eas
 ## CSS
 
 # PHP Frameworks
-Once you get more established with the PHP language, I would strongly reccomend that you start looking to move to a PHP Frameworks.
+Once you get more established with the PHP language, I would strongly recommend that you start looking to move to a PHP Frameworks.
 
 Frameworks are an existing set of application code that you start projects with. They come out of the box with most of code you need to do common things in web applications. Such as Login & Authentication, Authorization, Database access, Security, etc.
 
@@ -308,7 +308,7 @@ They take out the repetition and let you write more code specific to your own ap
 - [CodeIgniter](http://codeigniter.com)
 - [Symfony](www.symfony-project.org)
 
-I have been programming web applications for years, and I wouldn't think twice about not using a framework. They just save you a lot of time. However, it does come at a cost. You need to take a while to learn the conventions of the framework. This is why I don't reccomend starting here. A framework is only as good as how well it is documented, and how much you invest to learn it. Once you master the language and the framework, you will find you can create applications very quickly. In a recent coding contest at Boton PHP, I witnessed a fully working web application being built in under 30 minutes.
+I have been programming web applications for years, and I wouldn't think twice about not using a framework. They just save you a lot of time. However, it does come at a cost. You need to take a while to learn the conventions of the framework. This is why I don't recommend starting here. A framework is only as good as how well it is documented, and how much you invest to learn it. Once you master the language and the framework, you will find you can create applications very quickly. In a recent coding contest at Boston PHP, I witnessed a fully working web application being built in under 30 minutes.
 
 All these frameworks follow a could of important principles:
 
