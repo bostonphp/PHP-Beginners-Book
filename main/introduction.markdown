@@ -14,7 +14,7 @@ PHP is also referred to as scripting language. This basically means that the pro
 
 In order to run PHP programs, you to have a PHP service installed and running on your server or PC. Most web hosting services now have PHP already installed and running. Also Apple Mac computers now have PHP already installed. In a later chapter, I will show you how to get PHP setup and running in no time.
 
-## An example of a PHP script
+### An example of a PHP script
 Let's look at the worlds most simple PHP script. Just three lines is all you need...
 
 	<?php
@@ -27,7 +27,7 @@ Let's look at the worlds most simple PHP script. Just three lines is all you nee
 
 Notice that the script above starts with **<?php**. We call this an opening PHP tag. It's a lot like an opening HTML tag. This tag tells your webserver that what follows is now going to be interpreted as PHP. On the last line, we close the PHP tag which tells the server to switch back to HTML. The middle line, we use a command called **echo**, which is a PHP function to print something to the screen. We put what we want to print between quotes, so that there is no confusion on what to print. Also notice we end each command with a **;**. This tells PHP that we are done with that command and there is no more code on that line to process.
 
-## Example of mixing PHP and HTML together
+### Example of mixing PHP and HTML together
 One of the more powerful concepts with this approach is that you can mix HTML and PHP together in one file.
 
 Look at the code below which is saved as index.php:
@@ -64,7 +64,7 @@ What does this look like?
 
 	Today's date is June 5, 2011, 9:52 am 
 
-# Chapter 2: What you can do with PHP
+### What you can do with PHP
 I have often thought that software development is a creative art. Most of the best developers I have met and worked with, were creative people. In fact, many times I find that the most creative developers never studied computer science in college.
 
 One thing I really love about PHP is that the learning curve is not that high. So you have people from all varying backgrounds using PHP to take their ideas and make them come to life. When you can take a person with a interesting background, with a killer idea, and teach them to use PHP to launch their idea - well, that's a winning combination. Otherwise the person with the idea has to hire a developer, and much time, energy, and money can be wasted trying to describe and create the solution.
