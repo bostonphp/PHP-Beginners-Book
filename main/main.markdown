@@ -1,7 +1,7 @@
 # PHP for beginners
 Copyright 2011, Boston PHP, All rights reserved.
 
-## Table of contents
+**Table of contents**
 -TOC-
 
 ## Why write another PHP book?
