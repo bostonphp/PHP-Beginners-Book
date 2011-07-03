@@ -27,6 +27,8 @@ Thank you for willing to partake in the writing of this book. Whatever your leve
 	- Learn about [Git here](http://progit.org/book/ch1-3.html) 
 3. A good markdown editor
 	- I like to use iaWriter for the Mac. This is a distraction free writing tool that creates pure Markdown. You can get [iaWriter from the App Store](http://itunes.apple.com/us/app/ia-writer/id439623248?mt=12) 
+4. A good understanding of collaboration through Agile with Pivotal Tracker
+	- Here is our [Pivotal Tracker Project](https://www.pivotaltracker.com/projects/322967) 
 4. A writing style that is compatible with the book
 	- Friendly, Conversational language
 	- Explain concepts by telling stories, analagies, examples
@@ -34,7 +36,7 @@ Thank you for willing to partake in the writing of this book. Whatever your leve
 5. Give code examples along the way
 	- Do not give all the code to the learner all at once. Layer on the code a little at a time so they can see cause and affect.
 	- Code needs to be well formatted and commented
-6. Have fun attitude
+6. A fun attitude
 	- If you have fun writing this, then it will show. I don't want this to be another boring PHP book. So promiss me you wont write if your not having fun. Take breaks, and don't take yourself too seriously. 
 
 ## The writing process

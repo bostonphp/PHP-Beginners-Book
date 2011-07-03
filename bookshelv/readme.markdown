@@ -15,8 +15,6 @@ The idea was born out of using a writing tool known as iaWriter. This is a distr
 ## What is Markdown?
 A Markdown-formatted document should be publishable as-is, as plain text, without looking like it?s been marked up with tags or formatting instructions. Markdown?s syntax is comprised entirely of punctuation characters, which punctuation characters have been carefully chosen so as to look like what they mean. E.g., asterisks around a word actually look like \*emphasis\*. Markdown lists look like, well, lists. Even blockquotes look like quoted passages of text, assuming you?ve ever used email.
 
-
-
 ## Bookshelv is for those people who want to write and share their work online with others:
 
 **Authoring**
