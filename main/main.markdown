@@ -14,7 +14,7 @@ Copyright 2011, Boston PHP, All rights reserved.
 {!include=https://raw.github.com/bostonphp/PHP-Beginners-Book/master/learning_php/learning_php.markdown}
 
 ## Installing and Configuring PHP
-{!include=https://github.com/bostonphp/PHP-Beginners-Book/raw/master/installing_and_configuring_php/installing_and_configuring_php.markdown}
+{!include=https://raw.github.com/bostonphp/PHP-Beginners-Book/master/installing_and_configuring_php/installing_and_configuring_php.markdown}
 
 ## Introduction to HTML
 {!include=https://raw.github.com/bostonphp/PHP-Beginners-Book/master/intro_to_html/intro_to_html.markdown}
