@@ -19,6 +19,7 @@ Thank you for willing to partake in the writing of this book. Whatever your leve
 *In order to work on this project you will need the following:*
 
 1. A good understanding of Markdown
+	- A Markdown-formatted document should be publishable as-is, as plain text, without looking like it?s been marked up with tags or formatting instructions. Markdown?s syntax is comprised entirely of punctuation characters, which punctuation characters have been carefully chosen so as to look like what they mean. E.g., asterisks around a word actually look like \*emphasis\*. Markdown lists look like, well, lists. Even blockquotes look like quoted passages of text, assuming you?ve ever used email.
 	- Markdown is a wonderfully simple approach to creating rich content with plain text. Written by John Gruber of Daring Fireball. You get on with the business of writing (without any fancy code) and Markdown takes care of producing clean textual outout suitable for different output formats.
 	- Here is an [overview of the syntax](http://daringfireball.net/projects/markdown/syntax)  
 2. A good understanding of Git and GitHub
