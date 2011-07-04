@@ -84,7 +84,10 @@ __foreach( array AS $value )__
 Each time the array is looped over, it will store the array contents in $value. In our example, each array item contains another array, so we can extract the values from each returned array item.
 
 ### Try it yourself...
-Usign the new more dynamic table code, try adding more rows to the table by adding more data to the $users[] array.
+1. Get the code [here](https://github.com/bostonphp/PHP-Beginners-Book/blob/master/learning_php/samples/loops.php).
+2. Usign the new more dynamic table code, try adding more rows to the table by adding more data to the $users[] array.
+3. Try changing the email address to be a mailto: link.
+4. If your feeling ambitious, try to retrieve the values from a database.
 
 ## Variables
 Variables store information temporarily in your program. It's a little like the button on your calculator used to store the last value computed. They are very important to any programming language, and you will use them all them time.
