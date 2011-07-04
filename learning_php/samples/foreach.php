@@ -1,4 +1,4 @@
-	<?php // table.php
+	<?php // foreach.php
 
 	// Store the values in an array
 	$users[] = array( 1, 'Michael Bourque', 'michael@bostonphp.org');
