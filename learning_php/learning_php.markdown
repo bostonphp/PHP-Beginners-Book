@@ -84,8 +84,8 @@ __foreach( array AS $value )__
 Each time the array is looped over, it will store the array contents in $value. In our example, each array item contains another array, so we can extract the values from each returned array item.
 
 ### Try it yourself...
-1. Get the code [here](https://github.com/bostonphp/PHP-Beginners-Book/blob/master/learning_php/samples/loops.php).
-2. Usign the new more dynamic table code, try adding more rows to the table by adding more data to the $users[] array.
+1. Get the code [here](https://github.com/bostonphp/PHP-Beginners-Book/blob/master/learning_php/samples/foreach.php).
+2. Try adding more rows to the table by adding more data to the $users[] array.
 3. Try changing the email address to be a mailto: link.
 4. If your feeling ambitious, try to retrieve the values from a database.
 
