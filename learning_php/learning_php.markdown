@@ -16,6 +16,34 @@ In order to collect data from the user, you need to create an html form. This is
 - **type='Post'**
 The __type='post'__, describes the way we send the data to the server. In this case we want to post (send) the data so we will us post.  
 
+## Undetstanding the documentation on PHP.net
+One of the best things about PHP, is the amazing documentation that is available on PHP.net. Here you will find functional references for just about everthing that PHP can do. The documentation is easy to use, has great search, and gives valuable user contributed notes along with each function reference.
+
+It's important you learn to use this powerful reference.
+
+### Finding references
+When you visit PHP.net, at the upper right corner of every page is a search box. Just type the name of a function here, or anything your looking for and PHP.net will return you a list of pages that are relevant.
+
+Try searching for 'foreach' and 'while'.
+
+### Function description (syntax)
+When viewing a functional reference page, you need to understand how the syntax is represented in the description:
+
+string **stristr** ( string *$haystack* , __mixed__ *$needle* [, bool *$before_needle = false* ] )
+
+This may look like gobbley gook to you, but it is all one needs to understand how to use this function. Let's break it down.
+
+To the left of the function is the return value. In this case, this function will return a string value. Other functions may return integers, arrays, or objects. In some cases, you will see a function return something called bool, this means the function will return true or false. If you see a function return void, then this means that nothing is returned. Mixed means that the function can return a mixture of return types like Integer, String, Array, etc.
+
+The next part is the name of the function itself.
+
+The next part is the parameters passed to the function. In each case, there is an 
+
+### Examples
+### Notes
+### See also
+### User contributed notes
+
 ## Loops
 As a developer, I am very lazy. I cannot stand doing the same thing over and over and over again. I would much rather spend some extra time to avoid having to do something repetitive. 
 
