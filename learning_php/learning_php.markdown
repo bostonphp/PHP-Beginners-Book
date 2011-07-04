@@ -29,16 +29,24 @@ Try searching for 'foreach' and 'while'.
 ### Function description (syntax)
 When viewing a functional reference page, you need to understand how the syntax is represented in the description:
 
-string **stristr** ( string *$haystack* , __mixed__ *$needle* [, bool *$before_needle = false* ] )
+string **substr** ( string *$string* , int *$start* [, int *$length* ] )
 
-This may look like gobbley gook to you, but it is all one needs to understand how to use this function. Let's break it down.
+This may look like gobbley gook to you, but it is all that one should need to understand how to use this function. Let's break it down.
 
-To the left of the function is the return value. In this case, this function will return a string value. Other functions may return integers, arrays, or objects. In some cases, you will see a function return something called bool, this means the function will return true or false. If you see a function return void, then this means that nothing is returned. Mixed means that the function can return a mixture of return types like Integer, String, Array, etc.
+From left to right:
 
-The next part is the name of the function itself.
+- To the left of the function name is the return value. In this case, this function will return a string value. Other functions may return integers, arrays, objects, etc. In some cases, you will see a function return something called bool, this means the function will return true or false. If you see a function that returns void, then this means that nothing is returned. Mixed means that the function can return a mixture of return types like Integer, String, Array, etc.
+- The next part is the name of the function itself.
+- The next part is the parameters passed to the function separated by commas. In each case, there is an example of what type of value that should be passed. Example: string $string, or int $start. Sometimes you will see a value set within the syntax. This means that this is the default value. In some cases, the parameters are withing square brackets. This indicates that the parameter is optional, and does not need to be set.
 
-The next part is the parameters passed to the function. In each case, there is an 
+**Usign the example above:**
 
+$myNewString = substr( $myString , 5 );
+
+or
+
+$myNewString = substr( $myString , 5, 10 );
+ 
 ### Examples
 ### Notes
 ### See also
