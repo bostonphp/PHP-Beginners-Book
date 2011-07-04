@@ -17,11 +17,11 @@ In order to collect data from the user, you need to create an html form. This is
 The __type='post'__, describes the way we send the data to the server. In this case we want to post (send) the data so we will us post.  
 
 ## Loops
-As a developer, I am very lazy. I cannot stand doing the same thing over and over and over again. I would much rather spend some extra time to avoid having to do something again and again. 
+As a developer, I am very lazy. I cannot stand doing the same thing over and over and over again. I would much rather spend some extra time to avoid having to do something repetitive. 
 
 A powerful feature of PHP is looping. It will save you countless hours of typing, and allow you to make your code more flexible, scaleable, and more compact.
 
-Let's say that you have a program that outputs an HTML table like this:
+Let's explore the **foreach** loop. Imagine that you have a program that outputs a list of users in an HTML table like this:
 
 	<!-- users.html -->
 	<table>
@@ -46,7 +46,7 @@ Let's say that you have a program that outputs an HTML table like this:
 		</tbody>
 	</table>
 
-You can do the same this with a loop, with a more elegant solution:
+You can do the same this with a foreach loop, with a more elegant solution:
 
 	<?php // table.php
 	
@@ -73,17 +73,15 @@ You can do the same this with a loop, with a more elegant solution:
 		</tbody>
 	</table>
 
-It may appear that we are using more lines of code, but this approach will scale as we have more and more data to present. Also the code above could be hooked up to a database to make the table more dynamic.
+It may appear that we are using more lines of code, but this approach will scale as we have more and more data to display. Also the code above could be hooked up to a database to make the table more dynamic.
 
 ### How does this work?
-The secret to this is the *foreach* construct. This gives you the capability to loop over an array one by one and store the values returned by each array item. We are also adding another foreach construct within another. We first loop over $users and store each one as $user. Since $user is also an arrray, we loop over $user and echo each value found in the array.
+The secret to this is the [*foreach* construct](http://us.php.net/manual/en/control-structures.foreach.php). This gives you the capability to loop over an array one by one and store the values returned by each array item. We are also adding another foreach construct within another. We first loop over $users and store each one as $user. Since $user is also an array, we loop over $user and echo each value found in the array.
 
 #### Syntax
 __foreach( array AS $value )__
 
 Each time the array is looped over, it will store the array contents in $value. In our example, each array item contains another array, so we can extract the values from each returned array item.
-
-There is another syntax you can use as well that will extract the key value from each array itteration.
 
 ### Try it yourself...
 Usign the new more dynamic table code, try adding more rows to the table by adding more data to the $users[] array.
