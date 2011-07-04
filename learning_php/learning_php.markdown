@@ -2,8 +2,6 @@ One of the first things I like to teach is how to create a web form to collect u
 
 In order to collect user data, you will need an HTML form that contains a form and some form elements. This is easy to do:
 
-	{!include=https://raw.github.com/bostonphp/PHP-Beginners-Book/master/learning_php/form.php}
-
 	<!-- form.php -->
 	<form type='post' action='index.php'>
 		<label for='name'>Name:</label>
