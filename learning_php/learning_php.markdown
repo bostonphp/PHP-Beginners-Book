@@ -16,6 +16,67 @@ In order to collect data from the user, you need to create an html form. This is
 - **type='Post'**
 The __type='post'__, describes the way we send the data to the server. In this case we want to post (send) the data so we will us post.  
 
+## Loops
+As a developer, I am very lazy. I cannot stand doing the same thing over and over and over again. I would much rather spend some extra time to avoid having to do something again and again. 
+
+A powerful feature of PHP is looping. It will save you countless hours of typing, and allow you to make your code more flexible, scaleable, and more compact.
+
+Let's say that you have a program that outputs an HTML table like this:
+
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Email</th>
+			<tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>Michael Bourque</td>
+				<td>michael@bostonphp.org</td>
+			<tr>
+			<tr>
+				<td>2</td>
+				<td>Gene Babon</td>
+				<td>gene@bostonphp.org</td>
+			<tr>
+		</tbody>
+	</table>
+
+You can do the same this with a loop, with a more elegant solution:
+
+	<?php // code snippet
+	
+	// Store the values in an array
+	$users[] = array( 'id'=> 1, 'name' => 'Michael Bourque', 'email'=>'michael@bostonphp.org');
+	$users[] = array( 'id'=> 2, 'name' => 'Gene Babon', 'email'=>'gene@bostonphp.org');
+	?>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Email</th>
+			<tr>
+		</thead>
+		<tbody>
+			<?php foreach( $users AS $user ) : ?>
+			<tr>
+				<?php foreach( $user AS $value ) : ?>
+				<td><?php echo $value; ?></td>
+				<?php endforeach; ?>
+			<tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+
+It may appear that we are using more lines of code, but this approach will scale as we have more and more data to present. Also the code above could be hooked up to a database to make the table more dynamic.
+
+### Try it yourself...
+Usign the new more dynamic table code, try adding more rows to the table by adding more data to the $users[] array.
+
 ## Variables
 Variables store information temporarily in your program. It's a little like the button on your calculator used to store the last value computed. They are very important to any programming language, and you will use them all them time.
 
@@ -71,7 +132,7 @@ Pretty cool huh? The Ternary Operator evaluates the *test condition*, if that is
 A challenge... can you give me some more practical examples?
 
 ## Functions
-Functions are the most amazing and useful things you will learn about programing. They are a way to reduce the receptiveness in your program, by creating a special mini program designed to do something, based on your parameters.
+Functions are the most amazing and useful things you will learn about programing. They are a way to reduce the repetiveness in your program, by creating a special mini program designed to do whatever you need. It's almost like creating your own programming language!
 
 	// Example function
 	function add_values( $value1, $value2 ) { // Add two values together
