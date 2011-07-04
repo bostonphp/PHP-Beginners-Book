@@ -23,6 +23,7 @@ A powerful feature of PHP is looping. It will save you countless hours of typing
 
 Let's say that you have a program that outputs an HTML table like this:
 
+	<!-- users.html -->
 	<table>
 		<thead>
 			<tr>
@@ -47,7 +48,7 @@ Let's say that you have a program that outputs an HTML table like this:
 
 You can do the same this with a loop, with a more elegant solution:
 
-	<?php // code snippet
+	<?php // table.php
 	
 	// Store the values in an array
 	$users[] = array( 'id'=> 1, 'name' => 'Michael Bourque', 'email'=>'michael@bostonphp.org');
@@ -73,6 +74,14 @@ You can do the same this with a loop, with a more elegant solution:
 	</table>
 
 It may appear that we are using more lines of code, but this approach will scale as we have more and more data to present. Also the code above could be hooked up to a database to make the table more dynamic.
+
+### How does this work?
+The secret to this is the *foreach* construct. This gives you the capability to loop over an array one by one and store the values returned by each array item.
+
+#### Syntax
+foreach( array AS $value )
+
+Each time the array is looped over, it will store the array contents in $value. In our example, each array item contains another array, so we can extract the values from each returned array item.
 
 ### Try it yourself...
 Usign the new more dynamic table code, try adding more rows to the table by adding more data to the $users[] array.
