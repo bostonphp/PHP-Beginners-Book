@@ -40,7 +40,7 @@ In PHP, it is very easy to create variables:
 One of the coolest tricks I like to show is the **Ternary Operator**. It's a big time saver, and will make your code look and feel more compact. I use it all the time.
 
 #### Syntax:
-__mixed__ ( test condition ) ? (expression1) : (expression2);
+> __mixed__ ( test condition ) ? (expression1) : (expression2);
 
 #### Example:
 Consider the code below. It checks to see if the variable named $pocket is empty. If it is, then it will set the variable $needCash to true, otherwise $needCash is set to false.
