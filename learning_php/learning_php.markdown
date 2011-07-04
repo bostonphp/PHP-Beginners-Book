@@ -39,8 +39,8 @@ In PHP, it is very easy to create variables:
 #### Ternary operator
 One of the coolest tricks I like to show is the **Ternary Operator**. It's a big time saver, and will make your code look and feel more compact.
 
-**Example:**
-Consider the code below. It checks to see if the variable named $pocket is empty or not. If it is, it will set the variable $needCash to true or false resepectively. 
+##### Example:
+Consider the code below. It checks to see if the variable named $pocket is empty or not. If it is, then it will set the variable $needCash to true or false resepectively. 
 
 	<?php // code snippet
 		// Determine if user needs cash 
@@ -51,7 +51,6 @@ Consider the code below. It checks to see if the variable named $pocket is empty
 		}
 	?>
 
-**But this is cooler**
 You can do the same thing with the **Ternary Operator** with fewer lines of code:
 
 	<?php // code snippet
@@ -59,9 +58,9 @@ You can do the same thing with the **Ternary Operator** with fewer lines of code
 		$needCash = ( empty( $pocket ) ) ? true : false;
 	?>
 
-Pretty cool huh? The Ternary Operator first evaluates the *test condition*, then if that is true, then *expression1* is returned, if the test condition is false, then expression2 is returned. Because the Ternary Operator can returns the result, you can assign the result to a variable like *$needCash*.
+Pretty cool huh? The Ternary Operator evaluates the *test condition*, if that is true, then *expression1* is returned, if the *test condition* is false, then *expression2* is returned. Because the Ternary Operator returns the result, you can assign the result to a variable like *$needCash*.
 
-**Syntax:**
+##### Syntax:
 __mixed__ ( test condition ) ? (expression1) : (expression2);
 
 ### Functions
