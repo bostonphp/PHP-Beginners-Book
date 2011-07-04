@@ -51,8 +51,8 @@ You can do the same this with a loop, with a more elegant solution:
 	<?php // table.php
 	
 	// Store the values in an array
-	$users[] = array( 'id'=> 1, 'name' => 'Michael Bourque', 'email'=>'michael@bostonphp.org');
-	$users[] = array( 'id'=> 2, 'name' => 'Gene Babon', 'email'=>'gene@bostonphp.org');
+	$users[] = array( 1, 'Michael Bourque', 'michael@bostonphp.org');
+	$users[] = array( 2, 'Gene Babon', 'gene@bostonphp.org');
 	?>
 	<table>
 		<thead>
@@ -76,12 +76,14 @@ You can do the same this with a loop, with a more elegant solution:
 It may appear that we are using more lines of code, but this approach will scale as we have more and more data to present. Also the code above could be hooked up to a database to make the table more dynamic.
 
 ### How does this work?
-The secret to this is the *foreach* construct. This gives you the capability to loop over an array one by one and store the values returned by each array item.
+The secret to this is the *foreach* construct. This gives you the capability to loop over an array one by one and store the values returned by each array item. We are also adding another foreach construct within another. We first loop over $users and store each one as $user. Since $user is also an arrray, we loop over $user and echo each value found in the array.
 
 #### Syntax
-foreach( array AS $value )
+__foreach( array AS $value )__
 
 Each time the array is looped over, it will store the array contents in $value. In our example, each array item contains another array, so we can extract the values from each returned array item.
+
+There is another syntax you can use as well that will extract the key value from each array itteration.
 
 ### Try it yourself...
 Usign the new more dynamic table code, try adding more rows to the table by adding more data to the $users[] array.
