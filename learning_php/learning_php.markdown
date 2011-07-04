@@ -61,9 +61,14 @@ You can do the same thing with the **Ternary Operator** with fewer lines of code
 		$needCash = ( empty( $pocket ) ) ? true : false;
 	?>
 
-Pretty cool huh? The Ternary Operator evaluates the *test condition*, if that is true, then *expression1* is returned, if the *test condition* is false, then *expression2* is returned. Because the Ternary Operator returns a result, you can assign the result to a variable like *$needCash*.
+Pretty cool huh? The Ternary Operator evaluates the `test condition`, if that is true, then *expression1* is returned, if the *test condition* is false, then *expression2* is returned. Because the Ternary Operator returns a result, you can assign the result to a variable like *$needCash*.
 
 ### Other examples
+	<?php // code snippet
+		$agreeToTerms = ( isset( $_POST['agreeToTerms'] ) && $_POST['agreeToTerms'] === 1 ) ? true : false;
+	?>
+
+A challenge... can you give me some more practical examples?
 
 ## Functions
 Functions are the most amazing and useful things you will learn about programing. They are a way to reduce the receptiveness in your program, by creating a special mini program designed to do something, based on your parameters.
