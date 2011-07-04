@@ -29,7 +29,7 @@ Try searching for 'foreach' and 'while'.
 ### Function description (syntax)
 When viewing a functional reference page, you need to understand how the syntax is represented in the description:
 
-string **substr** ( string *$string* , int *$start* [, int *$length* ] )
+string~1~ **substr** ( string *$string* , int *$start* [, int *$length* ] )
 
 This may look like gobbley gook to you, but it is all that one should need to understand how to use this function. Let's break it down.
 
@@ -41,11 +41,11 @@ From left to right:
 
 **Usign the example above:**
 
-$myNewString = substr( $myString , 5 );
+	$myNewString = substr( $myString , 5 );
 
 or
 
-$myNewString = substr( $myString , 5, 10 );
+	$myNewString = substr( $myString , 5, 10 );
  
 ### Examples
 ### Notes
