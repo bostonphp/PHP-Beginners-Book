@@ -16,7 +16,7 @@ In order to collect data from the user, you need to create an html form. This is
 - **type='Post'**
 The __type='post'__, describes the way we send the data to the server. In this case we want to post (send) the data so we will us post.  
 
-### Variables
+## Variables
 Variables store information temporarily in your program. It's a little like the button on your calculator used to store the last value computed. They are very important to any programming language, and you will use them all them time.
 
 **Variables can hold different types of information:**
@@ -32,15 +32,18 @@ In PHP, it is very easy to create variables:
 	$price = 3.25 // Stores a float
 	$total = $price * $quantity;
 
-### Flow control
+## Flow control
 
-### Logic operators
+## Logic operators
 
-#### Ternary operator
-One of the coolest tricks I like to show is the **Ternary Operator**. It's a big time saver, and will make your code look and feel more compact.
+### Ternary operator
+One of the coolest tricks I like to show is the **Ternary Operator**. It's a big time saver, and will make your code look and feel more compact. I use it all the time.
 
-##### Example:
-Consider the code below. It checks to see if the variable named $pocket is empty or not. If it is, then it will set the variable $needCash to true or false resepectively. 
+#### Syntax:
+__mixed__ ( test condition ) ? (expression1) : (expression2);
+
+#### Example:
+Consider the code below. It checks to see if the variable named $pocket is empty. If it is, then it will set the variable $needCash to true, otherwise $needCash is set to false.
 
 	<?php // code snippet
 		// Determine if user needs cash 
@@ -58,12 +61,11 @@ You can do the same thing with the **Ternary Operator** with fewer lines of code
 		$needCash = ( empty( $pocket ) ) ? true : false;
 	?>
 
-Pretty cool huh? The Ternary Operator evaluates the *test condition*, if that is true, then *expression1* is returned, if the *test condition* is false, then *expression2* is returned. Because the Ternary Operator returns the result, you can assign the result to a variable like *$needCash*.
+Pretty cool huh? The Ternary Operator evaluates the *test condition*, if that is true, then *expression1* is returned, if the *test condition* is false, then *expression2* is returned. Because the Ternary Operator returns a result, you can assign the result to a variable like *$needCash*.
 
-##### Syntax:
-__mixed__ ( test condition ) ? (expression1) : (expression2);
+### Other examples
 
-### Functions
+## Functions
 Functions are the most amazing and useful things you will learn about programing. They are a way to reduce the receptiveness in your program, by creating a special mini program designed to do something, based on your parameters.
 
 	// Example function
@@ -73,12 +75,12 @@ Functions are the most amazing and useful things you will learn about programing
 	} // end add_values()
 	print add_values( 1, 15 ); // returns 16
 
-### Object Oriented Programming
+## Object Oriented Programming
 
-### Chapter 10: Challenges
+## Chapter 10: Challenges
 Ok, now we are going to have some fun. 
 
-### Challenge 1
+## Challenge 1
 In this challenge, we are going to look at how PHP handles variable types. You will see how flexible and lenient the language can be. It also demonstrates how easy it can be to depend on this, which can get you into trouble later on when trying to debug your program.
 
 **What is wrong with the following code?**
@@ -97,17 +99,17 @@ In this challenge, we are going to look at how PHP handles variable types. You w
 
 **Answer:** The correct answer is #2, which returns the value of 1+2=3. PHP is very flexible when it comes to variable type casting. We really __should not have put quotes around the values__. But in this case, PHP still determined that the values were indeed numbers, so it did what we wanted by added the values. In other languages, this would not be possible. If one of the values started with an alphabetic character, then the output would be different. You should try it yourself with different combinations and see what happens.
 
-### Good practices
+## Good practices
 It is very important to keep your code and your projects in good shape. It's easy to take shortcuts, but I find you will pay the price later if you do not at least practice some best practices. Here are my favorite best practices I have developed to keep you organized.
 
-### Code formatting
-### Format
-### Conventions
+## Code formatting
+## Format
+## Conventions
 
-### Source code control
-### Git
-### Subversion
-### Mercurial
+## Source code control
+## Git
+## Subversion
+## Mercurial
 
 Syntax
 Variables
