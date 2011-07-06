@@ -180,14 +180,60 @@ Pretty cool huh? The Ternary Operator evaluates the *test condition*, if that is
 A challenge... can you give me some more practical examples?
 
 ## Functions
-Functions are the most amazing and useful things you will learn about programing. They are a way to reduce the repetiveness in your program, by creating a special mini program designed to do whatever you need. It's almost like creating your own programming language!
+Functions are the most amazing and useful things you will learn about programing. They are a way to reduce the repetiveness in your program, by creating a special mini program designed to do whatever you need. It's almost like creating your own little programming language! Once you understand it, you will find all sorts of uses.
+
+For example, let's say that your developing a web application that uses php date() to print the date of various records in your database. You've embedded php's date function all over your site like this:
+	
+	...
+	<td><?php echo date( 'd m Y', $created ); ?></td> 
+	...
+
+Let's assume that you have used this date function all over your code base in 20 different pages. Now let's assume that your client has asked you to change the date format from 'd m Y' to 'Y m d'. Now you have to go through all of your code looking for the code you need to change.
+
+You could though just create your own date function and keep all the date format logic contained in one place.
+
+	<?php // php code snippet
+		// Returns date in a specified format
+		function myDate( $date ) {
+			return date( 'Y m d', $date );
+		}
+	?>
+
+Now you can do something like this:
+
+	<!-- php page using html -->
+	...
+	<td><?php echo myDate( $created ); ?></td> 
+	...
+	
+We call all functions by using the name of the function and the parenthesis with values.
+
+I hope your realizing how cool this is. We just created our own little program to do whatever we wanted. We use *return* to return the value to whatever called it. If we ever want to change the behaivor of this function, we only need to change it in once place.
+
+Let's play with the example below a bit more, and add more capabilities to our function. Let's now say we want to use this same function to print the current date on the page using the same format of 'Y m d'. Rather than create a new function, we can extend it's behaivor.
+
+	// Returns date in a specified format
+	function myDate( $date = NULL ) {
+		return date( 'Y m d', $date );
+	}
+
+All we did is add a default value the function setting the value of $date to NULL. NULL has a special meaning in PHP and means a value of nothing. So if you were to call the myDate() function without passing a value, then our function will assume it is NULL. Since the PHP date() function will return the current date if you omit the datestamp, then it will just return the current date.
+
+	...
+	<span>Today's date is <?php echo myDate( ); ?></span> 
+	...
+ 
+Let's create a few more functions and experiment. Say we are wanting a function that can add two numbers together. We can create our own function called addValues. 
 
 	// Example function
-	function add_values( $value1, $value2 ) { // Add two values together
+	function addValues( $value1, $value2 ) { // Add two values together
 		$total = $value1 + $value2;
 		return $total;
 	} // end add_values()
-	print add_values( 1, 15 ); // returns 16
+
+	print addValues( 1, 15 ); // returns 16
+
+Try experimenting yourself and try creating your own functions. Try to enhance them with default values.
 
 ## Object Oriented Programming
 
