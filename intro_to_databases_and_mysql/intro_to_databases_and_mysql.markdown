@@ -10,13 +10,9 @@ Have you ever collected anything? Rocks? Baseball cards? Sports cars? Where woul
 
 ###Table Rocks###
 
-| ID | Name | Location | Origin | Composition | Color |
-|:-----------|:------------|:------------|
-| 01 | Obsidian | Basement | Mexico | Volcanic Glass | Black |
-
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
+ ID | Name | Location | Origin | Composition | Color 
+:-----------|:------------|:------------ | :------ | :------ | :------
+ 01 | Obsidian | Basement | Mexico | Volcanic Glass | Black 
 
 
 We can clearly see that the elements in this table have the six column properties defined as ID, Name, Location, Origin, Composition, and Color. The table has one row that characterizes a rock named "Obsidian" whose location is currently in the "Basement". It also claims that this rock is "Black" and composed of "Volcanic Glass". Other rocks can be added to this table making it easy to create a distinction and easy reference between our obsidian rock and other rocks in our collection such as diamonds, sandstones, and gold. 
