@@ -143,7 +143,7 @@ Let's look back at our characteristics of fruits to decide what kind of datatype
 
 * Fruit quantity - Consists of numbers without a decimal point. **int**
 
-* Fruit shelf-life - Could be a matter of hours to a matter of days. Since the interval doesn't change, we will define it in the number of hours it takes for the fruit to expire. **int**
+* Fruit shelf-life - Could be a matter of hours to a matter of days. Since this number does not define a specific date or time, we will define it in the number of hours it takes for the fruit to expire. **int**
 
 * Fruit last purchased - A certain date and time when the fruit was last bought. **datetime**
 
@@ -151,3 +151,14 @@ Let's look back at our characteristics of fruits to decide what kind of datatype
 
 * Fruit store ID - Consists of numbers without a decimal point. **int**
 
+That about sums it up, now we just have to put these columns in the correct order. Since the **Fruit store ID** is the only truly unique element in the list, we will make this the "Primary Key".
+
+##How do I make a table with this?##
+
+Good question. It may seem like I am rambling on a bit here, but I assure you that my writing has some purpose. In your window with phpMyAdmin click on the **SQL** tab to bring up the command box again. Make sure that you see **localhost -> grocery_store** above the box. If you do not, just click on the **grocery_store** link on the right side and then the **SQL** tab to get yourself there. 
+
+Type the command:
+
+**CREATE TABLE FRUITS{};**
+
+into the command box, but do not press enter. You will get an error
