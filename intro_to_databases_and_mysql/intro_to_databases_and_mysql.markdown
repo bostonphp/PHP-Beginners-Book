@@ -40,6 +40,7 @@ Alright. You've made it through the first chapter. Are you proud of yourself? I 
 ###Navigating to your WAMP program.### 
 
 Please follow the steps outlined below:
+
 1a. There should be a shortcut on the desktop of your computer. It should look like a big pink "W" surrounded by a box. Double click on it. 
 1b. If it is not there, open up your start menu and search for WAMP. Find the icon described above, and click on it in the fashion that your prefer. Most popular people prefer the double click. Feel free to click in your own special way if you don't feel like conforming to their norms.
 1c. If you can remember were you put it, please disregard steps 1a and 1b
@@ -49,6 +50,7 @@ Nice, I knew you could do it. Now it's time to...
 ###Open your localhost!!!###
 
 Please follow the steps outlined below:
+
 1. Click and open your favorite browser. It should not be Internet Explorer.
 2. Type or paste the word **localhost** into where you would normally type a website address, and press enter.
 
