@@ -70,7 +70,13 @@ You should see a rectangular text area in front of you with a button labeled **g
 
 **CREATE DATABASE grocery_store;** 
 
-into the box and press **go**. If you typed in the command right, you will have created the database **grocery_store** in your MySQL database. Good work.
+into the text area, and press **go**. If you typed in the command right, you will have created the database **grocery_store** in your MySQL database. Good work.
+
+Go back to the **SQL** tab and type the command:
+
+**USE grocery_store;**
+
+This tells the MySQL database that you are going to work in the database **grocery_store** until you say otherwise. You will work within this structure throughout the next few chapters of this book.
 
 As a review, let us go over the basic structure of the MySQL database with colorful metaphors.
 
@@ -92,3 +98,4 @@ You have just created the database of a single fictional store grocery store, wh
 
 #MySQL/Databases Chapter 3 - The INSERT and DELETE statements:#
 
+Up until this point, you have created your database, and figured out the general structure of MySQL. What kind of objects go inside databases again?
