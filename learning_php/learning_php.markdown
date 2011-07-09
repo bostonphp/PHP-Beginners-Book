@@ -17,7 +17,7 @@ In order to collect data from the user, you need to create an html form. This is
 The __type='post'__, describes the way we send the data to the server. In this case we want to post (send) the data so we will us post.  
 
 ## Understanding the documentation on PHP.net
-One of the best things about PHP, is the amazing documentation that is available on PHP.net. Here you will find functional references for just about everthing that PHP can do. The documentation is easy to use, has great search, and gives valuable user contributed notes along with each function reference.
+One of the best things about PHP, is the amazing documentation that is available on PHP.net. Here you will find functional references for just about everything that PHP can do. The documentation is easy to use, has great search, and gives valuable user contributed notes along with each function reference.
 
 It's important you learn to use this powerful reference.
 
@@ -269,12 +269,14 @@ It is very important to keep your code and your projects in good shape. It's eas
 ## strtotime()
 One of my favorite built-in functions of PHP is the [strtotime()](http://us.php.net/manual/en/function.strtotime.php) function. It stands for String To Time and will take a human readable date and convert it to a standard format (unix timestamp) that you can further use to process and output date related functions.
 
+int **strtotime** ( string *$time* [, int *$now* ] )
+
+This function takes a textual date string and returns an integer, known as a Unix Timestamp which is the number of of seconds since January 1, 1970. You don't need to be concerned with what or how Unix Timestamps are calucated, but what you should know that most programming languages including PHP use this format for date related functions.
+
 For example, let's say that I want to print out a date to my website that is two weeks from now. I can use the strtotime() function to convert my date to Unix Timestamp:
 
 	$futureDate = strtotime('+2 weeks');
 	echo $futureDate; // Outputs 1311433120
-
-This function takes a textual date string and returns an integer, known as a Unix Timestamp which is the number of of seconds since January 1, 1970. You don't need to be concerned with what or how Unix Timestamps are calucated, but what you should know that most programming languages including PHP use this format for date related functions.
 
 Now that I have the Unix Timestamp of the date I want, I can combine this with another PHP built-in function called [date()](http://us.php.net/manual/en/function.date.php).
 
@@ -285,12 +287,12 @@ Now that I have the Unix Timestamp of the date I want, I can combine this with a
 Isn't that cool? Image what you can do with this. You could do  various date related calculations with ease:
 
 	$futureDate = strtotime( 'now' ); // Todays date
-	$futureDate = strtotime( '+1 day' ); // Tommorow
-	$futureDate = strtotime( '10 September 2000' ); // Date in the past
+	$futureDate = strtotime( '+1 day' ); // Tomorrow
+	$pastDate = strtotime( '10 September 2000' ); // Date in the past
 	$futureDate = strtotime( 'next Thursday' ); // Next thursday
 	$futureDate = strtotime( '+1 week 2 days 4 hours 2 seconds' );
 
-Now you can use the timestamp to output a date, or filter data from a database withing a range of dates, etc.
+Now you can use the timestamp to output a date, or filter data from a database within a range of dates, etc.
 
 ## Code formatting
 ## Format
