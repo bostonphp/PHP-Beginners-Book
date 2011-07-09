@@ -26,7 +26,21 @@ We can clearly see that the elements in this table have the six column propertie
  03 | Sandstone | Backyard | Mexico | Feldspar | Brown 
  04 | Gold | Basement | New Mexico | Gold | Gold 
 
-See. There's nothing to worry about. 
+See. There's nothing to worry about. As a review, let us go over the basic structure of the MySQL database with colorful metaphors.
+
+If the MySQL Database was a state...
+
+* A database in the MySQL Database would be a house in that state
+* A table in the database would be a room in that house
+* A row in the table would be an object belonging in that room
+
+If the MySQL Database was a chain of stores...
+
+* A database in the MySQL Database would be a single store in that chain
+* A table in the database would be a type of product sold at that store (such as a fruit)
+* A row in the table would be a specific product sold (such as an apple)
+
+Try to think of it as a huge box holding lots of things organized into smaller and smaller boxes within it.
 
 Here is a quick review of what we have learned.
 
@@ -79,22 +93,6 @@ Go back to the **SQL** tab and type the command:
 **USE grocery_store;**
 
 This tells the MySQL database that you are going to work in the database **grocery_store** until you say otherwise. You will work within this structure throughout the next few chapters of this book.
-
-As a review, let us go over the basic structure of the MySQL database with colorful metaphors.
-
-If the MySQL Database was a state...
-
-* A database in the MySQL Database would be a house in that state
-* A table in the database would be a room in that house
-* A row in the table would be an object belonging in that room
-
-If the MySQL Database was a chain of stores...
-
-* A database in the MySQL Database would be a single store in that chain
-* A table in the database would be a type of product sold at that store (such as a fruit)
-* A row in the table would be a specific product sold (such as an apple)
-
-Try to think of it as a huge box holding lots of things organized into smaller and smaller boxes within it.
 
 You have just created the database of a single fictional grocery store. We will develop this more in the next chapter.
 
