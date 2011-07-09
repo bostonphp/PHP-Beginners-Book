@@ -72,7 +72,7 @@ You should see a rectangular text area in front of you with a button labeled **g
 
 **CREATE DATABASE grocery_store;** 
 
-into the text area, and press **go**. If you typed in the command right, you will have created the database **grocery_store** in your MySQL database. Good work.
+into the text area, and press **go**. If you typed in the command right, you will have created the database **grocery_store** in your MySQL database.
 
 Go back to the **SQL** tab and type the command:
 
