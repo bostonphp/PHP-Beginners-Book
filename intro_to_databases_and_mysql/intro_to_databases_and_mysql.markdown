@@ -58,9 +58,33 @@ Please follow the steps outlined below:
 
 At this point you should see a page that says **XAMPP for Windows** in the top left corner, with a list of commands down the left side. Click on the word **phpMyAdmin** on the navigation bar on the left hand side of the screen. 
 
-*Was there an error? Don't panic. Just type in **https://localhost**. You should now be able to click on **phpMyAdmin** without any more hassles.*
+*Was there an error? Don't panic. Just type in **https://localhost**. You should now be able to click on **phpMyAdmin** without any more hassles. If there is still a problem, you may have to uninstall and reinstall WAMP*
 
 ##Using phpMyAdmin##
 
-Alright. By now you should be on a tacky dark blue and grey screen with **phpMyAdmin** on the upper left side. 
+Alright. By now you should be on a tacky dark blue and grey screen with **phpMyAdmin** on the upper left side. At the top of the screen, you should see a bunch of tabs directly underneath the word **localhost**. Click on the **SQL** tab.
+
+*NOTE: Because this tutorial focuses mainly on programming with embedded SQL in PHP, we will not be using any of the fun, efficient, and easy to use syntax phpMyAdmin offers. This is mainly because you will not actually be using this framework for the selects, inserts, updates, and deletes implemented in your awesome webpage. You will use these commands directly in the php framework of your choice.*
+
+You should see a rectangular text area in front of you with a button labeled **go** in the bottom right corner of the box. Type the command **CREATE DATABASE grocery_store;** into the box and press go. If you typed in the command right, you will have created the database **grocery_store** in your MySQL database. Good work.
+
+As a review, let us go over the basic structure of the MySQL database with colorful metaphors.
+
+If the MySQL Database was a state...
+
+* A database in the MySQL Database would be a house in that state
+* A table in the database would be a room in that house
+* A row in the table would be an object belonging in that room
+
+If the MySQL Database was a chain of stores...
+
+* A database in the MySQL Database would be a single store in that chain
+* A table in the database would be a type of product sold at that store (such as a fruit)
+* A row in the table would be a specific product sold (such as an apple)
+
+Try to think of it as a huge box holding lots of things organized into smaller and smaller boxes within it.
+
+You have just created the database of a single fictional store grocery store, which we will develop more in the next chapter.
+
+#MySQL/Databases Chapter 3 - The INSERT and DELETE statements:#
 
