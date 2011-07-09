@@ -41,9 +41,9 @@ Alright. You've made it through the first chapter. Are you proud of yourself? I 
 
 Please follow the steps outlined below:
 
-1a. There should be a shortcut on the desktop of your computer. It should look like a big pink "W" surrounded by a box. Double click on it. 
-1b. If it is not there, open up your start menu and search for WAMP. Find the icon described above, and click on it in the fashion that your prefer. Most popular people prefer the double click. Feel free to click in your own special way if you don't feel like conforming to their norms.
-1c. If you can remember were you put it, please disregard steps 1a and 1b
+1. There should be a shortcut on the desktop of your computer. It should look like a big pink "W" surrounded by a box. Double click on it. 
+2. If it is not there, open up your start menu and search for WAMP. Find the icon described above, and click on it in the fashion that your prefer. Most popular people prefer the double click. Feel free to click in your own special way if you don't feel like conforming to their norms.
+3. If you can remember were you put it, please disregard steps 1 and 2
 
 Nice, I knew you could do it. Now it's time to...
 
@@ -58,6 +58,9 @@ Please follow the steps outlined below:
 
 At this point you should see a page that says **XAMPP for Windows** in the top left corner, with a list of commands down the left side. Click on the word **phpMyAdmin** on the navigation bar on the left hand side of the screen. 
 
-Was there an error? Don't panic. You computer is just blocking what it thinks might be a malicious attack from an evil computer program. Just type in **https://localhost** to fool it into thinking that the connection is secure. You should now be able to click on **phpMyAdmin** without any more hassles.
+*Was there an error? Don't panic. You computer is just blocking what it thinks might be a malicious attack from an evil computer process. Just type in **https://localhost** to fool it into thinking that the connection is secure. You should now be able to click on **phpMyAdmin** without any more hassles.*
 
 ##Using phpMyAdmin##
+
+Alright. By now you should be on a tacky dark blue and grey screen with **phpMyAdmin** on the upper left side. 
+
