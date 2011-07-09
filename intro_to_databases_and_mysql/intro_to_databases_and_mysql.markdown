@@ -100,4 +100,19 @@ You have just created the database of a single fictional grocery store. We will 
 
 #MySQL/Databases Chapter 3 - The INSERT and DELETE statements:#
 
-Up until this point, you have created your database, and figured out the general structure of MySQL. Now you will need to put a table inside of the database you have created. 
+Up until this point, you have created your database, and figured out the general structure of MySQL. Now you will need to put a table inside of the database you have created. In the case of our **grocery_store** database we will need to define the table as some sort of product sold in the grocery store. For this example, we will focus on fruits.
+
+*Before one creates any table, he or she should consider what they are putting into the table in the first place. Try to pick things that are unique to most elements in the table and distinguish them meaningfully from other elements.*
+
+##What defines a fruit?###
+
+I can think of a few properties separating one fruit from other fruits.
+
+* Fruit common name
+* Fruit color
+* Fruit taste
+* Fruit texture
+* Fruit shelf-life
+* Fruit purchased last week
+
+That should be enough to at least let us get started.
