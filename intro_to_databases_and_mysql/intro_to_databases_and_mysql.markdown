@@ -98,7 +98,7 @@ Try to think of it as a huge box holding lots of things organized into smaller a
 
 You have just created the database of a single fictional grocery store. We will develop this more in the next chapter.
 
-#MySQL/Databases Chapter 3 - The INSERT and DELETE statements:#
+#MySQL/Databases Chapter 3 - Defining our first table:#
 
 Up until this point, you have created your database, and figured out the general structure of MySQL. Now you will need to put a table inside of the database you have created. In the case of our **grocery_store** database we will need to define the table as some sort of product sold in the grocery store. For this example, we will focus on fruits.
 
@@ -133,25 +133,23 @@ Dates are a way to store dates in the database. Do you just want to store the da
 
 Let's look back at our characteristics of fruits to decide what kind of datatype they should be.
 
-* Fruit name - Consists of letters. **varchar(50)**
+* Fruit name - Consists of a few letters. **varchar(50)**
 
-* Fruit color - Consists of letters. **varchar(50)**
+* Fruit color - Consists of few letters. **varchar(50)**
 
-* Fruit taste - Consists of letters. **varchar(100)**
+* Fruit taste - Consists of more letters. **varchar(100)**
 
-* Fruit texture - Consists of letters. **varchar(100)**
+* Fruit texture - Consists of more letters. **varchar(100)**
 
 * Fruit price - Consists of numbers with a decimal point. **float**
 
 * Fruit quantity - Consists of numbers without a decimal point. **int**
 
-* Fruit shelf-life - Could be a matter of hours to a matter of days. **datetime**
+* Fruit shelf-life - Could be a matter of hours to a matter of days. Since the interval doesn't change, we will define it in the number of hours it takes for the fruit to expire. **int**
 
 * Fruit last purchased - A certain date and time when the fruit was last bought. **datetime**
 
 * Fruit purchased quantity - Consists of numbers without a decimal point. **int**
 
 * Fruit store ID - Consists of numbers without a decimal point. **int**
-
-
 
