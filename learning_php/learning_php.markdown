@@ -274,9 +274,9 @@ For example, let's say that I want to print out a date to my website that is two
 	$futureDate = strtotime('+2 weeks');
 	echo $futureDate; // Outputs 1311433120
 
-Remember that this function returns an integer, known as a Unix Timestamp which is the number of of seconds since January 1, 1970. You don't need to be concerned with what or how Unix Timestamps are calucated, but what you should know that most programming languages including PHP use this format for date related functions.
+This function takes a textual date string and returns an integer, known as a Unix Timestamp which is the number of of seconds since January 1, 1970. You don't need to be concerned with what or how Unix Timestamps are calucated, but what you should know that most programming languages including PHP use this format for date related functions.
 
-Now that I have the Unix Timestamp of the date of two weeks from now, I can combine this with another PHP built-in function called [date()](http://us.php.net/manual/en/function.date.php).
+Now that I have the Unix Timestamp of the date I want, I can combine this with another PHP built-in function called [date()](http://us.php.net/manual/en/function.date.php).
 
 	$futureDate = strtotime( '+2 weeks' );
 	$myDate = date( 'm/d/Y', $futureDate );
