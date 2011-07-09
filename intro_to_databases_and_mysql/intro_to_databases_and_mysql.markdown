@@ -58,7 +58,7 @@ Please follow the steps outlined below:
 
 At this point you should see a page that says **XAMPP for Windows** in the top left corner, with a list of commands down the left side. Click on the word **phpMyAdmin** on the navigation bar on the left hand side of the screen. 
 
-*Was there an error? Don't panic. You computer is just blocking what it thinks might be a malicious attack from an evil computer process. Just type in **https://localhost** to fool it into thinking that the connection is secure. You should now be able to click on **phpMyAdmin** without any more hassles.*
+*Was there an error? Don't panic. Just type in **https://localhost**. You should now be able to click on **phpMyAdmin** without any more hassles.*
 
 ##Using phpMyAdmin##
 
