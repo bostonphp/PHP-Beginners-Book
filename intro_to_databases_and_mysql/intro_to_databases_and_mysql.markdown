@@ -106,13 +106,53 @@ Up until this point, you have created your database, and figured out the general
 
 ##What defines a fruit?###
 
-I can think of a few properties separating one fruit from other fruits.
+I can think of a few properties separating one fruit from other fruits in a grocery store.
 
-* Fruit common name
+* Fruit name
 * Fruit color
 * Fruit taste
 * Fruit texture
+* Fruit price
+* Fruit quantity
 * Fruit shelf-life
-* Fruit purchased last week
+* Fruit last purchased
+* Fruit purchased quantity
+* Fruit store ID
 
-That should be enough to at least let us get started.
+That should be enough to at least let us get started. Now we have to figure out what kind of data we are going to put in these categories. For learning purposes, there are really only three types of data you will need to use. They are:
+
+* Numbers
+* Characters
+* Dates
+
+Numbers, as the name probably gives away, are any kind of numeric information. Will you need to use any kind of decimals for the data that you are going to store? In that case you will need to use the datatype **float**. If not, you can use the datatype **int** or **bigint** (which takes up more space, but can handle bigger numbers).
+
+Characters are any kind of way to representation of a letter, word, or series of words. For example the letter **A** and the phrase **Anything goes in SQL world** would both be of a character type. Use the datatype **varchar(n)** to define a column that you would like to represent with a character. Substitute the **n** in **varchar(n)** with the maximum amount of letters a column in your table can have (up to 255). Spaces, tabs, and newlines in a paragraph all count as a characters.
+
+Dates are a way to store dates in the database. Do you just want to store the dates and not the time? Use the datatype **date**. Do you want to store the time and not the date? Use the datatype **time**. Want to store the date and the time? Use the datatype **datetime**.
+
+Let's look back at our characteristics of fruits to decide what kind of datatype they should be.
+
+* Fruit name
+: Consists of letters. **varchar(50)**
+* Fruit color
+: Consists of letters. **varchar(50)**
+* Fruit taste
+: Consists of letters. **varchar(100)**
+* Fruit texture
+: Consists of letters. **varchar(100)**
+* Fruit price
+: Consists of numbers with a decimal point. **float**
+* Fruit quantity
+: Consists of numbers without a decimal point. **int**
+* Fruit shelf-life
+: Could be a matter of hours to a matter of days. **datetime**
+* Fruit last purchased
+: A certain date and time when the fruit was last bought. **datetime**
+* Fruit purchased quantity
+: Consists of numbers without a decimal point. **int**
+* Fruit store ID
+: Consists of numbers without a decimal point. **int**
+
+
+
