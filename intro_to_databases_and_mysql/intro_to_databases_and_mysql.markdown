@@ -37,7 +37,7 @@ Here is a quick review of what we have learned.
 
 Alright. You've made it through the first chapter. Are you proud of yourself? I sure am! Give yourself a pat on the back. This next chapter will be a tad more difficult as it requires the user to do other things as well as read this helpful instruction manual. 
 
-###Navigating to your WAMP program### 
+###Navigating to your WAMP program###
 
 Please follow the steps outlined below:
 
