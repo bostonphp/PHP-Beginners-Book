@@ -96,8 +96,8 @@ If the MySQL Database was a chain of stores...
 
 Try to think of it as a huge box holding lots of things organized into smaller and smaller boxes within it.
 
-You have just created the database of a single fictional store grocery store, which we will develop more in the next chapter.
+You have just created the database of a single fictional grocery store. We will develop this more in the next chapter.
 
 #MySQL/Databases Chapter 3 - The INSERT and DELETE statements:#
 
-Up until this point, you have created your database, and figured out the general structure of MySQL. What kind of objects go inside databases again?
+Up until this point, you have created your database, and figured out the general structure of MySQL. Now you will need to put a table inside of the database you have created. 
