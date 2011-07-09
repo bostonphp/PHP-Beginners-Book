@@ -16,7 +16,7 @@ In order to collect data from the user, you need to create an html form. This is
 - **type='Post'**
 The __type='post'__, describes the way we send the data to the server. In this case we want to post (send) the data so we will us post.  
 
-## Undetstanding the documentation on PHP.net
+## Understanding the documentation on PHP.net
 One of the best things about PHP, is the amazing documentation that is available on PHP.net. Here you will find functional references for just about everthing that PHP can do. The documentation is easy to use, has great search, and gives valuable user contributed notes along with each function reference.
 
 It's important you learn to use this powerful reference.
@@ -182,15 +182,16 @@ A challenge... can you give me some more practical examples?
 ## Functions
 Functions are the most amazing and useful things you will learn about programing. They are a way to reduce the repetiveness in your program, by creating a special mini program designed to do whatever you need. It's almost like creating your own little programming language! Once you understand it, you will find all sorts of uses.
 
-For example, let's say that your developing a web application that uses php date() to print the date of various records in your database. You've embedded php's date function all over your site like this:
+For example, let's say that your developing a web application that uses php date() to print the date of various records in your database. You've embedded php's date function like this:
 	
+	<!-- php page using html -->
 	...
 	<td><?php echo date( 'd m Y', $created ); ?></td> 
 	...
 
-Let's assume that you have used this date function all over your code base in 20 different pages. Now let's assume that your client has asked you to change the date format from 'd m Y' to 'Y m d'. Now you have to go through all of your code looking for the code you need to change.
+Let's assume now that you have used this date function all over your code base in over 20 different places. Now let's assume that your client has asked you to change the date format from 'd m Y' to 'Y m d'. Now you have to comb though all of your code to make the change. I know its a simple example, but it happens.
 
-You could though just create your own date function and keep all the date format logic contained in one place.
+I am much to lazy! You can just create your own personal date function to use within your program and keep all the date format logic contained in one place like this:
 
 	<?php // php code snippet
 		// Returns date in a specified format
@@ -206,25 +207,27 @@ Now you can do something like this:
 	<td><?php echo myDate( $created ); ?></td> 
 	...
 	
-We call all functions by using the name of the function and the parenthesis with values.
-
 I hope your realizing how cool this is. We just created our own little program to do whatever we wanted. We use *return* to return the value to whatever called it. If we ever want to change the behaivor of this function, we only need to change it in once place.
 
 Let's play with the example below a bit more, and add more capabilities to our function. Let's now say we want to use this same function to print the current date on the page using the same format of 'Y m d'. Rather than create a new function, we can extend it's behaivor.
 
-	// Returns date in a specified format
-	function myDate( $date = NULL ) {
-		return date( 'Y m d', $date );
-	}
+	<?php // php code snippet
+		// Returns date in a specified format
+		function myDate( $date = NULL ) {
+			return date( 'Y m d', $date );
+		}
+	?>
 
 All we did is add a default value the function setting the value of $date to NULL. NULL has a special meaning in PHP and means a value of nothing. So if you were to call the myDate() function without passing a value, then our function will assume it is NULL. Since the PHP date() function will return the current date if you omit the datestamp, then it will just return the current date.
 
+	<!-- php page using html -->
 	...
 	<span>Today's date is <?php echo myDate( ); ?></span> 
 	...
  
 Let's create a few more functions and experiment. Say we are wanting a function that can add two numbers together. We can create our own function called addValues. 
 
+	<?php // php code snippet
 	// Example function
 	function addValues( $value1, $value2 ) { // Add two values together
 		$total = $value1 + $value2;
@@ -232,6 +235,7 @@ Let's create a few more functions and experiment. Say we are wanting a function 
 	} // end add_values()
 
 	print addValues( 1, 15 ); // returns 16
+	?>
 
 Try experimenting yourself and try creating your own functions. Try to enhance them with default values.
 
@@ -261,6 +265,32 @@ In this challenge, we are going to look at how PHP handles variable types. You w
 
 ## Good practices
 It is very important to keep your code and your projects in good shape. It's easy to take shortcuts, but I find you will pay the price later if you do not at least practice some best practices. Here are my favorite best practices I have developed to keep you organized.
+
+## strtotime()
+One of my favorite built-in functions of PHP is the [strtotime()](http://us.php.net/manual/en/function.strtotime.php) function. It stands for String To Time and will take a human readable date and convert it to a standard format (unix timestamp) that you can further use to process and output date related functions.
+
+For example, let's say that I want to print out a date to my website that is two weeks from now. I can use the strtotime() function to convert my date to Unix Timestamp:
+
+	$futureDate = strtotime('+2 weeks');
+	echo $futureDate; // Outputs 1311433120
+
+Remember that this function returns an integer, known as a Unix Timestamp which is the number of of seconds since January 1, 1970. You don't need to be concerned with what or how Unix Timestamps are calucated, but what you should know that most programming languages including PHP use this format for date related functions.
+
+Now that I have the Unix Timestamp of the date of two weeks from now, I can combine this with another PHP built-in function called [date()](http://us.php.net/manual/en/function.date.php).
+
+	$futureDate = strtotime( '+2 weeks' );
+	$myDate = date( 'm/d/Y', $futureDate );
+	echo $myDate; // Outputs 07/23/2011 (two weeks from now)
+
+Isn't that cool? Image what you can do with this. You could do  various date related calculations with ease:
+
+	$futureDate = strtotime( 'now' ); // Todays date
+	$futureDate = strtotime( '+1 day' ); // Tommorow
+	$futureDate = strtotime( '10 September 2000' ); // Date in the past
+	$futureDate = strtotime( 'next Thursday' ); // Next thursday
+	$futureDate = strtotime( '+1 week 2 days 4 hours 2 seconds' );
+
+Now you can use the timestamp to output a date, or filter data from a database withing a range of dates, etc.
 
 ## Code formatting
 ## Format
