@@ -67,7 +67,9 @@ Alright. By now you should be on a tacky dark blue and grey screen with **phpMyA
 *NOTE: Because this tutorial focuses mainly on programming with embedded SQL in PHP, we will not be using any of the fun, efficient, and easy to use syntax phpMyAdmin offers. This is mainly because you will not actually be using this framework for the selects, inserts, updates, and deletes implemented in your awesome webpage. You will use these commands directly in the php framework of your choice.*
 
 You should see a rectangular text area in front of you with a button labeled **go** in the bottom right corner of the box. Type the command:
+
 **CREATE DATABASE grocery_store;** 
+
 into the box and press **go**. If you typed in the command right, you will have created the database **grocery_store** in your MySQL database. Good work.
 
 As a review, let us go over the basic structure of the MySQL database with colorful metaphors.
