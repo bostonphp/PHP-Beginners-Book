@@ -134,33 +134,43 @@ Dates are a way to store dates in the database. Do you just want to store the da
 Let's look back at our characteristics of fruits to decide what kind of datatype they should be.
 
 Fruit name
+
     Consists of letters. **varchar(50)**
 
 Fruit color
+
     Consists of letters. **varchar(50)**
 
 Fruit taste
+
     Consists of letters. **varchar(100)**
 
 Fruit texture
+
     Consists of letters. **varchar(100)**
 
 Fruit price
+
     Consists of numbers with a decimal point. **float**
 
 Fruit quantity
+
     Consists of numbers without a decimal point. **int**
 
 Fruit shelf-life
+
     Could be a matter of hours to a matter of days. **datetime**
 
 Fruit last purchased
+
     A certain date and time when the fruit was last bought. **datetime**
 
 Fruit purchased quantity
+
     Consists of numbers without a decimal point. **int**
 
 Fruit store ID
+
     Consists of numbers without a decimal point. **int**
 
 
