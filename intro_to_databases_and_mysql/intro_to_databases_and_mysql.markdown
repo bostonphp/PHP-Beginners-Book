@@ -135,11 +135,11 @@ Let's look back at our characteristics of fruits to decide what kind of datatype
 
 Fruit name
 
-: Consists of letters. **varchar(50)**
+    : Consists of letters. **varchar(50)**
 
 Fruit color
 
-: Consists of letters. **varchar(50)**
+    : Consists of letters. **varchar(50)**
 
 Fruit taste
 
