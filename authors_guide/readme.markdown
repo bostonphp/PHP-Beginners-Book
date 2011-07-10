@@ -73,7 +73,7 @@ Also try and give a hint to the type of code your giving by adding a comment lin
 
 Please remember to use good structured code that is indented, and easy to look at and read. Use comments and good variable names. This is what I like to call pseudo code. It's not really intended to be run, it's intended to teach, so be a bit more verbose than you might otherwise be with comment, variable names, etc.
 
-## Tables
+### Tables
 If you need to display a table, you can do so using Markdown by using pipe characters within your tabular data
 
 	|Heading 1|Heading 2|
@@ -81,6 +81,12 @@ If you need to display a table, you can do so using Markdown by using pipe chara
 	|data|data|
 	|data|data|
 
+Will look like this:
+
+|Heading 1|Heading 2|
+	|-|-|
+	|data|data|
+	|data|data|
 
 
 
