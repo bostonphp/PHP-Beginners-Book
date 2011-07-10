@@ -1,6 +1,10 @@
-I would like to thank everyone who helped write this book.
+I would like to thank everyone who helped write this book. Here is a list of contributors:
 
-### Tools I used to write this book
+|Name|Contribution|
+|Brad Zimmerman|[introduction-to-databases-and-mysql](#introduction-to-databases-and-mysql)
+|Michael Bourque|[Learning PHP](#learning-php)|
+
+### Tools we used to write this book
 
 - **[iaWriter for the Mac](http://www.iawriter.com):** This is a great distraction free writing tool for the Mac. It allows the author to write effortlessly in Markdown format. The output format is a text file that uses Markdown to signify headings, emphasis, etc. 
 - **[CakePHP Framework](http://www.cakephp.org):** I wrote a little CakePHP app that takes the Markdown text file and formats it for the web. It converts the Markdown to suitable HTML elements, as well as automatically creating a table of contents and index.

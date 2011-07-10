@@ -4,6 +4,10 @@ This book takes a different approach. I will teach you by giving you small devel
 
 You should already have some basic understanding and experience in creating HTML pages and a little CSS.
 
+### More than just PHP
+This book aims to go beyond PHP. We will cover all the things a PHP developer should know like HTML, CSS, Databases, and jQuery. Look to the later chapters to learn more.
+
+### Work in progress
 This book is a work in progress. We are constantly adding to it and editing it to make it better. It's not completed yet. So you might save it locally, print it, or save to PDF so you don't see change while your using it.
 
 ### What you will need

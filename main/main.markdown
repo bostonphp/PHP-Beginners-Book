@@ -1,4 +1,4 @@
-# PHP for beginners
+# PHP for Beginners
 Copyright 2011, Boston PHP, All rights reserved.
 
 **Table of contents**
@@ -40,3 +40,4 @@ Copyright 2011, Boston PHP, All rights reserved.
 {!include=https://raw.github.com/bostonphp/PHP-Beginners-Book/master/main/acknowledgements.markdown}
 
 # Index
+-TOC-
