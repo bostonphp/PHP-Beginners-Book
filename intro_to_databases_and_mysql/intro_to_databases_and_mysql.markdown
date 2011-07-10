@@ -76,13 +76,13 @@ Alright. By now you should be on a tacky dark blue and grey screen with **phpMyA
 
 You should see a rectangular text area in front of you with a button labeled **go** in the bottom right corner of the box. Type the command:
 
-**CREATE DATABASE grocery_store;** 
+	CREATE DATABASE grocery_store; 
 
 into the text area, and press **go**. If you typed in the command right, you will have created the database **grocery_store** in your MySQL database.
 
 Go back to the **SQL** tab and type the command:
 
-**USE grocery_store;**
+	USE grocery_store;
 
 This tells the MySQL database that you are going to work in the database **grocery_store** until you say otherwise. You will work within this structure throughout the next few chapters of this book.
 
