@@ -76,17 +76,15 @@ Please remember to use good structured code that is indented, and easy to look a
 ### Tables
 If you need to display a table, you can do so using Markdown by using pipe characters within your tabular data
 
-	|Heading 1|Heading 2|
-	|-|-|
-	|data|data|
-	|data|data|
+	Heading 1|Heading 2
+	data|data
+	data|data
 
 Will look like this:
 
-|Heading 1|Heading 2|
-|-|-|
-|data|data|
-|data|data|
+Heading 1|Heading 2
+data|data
+data|data
 
 
 
