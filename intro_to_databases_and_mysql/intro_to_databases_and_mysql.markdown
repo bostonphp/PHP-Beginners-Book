@@ -139,6 +139,6 @@ Good question. It may seem like I am rambling on a bit here, but I assure you th
 
 Type the command:
 
-**CREATE TABLE FRUITS{};**
+	CREATE TABLE FRUITS{};
 
 into the command box, but do not press enter. You will get an error
