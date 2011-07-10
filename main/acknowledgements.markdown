@@ -1,7 +1,8 @@
 I would like to thank everyone who helped write this book. Here is a list of contributors:
 
 |Name|Contribution|
-|Brad Zimmerman|[introduction-to-databases-and-mysql](#introduction-to-databases-and-mysql)
+|-|-|
+|Brad Zimmerman|[introduction-to-databases-and-mysql](#introduction-to-databases-and-mysql)|
 |Michael Bourque|[Learning PHP](#learning-php)|
 
 ### Tools we used to write this book
