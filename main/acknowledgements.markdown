@@ -2,7 +2,7 @@ I would like to thank everyone who helped write this book. Here is a list of con
 
 |Name|Contribution|
 |-|-|
-|Brad Zimmerman|[introduction-to-databases-and-mysql](#introduction-to-databases-and-mysql)|
+|Brad Zimmerman|[Introduction-to-databases-and-mysql](#introduction-to-databases-and-mysql)|
 |Michael Bourque|[Learning PHP](#learning-php)|
 
 ### Tools we used to write this book
