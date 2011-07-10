@@ -164,7 +164,7 @@ Orange
 Orange
 :   The fruit of an evergreen tree of the genus Citrus.
 
-Terms must be separated from the previous definition by a blank line. Definitions can span on multiple lines, in which case they should be indented. But you don’t really have to: if you want to be lazy, you could forget to indent a definition that span on multiple lines and it will still work:
+Terms must be separated from the previous definition by a blank line. Definitions can span on multiple lines, in which case they should be indented. But you don't really have to: if you want to be lazy, you could forget to indent a definition that span on multiple lines and it will still work:
 
 ~~~~~~~~~~~~~~~~~~~~~ 
 Apple
