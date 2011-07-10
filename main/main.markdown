@@ -39,5 +39,8 @@ Copyright 2011, Boston PHP, All rights reserved.
 # Acknowledgements
 {!include=https://raw.github.com/bostonphp/PHP-Beginners-Book/master/main/acknowledgements.markdown}
 
+# Want to contribute?
+{!include=https://raw.github.com/bostonphp/PHP-Beginners-Book/master/authors_guide/readme.markdown}
+
 # Index
 -TOC-
