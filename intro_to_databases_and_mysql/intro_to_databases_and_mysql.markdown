@@ -46,8 +46,8 @@ Here is a quick review of what we have learned.
 3. Tables are just a collection of things that you want to keep track of.  
 4. Databases are a collection of tables.
 
-## MySQL/Databases Chapter 2 - Where do I start?
-Alright. You've made it through the first chapter. Are you proud of yourself? I sure am! Give yourself a pat on the back. This next chapter will be a tad more difficult as it requires the user to do other things as well as read this helpful instruction manual. 
+## MySQL/Databases - Where do I start?
+Alright. You've made it through the last chapter. Are you proud of yourself? I sure am! Give yourself a pat on the back. This next chapter will be a tad more difficult as it requires the user to do other things as well as read this helpful instruction manual. 
 
 #### Navigating to your WAMP program
 Please follow the steps outlined below:
@@ -88,7 +88,7 @@ This tells the MySQL database that you are going to work in the database **groce
 
 You have just created the database of a single fictional grocery store. We will develop this more in the next chapter.
 
-## MySQL/Databases Chapter 3 - Defining our first table
+## MySQL/Databases - Defining our first table
 Up until this point, you have created your database, and figured out the general structure of MySQL. Now you will need to put a table inside of the database you have created. In the case of our **grocery_store** database we will need to define the table as some sort of product sold in the grocery store. For this example, we will focus on fruits.
 
 *Before one creates any table, he or she should consider what they are putting into the table in the first place. Try to pick things that are unique to most elements in the table and distinguish them meaningfully from other elements.*
