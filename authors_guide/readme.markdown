@@ -23,6 +23,7 @@ Thank you for willing to partake in the writing of this book. Whatever your leve
 	- A Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or formatting instructions. Markdown's syntax is comprised entirely of punctuation characters, which punctuation characters have been carefully chosen so as to look like what they mean. E.g., asterisks around a word actually look like \*emphasis\*. Markdown lists look like, well, lists. Even blockquotes look like quoted passages of text, assuming you've ever used email.
 	- Markdown is a wonderfully simple approach to creating rich content with plain text. Written by John Gruber of Daring Fireball. You get on with the business of writing (without any fancy code) and Markdown takes care of producing clean textual output suitable for different output formats.
 	- Here is an [overview of the syntax](http://daringfireball.net/projects/markdown/syntax)  
+	- We also use [Markdown extra](http://michelf.com/projects/php-markdown/extra/), so make sure you read this as well.
 3. A good understanding of Git and GitHub
 	- You will need to a GitHub account, and Git installed on your computer
 	- Learn about [Git here](http://progit.org/book/ch1-3.html) 
@@ -92,9 +93,36 @@ data | data
 
 You can specify alignement for each column by adding colons to separator lines. A colon at the left of the separator line will make the column left-aligned; a colon on the right of the line will make the column right-aligned; colons at both side means the column is center-aligned.
 
+~~~~~~~~~~~~~~~~~~~~~
+| Item      | Value |
+| --------- | -----:|
+| Computer  | $1600 |
+| Phone     |   $12 |
+| Pipe      |    $1 |
+~~~~~~~~~~~~~~~~~~~~~
+Looks like this:
+
 | Item      | Value |
 | --------- | -----:|
 | Computer  | $1600 |
 | Phone     |   $12 |
 | Pipe      |    $1 |
 
+### Lists
+Ordered lists and unordered lists can be used as follows:
+
+~~~~~~~~~~~~~~~~~~~~~
+* Item 1
+* Item 2
+* Item 3
+~~~~~~~~~~~~~~~~~~~~~ 
+
+* Item 1
+* Item 2
+* Item 3
+
+* Item 1
+
+This is a hanging indent
+* Item 2
+* Item 3
