@@ -11,6 +11,7 @@ Copyright 2011, Boston PHP, All rights reserved.
 {!include=https://raw.github.com/bostonphp/PHP-Beginners-Book/master/main/introduction.markdown}
 
 ## Learning PHP
+*Written by: [Michael Bourque](mailto:michael@bostonphp.org)* 
 {!include=https://raw.github.com/bostonphp/PHP-Beginners-Book/master/learning_php/learning_php.markdown}
 
 ## Installing and Configuring PHP
@@ -23,6 +24,7 @@ Copyright 2011, Boston PHP, All rights reserved.
 {!include=https://raw.github.com/bostonphp/PHP-Beginners-Book/master/intro_to_css/intro_to_css.markdown}
 
 ## Introduction to Databases and MySQL
+*Written by: Brad Zimmerman* 
 {!include=https://raw.github.com/bostonphp/PHP-Beginners-Book/master/intro_to_databases_and_mysql/intro_to_databases_and_mysql.markdown}
 
 ## Introduction to Javascript and jQuery
