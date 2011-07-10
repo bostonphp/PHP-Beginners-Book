@@ -1,23 +1,20 @@
-#MySQL/Databases Chapter 1 - Why MySQL?:#
-
+## MySQL/Databases Chapter 1 - Why MySQL?
 This chapter is written assuming that you, the user, has successfully installed the WAMP, XAMP, or MAMP packages. If you have not, please refer to the previous chapters entitled WAMP, XAMP, and MAMP configuration so that you can successfully test and implement the commands outlined in this tutorial. We will begin this chapter assuming that the reader has absolutely no knowledge of MySQL or databases.
 
-##What are databases?##
-
+### What are databases?
 Have you ever collected anything? Rocks? Baseball cards? Sports cars? Where would one normally put these things? One person might put the sports cars in a garage, the rocks in a box in the basement, and the baseball cards in plastic sleeves on a shelf in the living room. It would not make much sense to put them all in one place, as it would be hard to find any particular item. What if all of your sports cars, rocks, and baseball cards were on the shelf in your living room? In addition to being very inconvenient to remove any one item from your living room, it would be confusing what and how many items you had to begin with. The same applies to electronic data.
 
 "Databases" are simply an organized collection of data, usually in electronic form. They are composed of smaller parts called "tables". These tables are composed of even smaller parts called "rows" and "columns" similar to what one would see in a Excel spreadsheet (or any spreadsheet for that matter). The columns section of each table declares the characteristics of each table while each row contains unique data for each element in the table. It sounds complicated but it is actually quite simple. Take the example outlined below:
 
-###Table Rocks###
+#### Table Rocks
 
  ID | Name | Location | Origin | Composition | Color 
 :-----------|:------------|:------------ | :------ | :------ | :------
  01 | Obsidian | Basement | Mexico | Volcanic Glass | Black 
 
-
 We can clearly see that the elements in this table have the six column properties defined as ID, Name, Location, Origin, Composition, and Color. The table has one row that characterizes a rock named "Obsidian" whose location is currently in the "Basement". It also claims that this rock is "Black" and composed of "Volcanic Glass". Other rocks can be added to this table making it easy to create a distinction and easy reference between our obsidian rock and other rocks in our collection such as diamonds, sandstones, and gold. Let's add these new elements to our previous table just to see what it looks like.
 
-###Table Rocks###
+#### Table Rocks
 
  ID | Name | Location | Origin | Composition | Color 
 :-----------|:------------|:------------ | :------ | :------ | :------
@@ -49,12 +46,10 @@ Here is a quick review of what we have learned.
 3. Tables are just a collection of things that you want to keep track of.  
 4. Databases are a collection of tables.
 
-#MySQL/Databases Chapter 2 - Where do I start?:#
-
+## MySQL/Databases Chapter 2 - Where do I start?
 Alright. You've made it through the first chapter. Are you proud of yourself? I sure am! Give yourself a pat on the back. This next chapter will be a tad more difficult as it requires the user to do other things as well as read this helpful instruction manual. 
 
-###Navigating to your WAMP program###
-
+#### Navigating to your WAMP program
 Please follow the steps outlined below:
 
 1. There should be a shortcut on the desktop of your computer. It should look like a big pink "W" surrounded by a box. Double click on it. 
@@ -63,21 +58,18 @@ Please follow the steps outlined below:
 
 Nice, I knew you could do it. Now it's time to...
 
-###Open your localhost!!!###
-
+#### Open your localhost!!!
 Please follow the steps outlined below:
 
 1. Click and open your favorite browser. It should not be Internet Explorer.
 2. Type or paste the word **localhost** into where you would normally type a website address, and press enter.
 
-###Congratulations! You did it!###
-
+#### Congratulations! You did it!
 At this point you should see a page that says **XAMPP for Windows** in the top left corner, with a list of commands down the left side. Click on the word **phpMyAdmin** on the navigation bar on the left hand side of the screen. 
 
 *Was there an error? Don't panic. Just type in **https://localhost**. You should now be able to click on **phpMyAdmin** without any more hassles. If there is still a problem, you may have to uninstall and reinstall WAMP*
 
-##Using phpMyAdmin##
-
+### Using phpMyAdmin
 Alright. By now you should be on a tacky dark blue and grey screen with **phpMyAdmin** on the upper left side. At the top of the screen, you should see a bunch of tabs directly underneath the word **localhost**. Click on the **SQL** tab.
 
 *NOTE: Because this tutorial focuses mainly on programming with embedded SQL in PHP, we will not be using any of the fun, efficient, and easy to use syntax phpMyAdmin offers. This is mainly because you will not actually be using this framework for the selects, inserts, updates, and deletes implemented in your awesome webpage. You will use these commands directly in the php framework of your choice.*
@@ -96,14 +88,12 @@ This tells the MySQL database that you are going to work in the database **groce
 
 You have just created the database of a single fictional grocery store. We will develop this more in the next chapter.
 
-#MySQL/Databases Chapter 3 - Defining our first table:#
-
+## MySQL/Databases Chapter 3 - Defining our first table
 Up until this point, you have created your database, and figured out the general structure of MySQL. Now you will need to put a table inside of the database you have created. In the case of our **grocery_store** database we will need to define the table as some sort of product sold in the grocery store. For this example, we will focus on fruits.
 
 *Before one creates any table, he or she should consider what they are putting into the table in the first place. Try to pick things that are unique to most elements in the table and distinguish them meaningfully from other elements.*
 
-##What defines a fruit?###
-
+### What defines a fruit?
 I can think of a few properties separating one fruit from other fruits in a grocery store.
 
 * Fruit name
@@ -132,29 +122,19 @@ Dates are a way to store dates in the database. Do you just want to store the da
 Let's look back at our characteristics of fruits to decide what kind of datatype they should be.
 
 * Fruit name - Consists of a few letters. **varchar(50)**
-
 * Fruit color - Consists of few letters. **varchar(50)**
-
 * Fruit taste - Consists of more letters. **varchar(100)**
-
 * Fruit texture - Consists of more letters. **varchar(100)**
-
 * Fruit price - Consists of numbers with a decimal point. **float**
-
 * Fruit quantity - Consists of numbers without a decimal point. **int**
-
 * Fruit shelf-life - Could be a matter of hours to a matter of days. Since this number does not define a specific date or time, we will define it in the number of hours it takes for the fruit to expire. **int**
-
 * Fruit last purchased - A certain date and time when the fruit was last bought. **datetime**
-
 * Fruit purchased quantity - Consists of numbers without a decimal point. **int**
-
 * Fruit store ID - Consists of numbers without a decimal point. **int**
 
 That about sums it up, now we just have to put these columns in the correct order. Since the **Fruit store ID** is the only truly unique element in the list, we will make this the "Primary Key".
 
-##How do I make a table with this?##
-
+### How do I make a table with this?
 Good question. It may seem like I am rambling on a bit here, but I assure you that my writing has some purpose. In your window with phpMyAdmin click on the **SQL** tab to bring up the command box again. Make sure that you see **localhost -> grocery_store** above the box. If you do not, just click on the **grocery_store** link on the right side and then the **SQL** tab to get yourself there. 
 
 Type the command:
