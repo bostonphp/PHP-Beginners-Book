@@ -109,7 +109,9 @@ Looks like this:
 | Pipe      |    $1 |
 
 ### Lists
-Ordered lists and unordered lists can be used as follows:
+You can use list in the book according to these rules:
+
+#### Un-ordered lists
 
 ~~~~~~~~~~~~~~~~~~~~~
 * Item 1
@@ -128,3 +130,63 @@ This is a hanging indent
 ~~~~~~~~~~~~~~~~~~~~~ 
 * Item 2
 * Item 3
+
+#### Ordered lists
+~~~~~~~~~~~~~~~~~~~~~
+1. Item 1
+2. Item 2
+3. Item 3
+~~~~~~~~~~~~~~~~~~~~~ 
+
+**Looks like this:**
+
+1. Item 1
+2. Item 2
+3. Item 3
+
+#### Definition lists
+Definition lists are made of terms and definitions of these terms, much like in a dictionary.
+
+A simple definition list in PHP Markdown Extra is made of a single-line term followed by a colon and the definition for that term.
+
+~~~~~~~~~~~~~~~~~~~~~ 
+Apple
+:   Pomaceous fruit of plants of the genus Malus in 
+    the family Rosaceae.
+~~~~~~~~~~~~~~~~~~~~~ 
+
+**Looks like this:**
+
+Apple
+:   Pomaceous fruit of plants of the genus Malus in 
+    the family Rosaceae.
+
+~~~~~~~~~~~~~~~~~~~~~ 
+Orange
+:   The fruit of an evergreen tree of the genus Citrus.
+~~~~~~~~~~~~~~~~~~~~~ 
+
+**Looks like this:**
+
+Orange
+:   The fruit of an evergreen tree of the genus Citrus.
+
+Terms must be separated from the previous definition by a blank line. Definitions can span on multiple lines, in which case they should be indented. But you don’t really have to: if you want to be lazy, you could forget to indent a definition that span on multiple lines and it will still work:
+
+~~~~~~~~~~~~~~~~~~~~~ 
+Apple
+:   Pomaceous fruit of plants of the genus Malus in 
+the family Rosaceae.
+
+Orange
+:   The fruit of an evergreen tree of the genus Citrus.
+~~~~~~~~~~~~~~~~~~~~~ 
+
+**Looks like this:**
+
+Apple
+:   Pomaceous fruit of plants of the genus Malus in 
+the family Rosaceae.
+
+Orange
+:   The fruit of an evergreen tree of the genus Citrus.
