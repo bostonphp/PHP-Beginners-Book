@@ -84,9 +84,9 @@ If you need to display a table, you can do so using Markdown by using pipe chara
 Will look like this:
 
 |Heading 1|Heading 2|
-	|-|-|
-	|data|data|
-	|data|data|
+|-|-|
+|data|data|
+|data|data|
 
 
 
