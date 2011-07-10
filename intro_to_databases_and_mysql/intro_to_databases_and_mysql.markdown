@@ -1,4 +1,4 @@
-## MySQL/Databases Chapter 1 - Why MySQL?
+## MySQL/Databases - Why MySQL?
 This chapter is written assuming that you, the user, has successfully installed the WAMP, XAMP, or MAMP packages. If you have not, please refer to the previous chapters entitled WAMP, XAMP, and MAMP configuration so that you can successfully test and implement the commands outlined in this tutorial. We will begin this chapter assuming that the reader has absolutely no knowledge of MySQL or databases.
 
 ### What are databases?

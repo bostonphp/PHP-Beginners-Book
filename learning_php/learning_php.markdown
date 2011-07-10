@@ -241,10 +241,10 @@ Try experimenting yourself and try creating your own functions. Try to enhance t
 
 ## Object Oriented Programming
 
-## Chapter 10: Challenges
+## Challenges
 Ok, now we are going to have some fun. 
 
-## Challenge 1
+### Challenge 1
 In this challenge, we are going to look at how PHP handles variable types. You will see how flexible and lenient the language can be. It also demonstrates how easy it can be to depend on this, which can get you into trouble later on when trying to debug your program.
 
 **What is wrong with the following code?**
@@ -265,6 +265,20 @@ In this challenge, we are going to look at how PHP handles variable types. You w
 
 ## Good practices
 It is very important to keep your code and your projects in good shape. It's easy to take shortcuts, but I find you will pay the price later if you do not at least practice some best practices. Here are my favorite best practices I have developed to keep you organized.
+
+## Syntax
+## Variables
+## String
+## Operators
+## If...Else
+## Switch
+## Arrays
+## While Loops
+## For Loops
+## Functions
+## Forms
+##  PHP $_GET
+## PHP $_POST
 
 ## strtotime()
 One of my favorite built-in functions of PHP is the [strtotime()](http://us.php.net/manual/en/function.strtotime.php) function. It stands for String To Time and will take a human readable date and convert it to a standard format (unix timestamp) that you can further use to process and output date related functions.
@@ -297,22 +311,8 @@ Now you can use the timestamp to output a date, or filter data from a database w
 ## Code formatting
 ## Format
 ## Conventions
-
 ## Source code control
-## Git
-## Subversion
-## Mercurial
-
-Syntax
-Variables
-String
-Operators
-If...Else
-Switch
-Arrays
-While Loops
-For Loops
-Functions
-Forms
-PHP $_GET
-PHP $_POST
+### Subversion
+### Git
+### Subversion
+### Mercurial
