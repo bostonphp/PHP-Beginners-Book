@@ -16,7 +16,5 @@ For you to learn PHP in this book, you will need the following things:
 
 Look to the section on how to install PHP on your computer.
 
-### About the author
-Michael Bourque is the organizer of [Boston PHP](http://www.bostonphp.org), the largest and most active PHP community in the world. He is passionate at teaching and mentoring folks on using open source technology to take their passion, ideas, and creativity, and turn it into something great.
-
-Michael taught himself to program when he was 13 years old. He bought a used Radio Shack TRS-80 computer, turned it on, and started to hack. Through the years he has taught himself Basic, Assembly, Java, C, C++, Perl, and PHP.
+### Who wrote this book?
+This book is a collaborative effort by the generous members of Boston PHP. Boston PHP is the largest and most active PHP community in the world. We are passionate at teaching and mentoring folks on using open source technology to take their passion, ideas, and creativity, and turn it into something great.
