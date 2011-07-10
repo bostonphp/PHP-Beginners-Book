@@ -112,22 +112,15 @@ Looks like this:
 You can use list in the book according to these rules:
 
 #### Un-ordered lists
-
 ~~~~~~~~~~~~~~~~~~~~~
 * Item 1
 * Item 2
 * Item 3
 ~~~~~~~~~~~~~~~~~~~~~ 
 
-* Item 1
-* Item 2
-* Item 3
+**Looks like this:**
 
 * Item 1
-
-~~~~~~~~~~~~~~~~~~~~~ 
-This is a hanging indent
-~~~~~~~~~~~~~~~~~~~~~ 
 * Item 2
 * Item 3
 
@@ -187,6 +180,5 @@ Orange
 Apple
 :   Pomaceous fruit of plants of the genus Malus in 
 the family Rosaceae.
-
 Orange
 :   The fruit of an evergreen tree of the genus Citrus.
