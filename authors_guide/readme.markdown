@@ -50,3 +50,37 @@ Before you go off and start writing your part of the book, I will be asking each
 Yes, you will get credit for your work in terms of you as the author of that section. But please do not expect more than that. This is an open source project, and this book is free to the public. You should only be doing this because you believe in the project and the philosophy, and want to teach the world how to code.
 
 ## Standards
+Please follow these standards when writing the book.
+
+### Code
+When showing code to the user, please indent the code with one tab top. Markdown knows how to treat this as source code and when you do this the code will appear in mono-spaced font and will appear like source code.
+
+Example:
+
+	<?php // filename.php
+		$variable = 'Test';
+		echo $variable;
+	?>
+
+Also try and give a hint to the type of code your giving by adding a comment line above that gives the name of the file. If you need to show that the source is a snippet, you can do this:
+
+	<?php // filename.php
+		...
+		$variable = 'Test';
+		echo $variable;
+		...
+	?>
+
+Please remember to use good structured code that is indented, and easy to look at and read. Use comments and good variable names. This is what I like to call pseudo code. It's not really intended to be run, it's intended to teach, so be a bit more verbose than you might otherwise be with comment, variable names, etc.
+
+## Tables
+If you need to display a table, you can do so using Markdown by using pipe characters within your tabular data
+
+	|Heading 1|Heading 2|
+	|-|-|
+	|data|data|
+	|data|data|
+
+
+
+
