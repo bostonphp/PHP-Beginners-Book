@@ -10,6 +10,32 @@ This book aims to go beyond PHP. We will cover all the things a PHP developer sh
 ### Work in progress
 This book is a work in progress. We are constantly adding to it and editing it to make it better. It's not completed yet. So you might save it locally, print it, or save to PDF so you don't see change while your using it.
 
+### The future
+We have big plans for this book and it's format. To call this a book sort of tarnishes the future direction we want to take it. I want to go beyond plain text and images. I want to take full advantage of the web and new platforms such as mobile and book readers. The book will start to take on a progressive enhancement approach that aims to exploit the benefits of each medium we publish to.
+
+Mediums:
+
+- Paper
+- Web
+- Video Podcast
+- Mac App (From app store)
+- Generic eReaders
+- iBook
+- iPhone, iPdod
+
+Here are some things we want to add in the future:
+
+- Inline Images
+- Inline Videos
+- User contributed notes, tips, and techniques
+- *Paste Bin* - Lets you type and try out code directly in the book without needing to install PHP.
+- Interactive graphics that help explain varios concepts
+- Interactive quizzes and assessments
+- *Prescibed Learning* - Take an assessment, and click a button to build you a personal book with sections you need help in
+- Online chat
+- Awards and progress indicators for completing chapters and sections
+- Sharing tools like Facebook and Twitter
+
 ### What you will need
 For you to learn PHP in this book, you will need the following things:
 
