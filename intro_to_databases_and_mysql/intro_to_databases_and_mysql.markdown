@@ -134,7 +134,7 @@ Let's look back at our characteristics of fruits to decide what kind of datatype
 
 That about sums it up, now we just have to put these columns in the correct order. Since the **Fruit store ID** is the only truly unique element in the list, we will make this the "Primary Key".
 
-*Defining a column with a primary key means that the column will only be able to have unique values (i.e. nothing can repeat itself). Some examples of this in everyday life are license plate numbers, credit card numbers, and social security numbers. All of these value work to make sure that somebody can't impersonate someone else, and allow them access to certain privileges that are not entitled to them. The same concept applies to tables in databases. Whenever possible, make sure that the table you are creating contains some form of primary key, to give something to uniquely identify a row. This will be discussed more in the next section*
+*Defining a column with a primary key means that the column will only be able to have unique values (i.e. nothing can repeat itself). Some examples of this in everyday life are license plate numbers, credit card numbers, and social security numbers. All of these value work to make sure that somebody can't impersonate someone else, and allow them access to certain privileges that are not entitled to them. The same concept applies to tables in databases. Whenever possible, it is good practice to make sure that the table you are creating contains some form of primary key, to give something to uniquely identify a row. This will be discussed more in future sections*
 
 ### How do I make a table with this?
 Good question. It may seem like I am rambling on a bit here, but I assure you that my writing has some purpose. In your window with phpMyAdmin click on the **SQL** tab to bring up the command box again. Make sure that you see **localhost -> grocery_store** above the box. If you do not, just click on the **grocery_store** link on the right side and then the **SQL** tab to get yourself there. 
@@ -151,3 +151,25 @@ into the command box, but do not press enter. You will receive and error. Replac
      PURCHASED_QUANTITY int);
 
 Just press enter, and you should be all set. Congratulations! You have created your very first table.
+
+## MySQL/Databases - INSERT and SELECT
+
+Now it is time to actually put something into our table. Click on the SQL tab again, type the following command, and press enter.
+
+     INSERT INTO FRUITS VALUES (001,"Banana","Yellow",
+     "Sweet Dry","Spongy",".29",100,72,"2011-05-08 
+     12:00:00",100);
+
+*The format for datetime is YYYY-MM-DD HH:MM:SS*
+
+This should add the row **"Banana"** to your table. Click on the SQL tab again, and send the next command to the database.
+
+     INSERT INTO FRUITS VALUES (001,"Strawberries",
+     "Red","Tangy Moist","Smooth",".15",50,48,
+     "2011-05-08 12:00:00",50);
+
+Did it work? It shouldn't have. If you remember, we had defined the first column **"ID"** as the Primary Key. This means that every value in the column must be unique. We forgot to change this value to a different number after we defined bananas. Let's do that now.
+
+     INSERT INTO FRUITS VALUES (002,"Strawberries",
+     "Red","Tangy Moist","Smooth",".15",50,48,
+     "2011-05-08 12:00:00",50);
