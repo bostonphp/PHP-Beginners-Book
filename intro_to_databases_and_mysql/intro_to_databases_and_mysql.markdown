@@ -96,6 +96,7 @@ Up until this point, you have created your database, and figured out the general
 ### What defines a fruit?
 I can think of a few properties separating one fruit from other fruits in a grocery store.
 
+* Fruit store ID
 * Fruit name
 * Fruit color
 * Fruit taste
@@ -105,7 +106,6 @@ I can think of a few properties separating one fruit from other fruits in a groc
 * Fruit shelf-life
 * Fruit last purchased
 * Fruit purchased quantity
-* Fruit store ID
 
 That should be enough to at least let us get started. Now we have to figure out what kind of data we are going to put in these categories. For learning purposes, there are really only three types of data you will need to use. They are:
 
@@ -121,6 +121,7 @@ Dates are a way to store dates in the database. Do you just want to store the da
 
 Let's look back at our characteristics of fruits to decide what kind of datatype they should be.
 
+* Fruit store ID - Consists of numbers without a decimal point. **int**
 * Fruit name - Consists of a few letters. **varchar(50)**
 * Fruit color - Consists of few letters. **varchar(50)**
 * Fruit taste - Consists of more letters. **varchar(100)**
@@ -130,15 +131,20 @@ Let's look back at our characteristics of fruits to decide what kind of datatype
 * Fruit shelf-life - Could be a matter of hours to a matter of days. Since this number does not define a specific date or time, we will define it in the number of hours it takes for the fruit to expire. **int**
 * Fruit last purchased - A certain date and time when the fruit was last bought. **datetime**
 * Fruit purchased quantity - Consists of numbers without a decimal point. **int**
-* Fruit store ID - Consists of numbers without a decimal point. **int**
 
 That about sums it up, now we just have to put these columns in the correct order. Since the **Fruit store ID** is the only truly unique element in the list, we will make this the "Primary Key".
+
+*Defining a column with a primary key means that the column will only be able to have unique values (i.e. nothing can repeat itself). Some examples of this in everyday life are license plate numbers, credit card numbers, and social security numbers. All of these value work to make sure that somebody can't impersonate someone else, and allow them access to certain privileges that are not entitled to them. The same concept applies to tables in databases. Whenever possible, make sure that the table you are creating contains some form of primary key, to give something to uniquely identify a row. This will be discussed more in the next section*
 
 ### How do I make a table with this?
 Good question. It may seem like I am rambling on a bit here, but I assure you that my writing has some purpose. In your window with phpMyAdmin click on the **SQL** tab to bring up the command box again. Make sure that you see **localhost -> grocery_store** above the box. If you do not, just click on the **grocery_store** link on the right side and then the **SQL** tab to get yourself there. 
 
 Type the command:
 
-	CREATE TABLE FRUITS{};
+	CREATE TABLE FRUITS(*);
 
-into the command box, but do not press enter. You will get an error
+into the command box, but do not press enter. You will receive and error. Replace the star in the parentheses the names and variable types that we have outlined above. 
+
+     CREATE TABLE FRUITS(ID int PRIMARY KEY, NAME varchar(50), COLOR varchar(50), TASTE varchar(100), TEXTURE varchar(100), PRICE float, QUANTITY int, SHELF_LIFE int, LAST_PUCHASED datetime, PURCHASED_QUANTITY int);
+
+Just press enter, and you should be all set. Congratulations! You have created your very first table.
