@@ -145,6 +145,9 @@ Type the command:
 
 into the command box, but do not press enter. You will receive and error. Replace the star in the parentheses the names and variable types that we have outlined above. 
 
-     CREATE TABLE FRUITS(ID int PRIMARY KEY, NAME varchar(50), COLOR varchar(50), TASTE varchar(100), TEXTURE varchar(100), PRICE float, QUANTITY int, SHELF_LIFE int, LAST_PUCHASED datetime, PURCHASED_QUANTITY int);
+     CREATE TABLE FRUITS(ID int PRIMARY KEY, NAME varchar(50), 
+     COLOR varchar(50), TASTE varchar(100), TEXTURE varchar(100), 
+     PRICE float, QUANTITY int, SHELF_LIFE int, LAST_PUCHASED datetime, 
+     PURCHASED_QUANTITY int);
 
 Just press enter, and you should be all set. Congratulations! You have created your very first table.
