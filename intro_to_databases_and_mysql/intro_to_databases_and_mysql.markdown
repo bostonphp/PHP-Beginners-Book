@@ -210,7 +210,7 @@ The results should be every fruit labeled **Red** in the database.
 
 *Remember to surround a string with quotations or parentheses every time you wish to use them in SQL statements. They will not work otherwise.*
 
-Now say that we want to do something a bit more complicated and select a fruit whose price is greater than 20 cents. For this, you need to think back to geometry and remember your inequality modifiers. Don't remember what they are? Don't worry, I have provided a helpful table below.
+Now say that we want to do something a bit more complicated and select a fruit whose price is greater than 25 cents. For this, you need to think back to geometry and remember your inequality modifiers. Don't remember what they are? Don't worry, I have provided a helpful table below.
 
  Operation | Symbol 
 :-----------|:------------
