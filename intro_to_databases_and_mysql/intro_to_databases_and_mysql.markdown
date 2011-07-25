@@ -176,7 +176,7 @@ Did it work? It shouldn't have. If you remember, we had defined the first column
 
 And add one more row to our table.
 
-     INSERT INTO FRUITS VALUES (003,"Rasberries",
+     INSERT INTO FRUITS VALUES (003,"Raspberries",
      "Red","Tart Moist","Juicy",".25",60,92,
      "2011-05-09 10:15:00",200);
 
@@ -202,7 +202,7 @@ This kind of syntax becomes especially useful when dealing with the conditional 
 
 ## MySQL/Databases - WHERE and ORDER BY
 
-So far you have learned how to get blocks of information from a table, but you still have no idea how to turn those results into something relevant such as selecting all of the fruit prices greater than 20 cents, or displaying all of the "Red" fruits. This is where the **WHERE** statement comes into play. The **WHERE** statement gives a specific set of criteria to the MySQL database so that the results are much more controlled and relevant to what you want. For example, say that you want to select the names of all of the fruits with a **Red** color. You would want to type in the following statement in the compiler.
+So far you have learned how to get blocks of information from a table, but you still have no idea how to turn those results into something relevant such as selecting all of the fruit prices greater than 25 cents, or displaying all of the "Red" fruits. This is where the **WHERE** statement comes into play. The **WHERE** statement gives a specific set of criteria to the MySQL database so that the results are much more controlled and relevant to what you want. For example, say that you want to select the names of all of the fruits with a **Red** color. You would want to type in the following statement in the compiler.
 
      SELECT name FROM fruits WHERE color = 'Red';
 
@@ -220,9 +220,15 @@ Now say that we want to do something a bit more complicated and select a fruit w
  Greater Than Or Equal To | >= 
  Less Than Or Equal To | <= 
 
-To find all of the fruits with a price that is greater than 20 cents, it is fairly obvious that we need to use the Greater Than operator defined above. Type the following command into your compiler and press **Go**.
+To find all of the fruits with a price that is greater than 25 cents, it is fairly obvious that we need to use the **Greater Than** operator defined above. Type the following command into your compiler and press **Go**.
 
-    SELECT name FROM fruits WHERE price > 0.20;
+    SELECT name FROM fruits WHERE price > 0.25;
+
+This should select all of the fruits with a price greater than 25 cents. Mainly bananas. To see all of the fruits with prices greater than 25 cents, including 25 cents, you will need to use the **Greater Than Or Equal To** operator defined above. Type the following command into the compiler and press **Go**.
+
+    SELECT name FROM fruits WHERE price >= 0.25;
+
+The previous statement should have selected raspberries as well as bananas
 
 ## MySQL/Databases - STATIC FUNCTIONS and GROUP BY
 ## MySQL/Databases - JOINS
