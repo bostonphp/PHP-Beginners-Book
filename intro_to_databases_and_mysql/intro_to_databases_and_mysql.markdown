@@ -212,24 +212,15 @@ The results should be every fruit labeled **Red** in the database.
 
 Now say that we want to do something a bit more complicated and select a fruit whose price is greater than 20 cents. For this, you need to think back to geometry and remember your inequality modifiers. Don't remember what they are? Don't worry, I have provided a helpful table below.
 
-*Equal To
-
+* Equal To
      =
-
-*Greater Than
-
+* Greater Than
      >
-
-*Less Than
-
+* Less Than
      <
-
-*Greater Than Or Equal To
-
+* Greater Than Or Equal To
      >=
-
-*Less Than Or Equal To
-
+* Less Than Or Equal To
      <=
 
 To find all of the fruits with a price that is greater than 20 cents, it is fairly obvious that we need to use the Greater Than operator defined above. Type the following command into your compiler and press **Go**.
