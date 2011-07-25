@@ -182,14 +182,19 @@ And add one more row to our table.
 
 Remember the syntax for inserting into a table is as follows:
 
-*INSERT INTO {Name of table} VALUES ({Number of values defined when the table was created in the correct order});
+*INSERT INTO {Name of table} VALUES ({Number of values defined when the table was created in the correct order});*
 
 Don't worry if you mess up. MySQL will warn and prevent you from running incorrect commands.
 
 ### MySQL/Databases - SELECT Statements
 
-The syntax of MySQL is pretty straight forward. We have seen so far to use INSERT statements to insert something into a table and CREATE statements to create a brand new table (or database). It doesn't take much imagination to figure out that SELECT statements select a value or group of values from a table and return that value to the user. 
+The syntax of MySQL is pretty straight forward. We have seen so far to use INSERT statements to insert something into a table and CREATE statements to create a brand new table (or database). It doesn't take much imagination to figure out that the SELECT statement selects a value or group of values from a table and return that value(s) to the user. 
 
-Let's start out with a simple SELECT statement. In phpMyAdmin click on the **grocery_store** icon on the left side and then click on the **SQL** tab at the top of the page. Type in the following command and press enter.
+Let's start out with a simple SELECT statement. In phpMyAdmin click on the **grocery_store** icon on the left side and then click on the **SQL** tab at the top of the page. Type in the following command and press **Go**.
 
      SELECT * FROM fruits;
+
+If you typed out this statement correctly, you should see the entire contents of your table **fruits**. To select only certain columns of a table, type out all of the columns you want to see in that table separated by a column. Type in the following command and press **Go**.
+
+     SELECT name,price,quantity FROM fruits;
+
