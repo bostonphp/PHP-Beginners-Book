@@ -194,7 +194,47 @@ Let's start out with a simple SELECT statement. In phpMyAdmin click on the **gro
 
      SELECT * FROM fruits;
 
-If you typed out this statement correctly, you should see the entire contents of your table **fruits**. To select only certain columns of a table, type out all of the columns you want to see in that table separated by a column. Type in the following command and press **Go**.
+If you typed out this statement correctly, you should see the entire contents of your table **fruits**. To select only certain columns of a table, type out all of the columns you want to see in that table separated by a comma. Type in the following command and press **Go**.
 
      SELECT name,price,quantity FROM fruits;
 
+This kind of syntax becomes especially useful when dealing with the conditional **WHERE** statement described in the next chapter.
+
+## MySQL/Databases - WHERE and ORDER BY
+
+So far you have learned how to get blocks of information from a table, but you still have no idea how to turn those results into something relevant such as selecting all of the fruit prices greater than 20 cents, or displaying all of the "Red" fruits. This is where the **WHERE** statement comes into play. The **WHERE** statement gives a specific set of criteria to the MySQL database so that the results are much more controlled and relevant to what you want. For example, say that you want to select the names of all of the fruits with a **Red** color. You would want to type in the following statement in the compiler.
+
+     SELECT name FROM fruits WHERE color = 'Red';
+
+The results should be every fruit labeled **Red** in the database. 
+
+*Remember to surround a string with quotations or parentheses every time you wish to use them in SQL statements. They will not work otherwise.*
+
+Now say that we want to do something a bit more complicated and select a fruit whose price is greater than 20 cents. For this, you need to think back to geometry and remember your inequality modifiers. Don't remember what they are? Don't worry, I have provided a helpful table below.
+
+*Equal To
+
+     =
+
+*Greater Than
+
+     >
+
+*Less Than
+
+     <
+
+*Greater Than Or Equal To
+
+     >=
+
+*Less Than Or Equal To
+
+     <=
+
+To find all of the fruits with a price that is greater than 20 cents, it is fairly obvious that we need to use the Greater Than operator defined above. Type the following command into your compiler and press **Go**.
+
+    SELECT name FROM fruits WHERE price > 0.20;
+
+## MySQL/Databases - STATIC FUNCTIONS and GROUP BY
+## MySQL/Databases - JOINS
