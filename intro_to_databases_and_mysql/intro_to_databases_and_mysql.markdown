@@ -154,6 +154,8 @@ Just press enter, and you should be all set. Congratulations! You have created y
 
 ## MySQL/Databases - INSERT and SELECT
 
+### INSERT Statements
+
 Now it is time to actually put something into our table. Click on the SQL tab again, type the following command, and press enter.
 
      INSERT INTO FRUITS VALUES (001,"Banana","Yellow",
@@ -186,7 +188,7 @@ Remember the syntax for inserting into a table is as follows:
 
 Don't worry if you mess up. MySQL will warn and prevent you from running incorrect commands.
 
-### MySQL/Databases - SELECT Statements
+### SELECT Statements
 
 The syntax of MySQL is pretty straight forward. We have seen so far to use INSERT statements to insert something into a table and CREATE statements to create a brand new table (or database). It doesn't take much imagination to figure out that the SELECT statement selects a value or group of values from a table and return that value(s) to the user. 
 
@@ -194,13 +196,17 @@ Let's start out with a simple SELECT statement. In phpMyAdmin click on the **gro
 
      SELECT * FROM fruits;
 
+*In general, the "*" in computer science refers to "all", so the result of the command above should return all columns of the table **fruits**.* 
+
 If you typed out this statement correctly, you should see the entire contents of your table **fruits**. To select only certain columns of a table, type out all of the columns you want to see in that table separated by a comma. Type in the following command and press **Go**.
 
      SELECT name,price,quantity FROM fruits;
 
-This kind of syntax becomes especially useful when dealing with the conditional **WHERE** statement described in the next chapter.
+This kind of syntax (where the return columns are specified) becomes especially useful when dealing with the conditional **WHERE** statement described in the next chapter.
 
 ## MySQL/Databases - WHERE and ORDER BY
+
+### WHERE Statements
 
 So far you have learned how to get blocks of information from a table, but you still have no idea how to turn those results into something relevant such as selecting all of the fruit prices greater than 25 cents, or displaying all of the "Red" fruits. This is where the **WHERE** statement comes into play. The **WHERE** statement gives a specific set of criteria to the MySQL database so that the results are much more controlled and relevant to what you want. For example, say that you want to select the names of all of the fruits with a **Red** color. You would want to type in the following statement in the compiler.
 
@@ -229,6 +235,26 @@ This should select all of the fruits with a price greater than 25 cents. Mainly 
     SELECT name FROM fruits WHERE price >= 0.25;
 
 The previous statement should have selected raspberries as well as bananas
+
+*Remember that the **WHERE** command always goes after the **SELECT** statement in MySQL 
+
+### ORDER BY
+
+The **ORDER BY** statement is probably one of the easiest commands to learn in MySQL. You can attach it at the end of any **SELECT** statement to put the results in the order of the column that you specify.
+
+     SELECT name FROM fruits ORDER BY id asc;
+
+The above statement should display the fruits in order of the column 'id' from smallest to largest. This is because the modifier **asc** is placed at the end of the command.
+
+     SELECT name FROM fruits ORDER BY id desc;
+
+The above statement will display the fruits in order of the column 'id' from largest to smallest. This is what happens when the **desc** modifier is used. 
+
+The **ORDER BY** modifier can also be used with a WHERE statement like so:
+
+     SELECT name FROM fruits WHERE price >= 0.25 ORDER BY id asc;
+
+Just remember that the **WHERE** command ALWAYS goes before the **ORDER BY** command. If you mix them up, you will get an error. 
 
 ## MySQL/Databases - STATIC FUNCTIONS and GROUP BY
 ## MySQL/Databases - JOINS
