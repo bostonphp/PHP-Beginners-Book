@@ -250,7 +250,7 @@ The above statement should display the fruits in order of the column 'id' from s
 
 The above statement will display the fruits in order of the column 'id' from largest to smallest. This is what happens when the **desc** modifier is used. 
 
-The **ORDER BY** modifier can also be used with a WHERE statement like so:
+The **ORDER BY** modifier can also be used with a **WHERE** statement like so:
 
      SELECT name FROM fruits WHERE price >= 0.25 ORDER BY id asc;
 
