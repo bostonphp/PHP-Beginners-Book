@@ -298,10 +298,12 @@ The **GROUP BY** function is only used with aggregate functions, or functions th
 
 First, we need to see what columns the question is asking us to use. From a quick glance, we can see that we will need to use the columns **color** and **price** in our fruits table. We can also see that we will have to take the average of the fruit price. We will **GROUP BY** color because we want to connect the **price** column to the **color** column in some way. 
 
-*Don't worry if this is still confusing. I find the often the best way to learn something is to practice it over and over again. You may hate yourself while you sit inside practicing mundane SQL commands when it is such a beautiful day outside (go look outside for a second. I'll wait), but think about this. I wrote this guide entirely for free. The weather outside is currently 78 degrees and sunny. I haven't showered in days. All you have to do is actually read and practice this tutorial.* 
+*Don't worry if this is still confusing. I find the often the best way to learn something is to practice it over and over again. You may hate yourself while you sit inside practicing mundane SQL commands when it is such a beautiful day outside (go look outside for a second. I'll wait), but think about this. I wrote this guide entirely for free. The weather outside is currently 78 degrees and sunny. I haven't showered in days. All you have to do is actually read and practice this tutorial. Stop complaining.* 
 
      SELECT color,avg(price) FROM fruits GROUP BY color;
 
-Run the command above. See anything interesting with the results?
+Run the command above. See anything interesting with the results? The averages aren't exactly what they should be. **.2/1 = .2, not .200000002980232**. So what gives? Is there something wrong with the database?
+
+Good question. The answer is both yes and no. SQL, in an effort to make things queries faster employs a short of *fuzzy* mathematics to its function calls.
 
 ## MySQL/Databases - JOINS
