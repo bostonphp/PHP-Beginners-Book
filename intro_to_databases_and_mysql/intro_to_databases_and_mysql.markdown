@@ -256,5 +256,25 @@ The **ORDER BY** modifier can also be used with a **WHERE** statement like so:
 
 Just remember that the **WHERE** command ALWAYS goes before the **ORDER BY** command. If you mix them up, you will get an error. 
 
-## MySQL/Databases - STATIC FUNCTIONS and GROUP BY
+## MySQL/Databases - Static Functions and GROUP BY
+
+I know that I have gone a bit more quickly than usual in the last few chapters, but will to slow things down for a slightly more complicated part of MySQL programming, **Static Functions**. Below you will find a list of the most common MySQL static functions and their purpose. Afterwards, I will show you how to use them.
+
+ Function | Purpose 
+:-----------|:------------
+ avg() | Returns the average value of the numbers in a column
+ count() | Returns the number of values in a column
+ first() | Returns the first value in a column
+ last() | Returns the last value in a column
+ max() | Returns the maximum value in a column
+ min() | Returns the minimum value in a column
+ sum() | Returns the sum of all numbers in a column
+ ucase() | Returns the results in upper case
+ lcase() | Returns the results in lower case
+ len() | Returns the length of a value in a specified field
+ round() | Rounds the results to the number of places specified
+ now() | Returns the server's current date and time
+ mid() | Returns a certain number of characters from a column
+ format() | Returns a field in the format specified (YYYY-MM-DD)
+
 ## MySQL/Databases - JOINS
