@@ -277,4 +277,14 @@ I know that I have gone a bit more quickly than usual in the last few chapters, 
  mid() | Returns a certain number of characters from a column
  format() | Returns a field in the format specified (YYYY-MM-DD)
 
+Wow. That sure is a lot of new things to learn. Where would one even begin to use commands that are so complicated? Good question. Let me give you some examples that could be applied to the database that we have already made.
+
+* You would like to find out which color fruits, on average, are the most expensive.
+* You would like to find out the sum of all of the fruits in your store
+* You would like to know how many different types or fruits you own
+* You would like to return the first three letters of each fruits name, so that you can index them efficiently in store
+* You would like to know that longest fruit name in your store
+
+
+
 ## MySQL/Databases - JOINS
