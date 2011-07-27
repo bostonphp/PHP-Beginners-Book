@@ -258,6 +258,8 @@ Just remember that the **WHERE** command ALWAYS goes before the **ORDER BY** com
 
 ## MySQL/Databases - Static Functions and GROUP BY
 
+### Static Functions
+
 I know that I have gone a bit more quickly than usual in the last few chapters, but will to slow things down for a slightly more complicated part of MySQL programming, **Static Functions**. Below you will find a list of the most common MySQL static functions and their purpose. Afterwards, I will show you how to use them.
 
  Function | Purpose 
@@ -269,6 +271,7 @@ I know that I have gone a bit more quickly than usual in the last few chapters, 
  max() | Returns the maximum value in a column
  min() | Returns the minimum value in a column
  sum() | Returns the sum of all numbers in a column
+------- | --------------------
  ucase() | Returns the results in upper case
  lcase() | Returns the results in lower case
  len() | Returns the length of a value in a specified field
@@ -285,6 +288,20 @@ Wow. That sure is a lot of new things to learn. Where would one even begin to us
 * You would like to return the first three letters of each fruits name, so that you can index them efficiently in store
 * You would like to know that longest fruit name in your store
 
+To do most of these things, we must become familiar with another command that you will use often.
 
+### GROUP BY
+
+The **GROUP BY** function is only used with aggregate functions, or functions that *Group* two or more things together. If you look at the chart above, you will see that everything above the hyphen will need the **GROUP BY** statement in order to function. Instead of confusing you more with complicated definitions, I find that it is usually best to dive right into the hard work and get it over with. Let us start with the first of the test cases above and work our way down to the end so that you can get a feel for the new commands.
+
+*1) You would like to find out which color fruits, on average, are the most expensive.*
+
+First, we need to see what columns the question is asking us to use. From a quick glance, we can see that we will need to use the columns **color** and **price** in our fruits table. We can also see that we will have to take the average of the fruit price. We will **GROUP BY** color because we want to connect the **price** column to the **color** column in some way. 
+
+*Don't worry if this is still confusing. I find the often the best way to learn something is to practice it over and over again. You may hate yourself while you sit inside practicing mundane SQL commands when it is such a beautiful day outside (go look outside for a second. I'll wait), but think about this. I wrote this guide entirely for free. The weather outside is currently 78 degrees and sunny. I haven't showered in days. All you have to do is actually read and practice this tutorial.* 
+
+     SELECT color,avg(price) FROM fruits GROUP BY color;
+
+Run the command above. See anything interesting with the results?
 
 ## MySQL/Databases - JOINS
