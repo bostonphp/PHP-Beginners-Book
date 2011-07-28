@@ -351,7 +351,7 @@ I know that you have been dreading doing any real work for a while now, but ther
 
 *Don't cheat. If you actually want to learn this, you are only hurting yourself.*
 
-*1) Select the sum for each fruit by color*
+*1) Select the sum of each fruit by color*
 
 *2) Select the names of the fruits in alphabetical order*
 
@@ -415,7 +415,13 @@ This is a derivation on the last problem. We just need to put a **WHERE** statem
 
 How are you doing so far? Tired from all of the sweet programming you have been doing lately? Thinking about taking a break? Well think again. I want to tell you about an awesome statement called UPDATE. I put the towards the end of the tutorial because it provides a break from the more complicated functions.
 
-So what does the **UPDATE** command do exactly? Why, it updates a value or values in a table with new values. Besides the **SELECT** statement, you will use **UPDATE** by far more often in any kind of 
+So what does the **UPDATE** command do exactly? Why, it updates a value or values in a table with new values. Besides the **SELECT** statement, you will use **UPDATE** far more often than any other kind of statement. The syntax is as follows:
+
+     UPDATE {Table Name} SET {Value1 = Value2} WHERE {Value3 Inequality Value4};
+
+Let's say we messed up and accidentally labeled our 'Blueberries' 'Peaches' in the database. With the **UPDATE** statement, we could easily fix our mistake in a few seconds. 
+
+     UPDATE fruits SET name = 'Blueberries' , color = 'Blue' WHERE name = 'Peaches';
 
 ## MySQL/Databases - AND/OR
 
