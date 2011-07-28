@@ -158,7 +158,7 @@ Just press enter, and you should be all set. Congratulations! You have created y
 
 Now it is time to actually put something into our table. Click on the SQL tab again, type the following command, and press enter.
 
-     INSERT INTO FRUITS VALUES (001,"Banana","Yellow",
+     INSERT INTO FRUITS VALUES (001,"Bananas","Yellow",
      "Sweet Dry","Spongy",".29",100,72,"2011-05-08 
      12:00:00",100);
 
@@ -284,9 +284,8 @@ Wow. That sure is a lot of new things to learn. Where would one even begin to us
 
 * You would like to find out which color fruits, on average, are the most expensive.
 * You would like to find out the sum of all of the fruits in your store
-* You would like to know how many different types or fruits you own
+* You would like to know how many different types of fruits you own
 * You would like to return the first three letters of each fruits name, so that you can index them efficiently in store
-* You would like to know that longest fruit name in your store
 
 To do **MOST** of these things, we must become familiar with another command that you will use often.
 
@@ -308,9 +307,56 @@ Did you get **yellow** as having a higher average price? Actually the answer was
 
 Well, OK. We know that we need to use the quantity column (where the number of fruits are stored) and SUM() function (to add up the numbers) in the table above for this next question. The only problem I see is that we have nothing to use in the GROUP BY statement, and didn't I say that we always need to use the GROUP BY statement with functions like these? (See above).
 
-If you had looked, you would have realized that I did not that one has to use GROUP BY statements all of the time, but simply in most cases. This example is one of the exceptions. Since it is only returning one row, you don't 
+If you had looked, you would have realized that I did not that one has to use GROUP BY statements all of the time, but simply in most cases. This example is one of the exceptions. Since it is only returning one row, you don't actually need any GROUP BY statement to clarify how the rows will be divided.
 
      SELECT sum(quantity) FROM fruits;
+
+You should have gotten 210. I'm not lying this time.
+
+*3) You would like to know how many different types of fruits you own*
+
+It would sure be awesome to have some kind of *counting* function so that we could simply *count* the number of **ids** in our table... I can't remember, do we have one of those functions we can use? Something to *count* things? If we did, we could always just run a statement like:
+
+     SELECT count(id) FROM fruits;
+
+and be done with it.
+
+*4)You would like to return the first three letters of each fruits name, so that you can index them efficiently in store*
+
+If you look at the table above, you will find the mid() function that returns a certain amount of characters from the data given to it. Unlike the other functions we have worked with, this function requires a bit more effort in order to run smoothly. The syntax requires that you enter the name of the variable, starting position, and length of the string into the function separated by commas. Since we want to grab the first three letters of the fruit name, I suggest that we arrange our function like so: **mid(name,1,3)**. I added the column **name** next to our function so that we can see the new results right next to the original results.
+
+     SELECT name, mid(name,1,3) FROM fruits;
+
+### Now for some problems
+
+I know that you have been dreading doing any real work for a while now, but there is just some things that have to be practiced. Unfortunately, you probably won't be able to understand the much more complicated topics in the next few chapters if you do not understand what you have read so far. To make things interesting, please copy and paste the following code into your MySQL command box.
+
+     INSERT INTO FRUITS VALUES (004,"Peaches","Yellow",
+     "Sweet Moist","Juicy",".17",120,72,"2011-05-08 
+     12:00:00",200);  
+     INSERT INTO FRUITS VALUES (005,"Pineapples","Yellow",
+     "Sweet Moist","Fibrous",".34",230,24,"2011-05-09 
+     11:00:00",350);  
+     INSERT INTO FRUITS VALUES (006,"Pears","Green",
+     "Tangy Moist","Smooth",".23",30,48,"2011-05-10 
+     10:00:00",160);  
+     INSERT INTO FRUITS VALUES (007,"Mangos","Yellow",
+     "Bland Dry","Spongy",".31",20,108,"2011-05-07 
+     9:00:00",80);  
+
+### Questions
+
+*Don't cheat. If you actually want to learn this, you are only hurting yourself.*
+
+*1) Select the sum for each fruit by color?*
+
+*2) Select the names of the fruits in alphabetical order*
+
+
+
+**1) SELECT color, sum(quantity) FROM fruits GROUP BY color;**
+
+**2) SELECT name FROM fruits ORDER BY name asc;**
 
 ## MySQL/Databases - HAVING
 
