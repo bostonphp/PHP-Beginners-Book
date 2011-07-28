@@ -301,6 +301,8 @@ First, we need to see what columns the question is asking us to use. From a quic
 
      SELECT color,avg(price) FROM fruits GROUP BY color;
 
+*A good rule of thumb to use is that the GROUP BY statements are most often used on a variable not used in a function. In this case since price was used in a function in the statement, the results need to be grouped by color.*
+
 Did you get **yellow** as having a higher average price? Actually the answer was **red**, you should go back a rerun the command again, you probably typed it in wrong... I'm just kidding the answer was **yellow**. Onto the next problem.
 
 *2) You would like to find out the sum of all of the fruits in your store.*
@@ -355,14 +357,38 @@ I know that you have been dreading doing any real work for a while now, but ther
 *3) Select the maximum and minimum amount of fruits purchased*
 **Hint: You have to use two functions you have not used before**
 
-*4) Find the color of fruit with the longest **average** name **length** *
-**Hint: This is a tricky one. It will require you to put a function within a function. Look at the bold words in the question**
+*4) Find the color of fruit with the longest average name length*
+**Hint: This is a tricky one. It will require you to put a function within a function. First figure out what you need to do, and then see if there are any functions to help you out**
 
-## MySQL/Databases - HAVING
+## MySQL/Databases - HAVING and UPDATE
+
+### HAVING
+
+First, if you skipped the question part of the last chapter, like I told you not to, please scroll up and copy the **INSERT** commands. You will need these rows for future "exercises".
+
+Next, I bet you were probably wondering why I spent a whole chapter on the **WHERE** statement, and haven't brought it up since. It's because it would make things a lot more confusing if I had made you practice with it before you learned the **HAVING** statement.
+
+The **HAVING** statement would be, for all intensive purposes, the exact same statement as **WHERE**, were it not for two things. The **HAVING** statement is only used with functions, while the **WHERE** statement is only used with variables. The **HAVING** statement goes right after the **GROUP BY** statement while the *WHERE** statement goes right before it. Some examples:
+
+ Dilemma | Need 
+:-----------|:------------
+ Sum(quantity) > 50 | HAVING 
+ Avg(quantity) < 25  | HAVING 
+ Color < 'Mauve'  | WHERE
+ Quantity < 25  | WHERE 
+ color < 'Yellow' and Avg(quantity) < 50  | HAVING and WHERE
+
+Let's start off with the last example in our table, as it gives a good layout of what we will need to use in the future. It says that we want all of the colors whose average quantity is less than 50 and are above 'Yellow' in the alphabet. The query should read something like this.
+
+     Select color,Avg(quantity) FROM fruits WHERE color < 'Yellow' GROUP BY color HAVING Avg(quantity) < 50;
+ 
+Wow. I know what I'm doing and that still looks scary. Let's try a few more examples just to get into the habit of knowing when to use these two commands.
+
+
+
+## MySQL/Databases - CAST and 'as'
 
 ## MySQL/Databases - JOINS
-
-## MySQL/Databases - CAST
 
 *another table needs to be made in joins with price as a float instead of a decimal*
 
