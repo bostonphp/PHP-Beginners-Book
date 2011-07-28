@@ -221,6 +221,7 @@ Now say that we want to do something a bit more complicated and select a fruit w
  Operation | Symbol 
 :-----------|:------------
  Equal To | = 
+ Not Equal To | != 
  Greater Than | > 
  Less Than | <
  Greater Than Or Equal To | >= 
@@ -360,7 +361,7 @@ I know that you have been dreading doing any real work for a while now, but ther
 *4) Find the color of fruit with the longest average name length*
 **Hint: This is a tricky one. It will require you to put a function within a function. First figure out what you need to do, and then see if there are any functions to help you out**
 
-## MySQL/Databases - HAVING and UPDATE
+## MySQL/Databases - HAVING
 
 ### HAVING
 
@@ -380,13 +381,47 @@ The **HAVING** statement would be, for all intensive purposes, the exact same st
 
 Let's start off with the last example in our table, as it gives a good layout of what we will need to use in the future. It says that we want all of the colors whose average quantity is less than 50 and are above 'Yellow' in the alphabet. The query should read something like this.
 
-     Select color,Avg(quantity) FROM fruits WHERE color < 'Yellow' GROUP BY color HAVING Avg(quantity) < 50;
+     SELECT color,Avg(quantity) FROM fruits WHERE color < 'Yellow' GROUP BY color HAVING Avg(quantity) < 50;
  
 Wow. I know what I'm doing and that still looks scary. Let's try a few more examples just to get into the habit of knowing when to use these two commands.
 
+*Return the colors of the fruits with quantities greater than 100 including 100
 
+Since you do not have to use any functions for this statement, you will need the **WHERE** statement
+
+     SELECT color,quantity FROM fruits WHERE quantity >= 100;
+
+*Return the colors of fruits whose combined quantities are greater than 100 including 100
+
+I see the words 'combined quantities' in the question, which means that we are going to have to take the sum of the column quantities. As usual we are taking the sum of each fruit color. 
+
+     SELECT color,sum(quantity) FROM fruits GROUP BY color HAVING sum(quantity) >= 100;
+
+*Return the names and colors of fruits whose greatest name within that color is greater than or equal to 'Mango'
+
+The result should return the fruit name closest to 'Z' for each color as long as it is below the word 'Mango', in which case it will not return anything.
+
+     SELECT color,max(name) FROM fruits GROUP BY color HAVING max(name) >= 'Mango';
+
+*Return the names and colors of fruits whose greatest name within that color is greater than or equal to 'Mango' and whose color is not Red
+
+This is a derivation on the last problem. We just need to put a **WHERE** statement between the **FROM** and **GROUP BY** statements in order to make this work.
+
+     SELECT color,max(name) FROM fruits WHERE color != 'Red' GROUP BY color HAVING max(name) >= 'Mango';
+
+*Remember, the '!=' symbol means 'not equal to' in computer science language. For future reference, '!' symbol simply means 'not'.*
+
+## MySQL/Databases - UPDATE
+
+How are you doing so far? Tired from all of the sweet programming you have been doing lately? Thinking about taking a break? Well think again. I want to tell you about an awesome statement called UPDATE. I put the towards the end of the tutorial because it provides a break from the more complicated functions.
+
+So what does the **UPDATE** command do exactly? Why, it updates a value or values in a table with new values. Besides the **SELECT** statement, you will use **UPDATE** by far more often in any kind of 
+
+## MySQL/Databases - AND/OR
 
 ## MySQL/Databases - CAST and 'as'
+
+## MySQL/Databases - CONSTRAINTS
 
 ## MySQL/Databases - JOINS
 
