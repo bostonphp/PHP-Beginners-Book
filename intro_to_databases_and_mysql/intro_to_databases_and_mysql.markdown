@@ -288,7 +288,7 @@ Wow. That sure is a lot of new things to learn. Where would one even begin to us
 * You would like to return the first three letters of each fruits name, so that you can index them efficiently in store
 * You would like to know that longest fruit name in your store
 
-To do most of these things, we must become familiar with another command that you will use often.
+To do **MOST** of these things, we must become familiar with another command that you will use often.
 
 ### GROUP BY
 
@@ -302,7 +302,15 @@ First, we need to see what columns the question is asking us to use. From a quic
 
      SELECT color,avg(price) FROM fruits GROUP BY color;
 
+Did you get **yellow** as having a higher average price? Actually the answer was **red**, you should go back a rerun the command again, you probably typed it in wrong... I'm just kidding the answer was **yellow**. Onto the next problem.
 
+*2) You would like to find out the sum of all of the fruits in your store.*
+
+Well, OK. We know that we need to use the quantity column (where the number of fruits are stored) and SUM() function (to add up the numbers) in the table above for this next question. The only problem I see is that we have nothing to use in the GROUP BY statement, and didn't I say that we always need to use the GROUP BY statement with functions like these? (See above).
+
+If you had looked, you would have realized that I did not that one has to use GROUP BY statements all of the time, but simply in most cases. This example is one of the exceptions. Since it is only returning one row, you don't 
+
+     SELECT sum(quantity) FROM fruits;
 
 ## MySQL/Databases - HAVING
 
