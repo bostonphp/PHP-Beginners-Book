@@ -274,7 +274,7 @@ I know that I have gone a bit more quickly than usual in the last few chapters, 
 ------- | --------------------
  ucase() | Returns the results in upper case
  lcase() | Returns the results in lower case
- len() | Returns the length of a value in a specified field
+ length() | Returns the length of a value in a specified field (number of letters in a word/phrase)
  round() | Rounds the results to the number of places specified
  now() | Returns the server's current date and time
  mid() | Returns a certain number of characters from a column
@@ -348,15 +348,15 @@ I know that you have been dreading doing any real work for a while now, but ther
 
 *Don't cheat. If you actually want to learn this, you are only hurting yourself.*
 
-*1) Select the sum for each fruit by color?*
+*1) Select the sum for each fruit by color*
 
 *2) Select the names of the fruits in alphabetical order*
 
+*3) Select the maximum and minimum amount of fruits purchased*
+**Hint: You have to use two functions you have not used before**
 
-
-**1) SELECT color, sum(quantity) FROM fruits GROUP BY color;**
-
-**2) SELECT name FROM fruits ORDER BY name asc;**
+*4) Find the color of fruit with the longest **average** name **length** *
+**Hint: This is a tricky one. It will require you to put a function within a function. Look at the bold words in the question**
 
 ## MySQL/Databases - HAVING
 
@@ -375,3 +375,13 @@ Good question. The answer is both yes and no. Float is an approximate datatype, 
 Think of a **CAST** function as if you were a wizard **casting** a spell on something else. Don't like that fireplace where it is? **CAST Fire-Sofado... and Poof!** Now it's a sweet Ottoman Sofa with a massage command and extra large cup holders. Think you have too many veggies and not enough nachos? **CAST Veggis-Reducto... and Poof!** Now you have a whole shelf lined with new bags of Doritos.
 
 Although the **CAST** function in a computer isn't nearly as cool as it would be outside of a computer, the concept is still the same. A **CAST** simply turns one type of data into another type of data. So as a computer wizard, you should be completely at ease doing even the most complicated of computer sorcery. Let's start with the problem we have in front of us.
+
+## MySQL/Databases - Question Answers
+
+**1) SELECT color, sum(quantity) FROM fruits GROUP BY color;**
+
+**2) SELECT name FROM fruits ORDER BY name asc;**
+
+**3) SELECT max(purchased_quantity),min(purchased_quantity) FROM fruits;**
+
+**4) SELECT color,avg(length(name)) FROM fruits GROUP BY color;**
