@@ -113,7 +113,7 @@ That should be enough to at least let us get started. Now we have to figure out 
 * Characters
 * Dates
 
-Numbers, as the name probably gives away, are any kind of numeric information. Will you need to use any kind of decimals for the data that you are going to store? In that case you will need to use the datatype **float**. If not, you can use the datatype **int** or **bigint** (which takes up more space, but can handle bigger numbers).
+Numbers, as the name probably gives away, are any kind of numeric information. Will you need to use any kind of decimals for the data that you are going to store? In that case you will need to use the datatype **decimal** or **float**. If not, you can use the datatype **int** or **bigint** (which takes up more space, but can handle bigger numbers).
 
 Characters are any kind of way to representation of a letter, word, or series of words. For example the letter **A** and the phrase **Anything goes in SQL world** would both be of a character type. Use the datatype **varchar(n)** to define a column that you would like to represent with a character. Substitute the **n** in **varchar(n)** with the maximum amount of letters a column in your table can have (up to 255). Spaces, tabs, and newlines in a paragraph all count as a characters.
 
@@ -126,7 +126,7 @@ Let's look back at our characteristics of fruits to decide what kind of datatype
 * Fruit color - Consists of few letters. **varchar(50)**
 * Fruit taste - Consists of more letters. **varchar(100)**
 * Fruit texture - Consists of more letters. **varchar(100)**
-* Fruit price - Consists of numbers with a decimal point. **float**
+* Fruit price - Consists of numbers with a decimal point. **decimal(10,2)**
 * Fruit quantity - Consists of numbers without a decimal point. **int**
 * Fruit shelf-life - Could be a matter of hours to a matter of days. Since this number does not define a specific date or time, we will define it in the number of hours it takes for the fruit to expire. **int**
 * Fruit last purchased - A certain date and time when the fruit was last bought. **datetime**
@@ -147,7 +147,7 @@ into the command box, but do not press enter. You will receive and error. Replac
 
      CREATE TABLE FRUITS(ID int PRIMARY KEY, NAME varchar(50), 
      COLOR varchar(50), TASTE varchar(100), TEXTURE varchar(100), 
-     PRICE float, QUANTITY int, SHELF_LIFE int, LAST_PUCHASED datetime, 
+     PRICE decimal(10,2), QUANTITY int, SHELF_LIFE int, LAST_PUCHASED datetime, 
      PURCHASED_QUANTITY int);
 
 Just press enter, and you should be all set. Congratulations! You have created your very first table.
@@ -302,8 +302,22 @@ First, we need to see what columns the question is asking us to use. From a quic
 
      SELECT color,avg(price) FROM fruits GROUP BY color;
 
-Run the command above. See anything interesting with the results? The averages aren't exactly what they should be. **.2/1 = .2, not .200000002980232**. So what gives? Is there something wrong with the database?
 
-Good question. The answer is both yes and no. SQL, in an effort to make things queries faster employs a short of *fuzzy* mathematics to its function calls.
+
+## MySQL/Databases - HAVING
 
 ## MySQL/Databases - JOINS
+
+## MySQL/Databases - CAST
+
+*another table needs to be made in joins with price as a float instead of a decimal*
+
+SELECT color,avg(price) FROM fruits GROUP BY color;
+
+Run the command above. See anything interesting with the results? The averages aren't exactly what they should be. **.2/1 = .2, not .200000002980232**. So what gives? Is there something wrong with the database?
+
+Good question. The answer is both yes and no. Float is an approximate datatype, so the float values .20 and .200...029 are technically the same. We need to define how many digits we want the return values to display in order to correct this discrepancy. To do this, we have to use an often misunderstood computer science concept called a **CAST**.
+
+Think of a **CAST** function as if you were a wizard **casting** a spell on something else. Don't like that fireplace where it is? **CAST Fire-Sofado... and Poof!** Now it's a sweet Ottoman Sofa with a massage command and extra large cup holders. Think you have too many veggies and not enough nachos? **CAST Veggis-Reducto... and Poof!** Now you have a whole shelf lined with new bags of Doritos.
+
+Although the **CAST** function in a computer isn't nearly as cool as it would be outside of a computer, the concept is still the same. A **CAST** simply turns one type of data into another type of data. So as a computer wizard, you should be completely at ease doing even the most complicated of computer sorcery. Let's start with the problem we have in front of us.
