@@ -147,7 +147,7 @@ into the command box, but do not press enter. You will receive and error. Replac
 
      CREATE TABLE FRUITS(ID int PRIMARY KEY, NAME varchar(50), 
      COLOR varchar(50), TASTE varchar(100), TEXTURE varchar(100), 
-     PRICE decimal(10,2), QUANTITY int, SHELF_LIFE int, LAST_PUCHASED datetime, 
+     PRICE decimal(10,2), QUANTITY int, SHELF_LIFE int, LAST_PURCHASED datetime, 
      PURCHASED_QUANTITY int);
 
 Just press enter, and you should be all set. Congratulations! You have created your very first table.
@@ -332,7 +332,7 @@ If you look at the table above, you will find the mid() function that returns a 
 
 ### Now for some problems
 
-I know that you have been dreading doing any real work for a while now, but there is just some things that have to be practiced. Unfortunately, you probably won't be able to understand the much more complicated topics in the next few chapters if you do not understand what you have read so far. To make things interesting, please copy and paste the following code into your MySQL command box.
+I know that you have been dreading doing any real work for a while now, but there is just some things that have to be practiced. Unfortunately, you probably won't be able to understand the much more complicated topics in the next few chapters if you do not understand what you have read so far. To make things interesting, please copy, paste, and run the following code in your MySQL command box.
 
      INSERT INTO FRUITS VALUES (004,"Peaches","Yellow",
      "Sweet Moist","Juicy",".17",120,72,"2011-05-08 
@@ -411,9 +411,11 @@ This is a derivation on the last problem. We just need to put a **WHERE** statem
 
 *Remember, the '!=' symbol means 'not equal to' in computer science language. For future reference, '!' symbol simply means 'not'.*
 
-## MySQL/Databases - UPDATE
+## MySQL/Databases - UPDATE and ALTER
 
-How are you doing so far? Tired from all of the sweet programming you have been doing lately? Thinking about taking a break? Well think again. I want to tell you about an awesome statement called UPDATE. I put the towards the end of the tutorial because it provides a break from the more complicated functions.
+### UPDATE
+
+How are you doing so far? Tired from all of the sweet programming you have been doing lately? Thinking about taking a break? Well think again. I want to tell you about an awesome statement called **UPDATE**. I put this towards the end of the tutorial because it provides a break from the more complicated functions.
 
 So what does the **UPDATE** command do exactly? Why, it updates a value or values in a table with new values. Besides the **SELECT** statement, you will use **UPDATE** far more often than any other kind of statement. The syntax is as follows:
 
@@ -422,6 +424,26 @@ So what does the **UPDATE** command do exactly? Why, it updates a value or value
 Let's say we messed up and accidentally labeled our 'Blueberries' 'Peaches' in the database. With the **UPDATE** statement, we could easily fix our mistake in a few seconds. 
 
      UPDATE fruits SET name = 'Blueberries' , color = 'Blue' WHERE name = 'Peaches';
+
+Now let's say that our bananas went bad, and every single one of them turned Brown. How would you update that in our table?
+
+     UPDATE fruits SET color = 'Brown' WHERE name = 'Bananas';
+
+Now say that we just received a huge shipment of bananas since the old shipment went bad. Only our supplier mistook bananas to mean plantains and send us plantains instead (he's family). Now we have to update the name of the fruit, the color, and the date (because we just got them) in the database.
+
+     UPDATE fruits SET color = 'Green', name = 'Plantains', last_purchased = now() WHERE name = 'Bananas'; 
+
+*Remember, the function now() returns the current server's date and time to whatever variable it is applied to*
+
+### ALTER
+
+The **ALTER** command is used to alter column, table, and database properties without having to delete and remake them. There really isn't much to say about this command. If you plan things out right the first time you will never have to use it. But hey, we're all human right? 
+
+Over the course of this tutorial I have had to use the **ALTER** command a few times in order to fix the multiple spelling mistakes throughout my column naming. Let's do a few quick examples, just in case, then never deal with this statement again. The syntax for the **ALTER** statement is as follows:
+
+     ALTER {TABLE/DATABASE} {NAME} CHANGE {OLD NAME} {NEW NAME} {If column, column properties go here};
+
+
 
 ## MySQL/Databases - AND/OR
 
