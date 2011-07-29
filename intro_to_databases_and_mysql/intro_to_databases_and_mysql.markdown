@@ -107,6 +107,8 @@ I can think of a few properties separating one fruit from other fruits in a groc
 * Fruit last purchased
 * Fruit purchased quantity
 
+### Datatypes
+
 That should be enough to at least let us get started. Now we have to figure out what kind of data we are going to put in these categories. For learning purposes, there are really only three types of data you will need to use. They are:
 
 * Numbers
@@ -441,11 +443,85 @@ The **ALTER** command is used to alter column, table, and database properties wi
 
 Over the course of this tutorial I have had to use the **ALTER** command a few times in order to fix the multiple spelling mistakes throughout my column naming. Let's do a few quick examples, just in case, then never deal with this statement again. The syntax for the **ALTER** statement is as follows:
 
-     ALTER {TABLE/DATABASE} {NAME} CHANGE {OLD NAME} {NEW NAME} {If column, column properties go here};
+     ALTER {TABLE/DATABASE} {NAME} {CHANGE/ADD/DROP} {OLD NAME} {NEW NAME} {If column, column properties go here};
 
+First, let's create a new column in our table, because we found something else that we want to organize. All that is required, is to specify the table in which you would like to add your column, and the data type that the column is.
 
+*Remember, datatypes fall into the category of numbers, letters, and dates. See the chapter where we defined our first table for a more detailed explanation.*
+
+     ALTER TABLE fruits ADD unnecessary_column int;
+
+Notice that after you create a column, all of the rows will be filled with null values indicating that there is nothing there. This can be corrected with **UPDATE** statements discussed in the last section.
+
+Let's say that the column name doesn't quite convey what we want to represent in our database, and we want to change it. We just need to tell the MySQL server the table name, old column name, and the column name that you would like to change it to.
+
+*Remember that you will need to add the datatype for each column that you change.*
+
+      ALTER TABLE fruits CHANGE unnecessary_column other_column int;
+
+Now we don't want to have the column that we created anymore. I seems like it contains a lot of unnecessary information a we would like to get rid of it. All we would have to do is run the following command. The database will give you a warning to make sure that you actually want to delete the column. Click OK.
+
+     ALTER TABLE fruits DROP other_column;
+
+You did it! The column is gone, and you didn't screw anything up (hopefully). Because the column was being deleted anyways, we did not have to define the datatype in the column before we dropped it.
 
 ## MySQL/Databases - AND/OR
+
+The **AND** and **OR** modifiers are used **ONLY** in conjunction with the **HAVING** and **WHERE** statements discussed previously in this tutorial. To understand exactly what AND and OR statements do, we first need to dissect what exactly happens when we use **HAVING** and **WHERE** statements.
+
+Here is an example of a **WHERE** statement:
+
+    SELECT name FROM fruits WHERE color = 'Red';
+
+This statement implies that the **SELECT** statement is looking to return the name of any row that has a color equal to ‘Red’. If the color is not equal to ‘Red’, the statement returns **false** and nothing is returned. If the color is equal to ‘Red’, the statement returns **true**. 
+
+The AND and OR statements work along these principles. They join together two or more conditions, such as color = ‘Red’, to make a bigger condition. For the AND statement to return **true** all of the conditions in the statement must individually return **true**. For the OR statement to return **true** only one of the conditions in the statement must return **true**. An example of this is below.
+
+Try out the two statements below individually. Which one do you think will give you the most results?
+
+     SELECT name FROM fruits WHERE (color = ‘Red’) AND (texture = ‘Juicy’);
+
+     SELECT name FROM fruits WHERE (color = ‘Red’) OR (texture = ‘Juicy’);
+
+*Although they aren’t necessarily needed, I find that it is easier to enclose my different conditionals in parenthesis to avoid any unnecessary confusion.*
+
+If you haven’t figured it out yet, the **OR** statement will yield the most results. This is because **OR** returns the red fruits, the juicy fruits, and the juicy red fruits. The **AND** statement will only return the juicy red fruits.
+
+Let’s first try out a few examples, before I will give you some practice problems to see what you have learned in the past few sections.
+
+*1) Return the names of the fruits that have a spongy texture and a price above $0.30*
+
+This problem is almost exactly like the examples that we had before, but working with different columns. We can see that we will need to use the **AND** statement with the texture and price columns. The rest is fairly straight forward.
+
+     SELECT name FROM fruits WHERE (texture = ‘Spongy’) AND (price > 0.30);
+
+The result should be ‘Mangos’
+
+*2) Return the type of textured fruit with an average price greater than $0.32 or a combined quantity less than 60*
+
+This problem is a bit more difficult than the last one, mainly because we will have to use the more difficult **HAVING** statement in order to execute our queries. We can see that we will need the **OR** statement as well as the price and quantity columns for this problem. The **SELECT** statement also needs to be grouped by the texture column, since that is what we are comparing. 
+
+*Remember that you will **GROUP BY** the column in the **SELECT** statement that is not part of any functions. In this case, it will be the texture column.*
+
+     SELECT texture, avg(price),sum(quantity) FROM fruits GROUP BY texture HAVING (avg(price) > 0.32) OR (sum(quantity) < 60);
+
+The result should return the fibrous fruits. 
+
+### Questions
+
+*Don't cheat. If you actually want to learn this, you are only hurting yourself.*
+
+*5) Return the names of all of the yellow fruits whose names begin with a ‘P’.*
+SELECT name FROM fruits WHERE color = ‘Yellow’ GROUP BY name HAVING mid(name,1,1) = ‘P’;
+*6) Return the names of all of the fruits that have a price over $0.30 and a spongy texture, or a price under $0.20 and a juicy texture.*
+SELECT name FROM fruits WHERE ((texture = ‘spongy’) AND (price > 0.30)) OR ((texture = ‘juicy’) AND (price < 0.20));
+*7) Make a new column named users of type varchar(100) in the fruits table.*
+ALTER TABLE fruits ADD user varchar(100);
+*8) Make every single value in the user column ‘Toby’;
+UPDATE fruits SET user = ‘Toby’;
+*9) Delete the column user in the fruits table.*
+ALTER TABLE fruits DROP user;
+
 
 ## MySQL/Databases - CAST and 'as'
 
@@ -474,3 +550,13 @@ Although the **CAST** function in a computer isn't nearly as cool as it would be
 **3) SELECT max(purchased_quantity),min(purchased_quantity) FROM fruits;**
 
 **4) SELECT color,avg(length(name)) FROM fruits GROUP BY color;**
+
+**5) SELECT name FROM fruits WHERE color = ‘Yellow’ GROUP BY name HAVING mid(name,1,1) = ‘P’;**
+
+**6) SELECT name FROM fruits WHERE ((texture = ‘spongy’) AND (price > 0.30)) OR ((texture = ‘juicy’) AND (price < 0.20)); **
+
+**7) ALTER TABLE fruits ADD user varchar(100); **
+
+**8) UPDATE fruits SET user = ‘Toby’; **
+
+**9) ALTER TABLE fruits DROP user; **
