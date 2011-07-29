@@ -553,10 +553,10 @@ Although the **CAST** function in a computer isn't nearly as cool as it would be
 
 **5) SELECT name FROM fruits WHERE color = ‘Yellow’ GROUP BY name HAVING mid(name,1,1) = ‘P’;**
 
-**6) SELECT name FROM fruits WHERE ((texture = ‘spongy’) AND (price > 0.30)) OR ((texture = ‘juicy’) AND (price < 0.20)); **
+**6) SELECT name FROM fruits WHERE ((texture = ‘spongy’) AND (price > 0.30)) OR ((texture = ‘juicy’) AND (price < 0.20));**
 
-**7) ALTER TABLE fruits ADD user varchar(100); **
+**7) ALTER TABLE fruits ADD user varchar(100);**
 
-**8) UPDATE fruits SET user = ‘Toby’; **
+**8) UPDATE fruits SET user = ‘Toby’;**
 
-**9) ALTER TABLE fruits DROP user; **
+**9) ALTER TABLE fruits DROP user;**
