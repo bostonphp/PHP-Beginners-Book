@@ -512,22 +512,64 @@ The result should return the fibrous fruits.
 *Don't cheat. If you actually want to learn this, you are only hurting yourself.*
 
 *5) Return the names of all of the yellow fruits whose names begin with a ‘P’.*
-SELECT name FROM fruits WHERE color = ‘Yellow’ GROUP BY name HAVING mid(name,1,1) = ‘P’;
+
 *6) Return the names of all of the fruits that have a price over $0.30 and a spongy texture, or a price under $0.20 and a juicy texture.*
-SELECT name FROM fruits WHERE ((texture = ‘spongy’) AND (price > 0.30)) OR ((texture = ‘juicy’) AND (price < 0.20));
+
 *7) Make a new column named users of type varchar(100) in the fruits table.*
-ALTER TABLE fruits ADD user varchar(100);
-*8) Make every single value in the user column ‘Toby’;
-UPDATE fruits SET user = ‘Toby’;
+
+*8) Make every single value in the user column the value ‘Toby’;*
+
 *9) Delete the column user in the fruits table.*
-ALTER TABLE fruits DROP user;
+
+## MySQL/Databases – CONSTRAINTS and JOINS
+
+### JOINS INTRO
+
+So far we have just worked with one table in our queries in order to get the information that we need, but what if we have two or more tables? Do we have to query each of the tables individually? The answer is no, not usually, but you do need to think about a few things. 
+
+The first is, what do the two tables have in common? Do they have the same user names we can query? Are they both arranged by colors, dates, or prices? In order to join two tables you, *cough*, usually need to find some sort of commonality between them.
+
+*Commonality means “something in common”.*
+
+The second is, if they don’t have anything in common, what do you need to do to give them something in common? Do you remember the example from the very start of the tutorial when we were referencing cars, rocks, and baseball cards? What do you think these three things would have in common? I can think of a few off the top of my head including: a color, a size, a weight, a height, a name, a value, a terminal velocity, etc. Without these columns in each of the tables, we would be unable to answer any of the silly questions that come into our heads.
+
+Which is more expensive? A brand new Porsche, or my ten most valuable baseball cards? 
+
+If I stacked all of my baseball cards in a line, how many rocks would I have to stack to go an equal distance?
+
+Which rocks will match my new Ford pickup’s color?
+
+ ### Creating Our New Table with Constraints
+
+In order to join two tables, we will need to add a second table to our grocery store database. Copy the code below into the SQL tab, and press go.
+
+CREATE TABLE VEGGIES(ID int PRIMARY KEY NOT NULL AUTO_INCREMENT, NAME varchar(50) NOT NULL, COLOR varchar(50), TASTE varchar(100), TEXTURE varchar(100), 
+PRICE decimal(10,2), QUANTITY int DEFAULT 0, SHELF_LIFE int, LAST_PURCHASED datetime, PURCHASED_QUANTITY int, CHECK (PRICE > 0));
+
+Look closely at the table we have just created. Do you notice anything different compared to the fruits table we created earlier? If you didn’t, you should look again. What we added to our table would be called **CONSTRAINTS**.
+
+**CONSTRAINTS** are simply commands that one adds to their table to make sure that people don’t screw up them up further down the line. Sometimes **CONSTRAINTS** can even make our lives easier. Take, for example, the AUTO_INCREMENT **CONSTRAINT** we added to our table. This tells the MySQL compiler to add one to this column each time a new row is created. This means that we no longer have to insert those pesky numbers ourselves each time we want to create a new row!
+
+*For those that don’t know too much about computing, a compiler is a way for the computer to translate what you are saying into computer code. Kind of like what a translator does when you go to a country where you don’t understand the language.*
+
+ Here are a list of the most common **CONSTRAINTS**, and what they do. 
+
+*Remember, all **CONSTRAINTS** should be inserted after the column name and datatype like in the example above. Not doing so will return an error. The only exception to this rule it the **CHECK CONSTRAINT** which is always inserted at the end in MySQL tables.*
+
+CONSTRAINT | Function 
+:-----------|:------------
+NOT NULL | Prevents any NULL value from being placed in the column
+PRIMARY KEY | Makes sure that every value is unique in the column. Each table needs to have one of these. You can still create a table without a PRIMARY KEY, but it is bad form. There can only be one column defined by a PRIMARY KEY.
+UNIQUE | Makes sure that every value is unique in the column. Unlike the PRIMARY KEY, there can be more than one column defined as ‘UNIQUE’ in a table
+DEFAULT | Used to define a value if one has not been inserted into the database. We used it above to insert 0 as a default value if nothing is put into the column ‘price’.
+AUTO_INCREMENT | Used to automatically add a number to the last rows value when a new row is created. The default value for AUTO_INCREMENT is 1, but can be changed by the command AUTO_INCREMENT = n, where n is the number by which you would like to increment by. For example, if the last row had the value 6, and my AUTO_INCREMENT is set to 2, my next row would be 8.
+CHECK | Used to make sure of a condition before a new row can be added. We implemented it in our new table to make sure that fruits weren’t being given away for free before they were inserted into the table.
 
 
-## MySQL/Databases - CAST and 'as'
 
-## MySQL/Databases - CONSTRAINTS
+## MySQL/Databases – JOINS pt. 2
 
-## MySQL/Databases - JOINS
+## MySQL/Databases – CAST, and ‘as’
 
 *another table needs to be made in joins with price as a float instead of a decimal*
 
