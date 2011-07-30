@@ -190,6 +190,8 @@ Remember the syntax for inserting into a table is as follows:
 
 Don't worry if you mess up. MySQL will warn and prevent you from running incorrect commands.
 
+*You can also specify which columns you would like to insert instead of inserting them all at once. This will be discussed in greater detail in the JOINS chapter.*
+
 ### SELECT Statements
 
 The syntax of MySQL is pretty straight forward. We have seen so far to use INSERT statements to insert something into a table and CREATE statements to create a brand new table (or database). It doesn't take much imagination to figure out that the SELECT statement selects a value or group of values from a table and return that value(s) to the user. 
@@ -550,7 +552,7 @@ In order to join two tables, we will need to add a second table to our grocery s
 
 Look closely at the table we have just created. Do you notice anything different compared to the fruits table we created earlier? If you didn’t, you should look again. What we added to our table would be called **CONSTRAINTS**.
 
-**CONSTRAINTS** are simply commands that one adds to their table to make sure that people don’t screw up them up further down the line. Sometimes **CONSTRAINTS** can even make our lives easier. Take, for example, the AUTO_INCREMENT **CONSTRAINT** we added to our table. This tells the MySQL compiler to add one to this column each time a new row is created. This means that we no longer have to insert those pesky numbers ourselves each time we want to create a new row!
+**CONSTRAINTS** are simply commands that one adds to their table to make sure that people don’t screw up them up further down the line. Sometimes **CONSTRAINTS** can even make our lives easier. Take, for example, the **AUTO_INCREMENT CONSTRAINT** we added to our table. This tells the MySQL compiler to add one to this column each time a new row is created. This means that we no longer have to insert those pesky numbers ourselves each time we want to create a new row!
 
 *For those that don’t know too much about computing, a compiler is a way for the computer to translate what you are saying into computer code. Kind of like what a translator does when you go to a country where you don’t understand the language.*
 
@@ -566,6 +568,34 @@ UNIQUE | Makes sure that every value is unique in the column. Unlike the PRIMARY
 DEFAULT | Used to define a value if one has not been inserted into the database. We used it above to insert 0 as a default value if nothing is put into the column ‘price’.
 AUTO_INCREMENT | Used to automatically add a number to the last rows value when a new row is created. The default value for AUTO_INCREMENT is 1, but can be changed by the command AUTO_INCREMENT = n, where n is the number by which you would like to increment by. For example, if the last row had the value 6, and my AUTO_INCREMENT is set to 2, my next row would be 8.
 CHECK | Used to make sure of a condition before a new row can be added. We implemented it in our new table to make sure that fruits weren’t being given away for free before they were inserted into the table.
+
+Not too hard right? Think of **CONSTRAINTS** as a little reminder that help you as you screw up from time to time. 
+
+### Adding Value to Our Table
+
+Now let’s add some values to our table so that we can work with JOINS at our leisure. Copy and paste the following commands into the SQL command box and click enter. 
+
+     INSERT INTO VEGGIES ( NAME, COLOR, TASTE, TEXTURE, PRICE, QUANTITY, 
+     SHELF_LIFE, LAST_PURCHASED, PURCHASED_QUANTITY ) VALUES ('Cucumbers'
+     ,'Green','Bland Moist','Juicy',.40,120, 24,'2011-05-06 02:00:00',150);
+     INSERT INTO VEGGIES ( NAME, COLOR, TASTE, TEXTURE, PRICE, QUANTITY, 
+     SHELF_LIFE, LAST_PURCHASED, PURCHASED_QUANTITY ) VALUES ('Potatoes'
+     ,'Brown','Bland Dry','Spongy',.35,100, 48,'2011-05-07 03:00:00',180);
+     INSERT INTO VEGGIES ( NAME, COLOR, TASTE, TEXTURE, PRICE, QUANTITY, 
+     SHELF_LIFE, LAST_PURCHASED, PURCHASED_QUANTITY ) VALUES ('Squash',
+     'Yellow','Bland Moist','Fibrous',.30,80, 96,'2011-05-08 04:00:00',250);
+     INSERT INTO VEGGIES ( NAME, COLOR, TASTE, TEXTURE, PRICE, QUANTITY, 
+     SHELF_LIFE, LAST_PURCHASED, PURCHASED_QUANTITY ) VALUES ('Pumpkins',
+     'Orange','Bland Moist','Fibrous',.25,60, 108,'2011-05-09 05:00:00',350);
+     INSERT INTO VEGGIES ( NAME, COLOR, TASTE, TEXTURE, PRICE, QUANTITY, 
+     SHELF_LIFE, LAST_PURCHASED, PURCHASED_QUANTITY ) VALUES ('Lettuce',
+     'Green','Bland Moist','Fibrous',.20,40, 78,'2011-05-10 09:00:00',70);
+     INSERT INTO VEGGIES ( NAME, COLOR, TASTE, TEXTURE, PRICE, QUANTITY, 
+     SHELF_LIFE, LAST_PURCHASED, PURCHASED_QUANTITY ) VALUES ('Eggplants',
+     'Purple','Bland Moist','Spongy',.15,140, 164,'2011-05-11 10:00:00',190);
+     INSERT INTO VEGGIES ( NAME, COLOR, TASTE, TEXTURE, PRICE, QUANTITY, 
+     SHELF_LIFE, LAST_PURCHASED, PURCHASED_QUANTITY ) VALUES ('Tomatoes',
+     'Red','Tangy Moist','Juicy',.45,160, 72,'2011-05-12 11:00:00',200);
 
 
 
