@@ -543,7 +543,10 @@ Which rocks will match my new Ford pickup’s color?
 
 In order to join two tables, we will need to add a second table to our grocery store database. Copy the code below into the SQL tab, and press go.
 
-     CREATE TABLE VEGGIES(ID int PRIMARY KEY NOT NULL AUTO_INCREMENT, NAME      varchar(50) NOT NULL, COLOR varchar(50), TASTE varchar(100), TEXTURE varchar(100), PRICE      decimal(10,2), QUANTITY int DEFAULT 0, SHELF_LIFE int, LAST_PURCHASED      datetime,      PURCHASED_QUANTITY int, CHECK (PRICE > 0));
+     CREATE TABLE VEGGIES(ID int PRIMARY KEY NOT NULL AUTO_INCREMENT, NAME varchar(50) 
+     NOT NULL, COLOR varchar(50), TASTE varchar(100), TEXTURE varchar(100), PRICE 
+     decimal(10,2), QUANTITY int DEFAULT 0, SHELF_LIFE int, LAST_PURCHASED datetime, 
+     PURCHASED_QUANTITY int, CHECK (PRICE > 0));
 
 Look closely at the table we have just created. Do you notice anything different compared to the fruits table we created earlier? If you didn’t, you should look again. What we added to our table would be called **CONSTRAINTS**.
 
