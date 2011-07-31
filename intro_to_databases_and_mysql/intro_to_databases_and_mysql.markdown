@@ -669,7 +669,26 @@ I’m sure that you can figure out how to use modulus and addition in the same w
 
 ### UNIONS
 
-**UNIONS** are used with normal **SELECT** statements  
+**UNIONS** are used with normal **SELECT** statements to combine queries when there is nothing to compare the tables to. Think of them as **JOINS** with no **WHERE** or **HAVING** clauses. For example, say that I wanted to see all the textures of both the fruits and veggies tables. Since there is nothing to compare the two tables to in order to make a **JOIN**, I would simply have to find all of the textures of the fruits table and **UNION**, or combine, them with all of the textures from the veggies table. The query would go something like this:
+
+     SELECT texture FROM fruits UNION SELECT texture FROM veggies;
+
+The best thing about the UNION statement is that the results are all unique. Notice how they do not repeat as a normal **SELECT** statement would. To print out the results in alphabetical order, simply add an **ORDER BY** clause at the end of the statement above.
+
+      SELECT texture FROM fruits UNION SELECT texture FROM veggies ORDER BY texture asc;
+
+**UNION** statements can only work if the following four conditions are met by all of the tables involved.
+
+1)	The **SELECT** statement returns the same number of results for each table
+2)	Each resulting column from the **SELECT** statement has the same name. These can easily be changed with an ‘as’ statement
+3)	The resulting columns are in the same order
+4)	Each resulting column has the same datatype as every other resulting column in order. This can easily be changed with a **CAST** function
+
+Basically you cannot create a **UNION** of two things that do not fit together.
+
+### JOINS pt. 2
+
+Remember, **JOINS** are only applicable if there is something to compare the two tables to each other. If there is nothing to compare, you simply need to use a **UNION** statement, or, more drastically, create a brand new table with which to house your results. Let’s look at a few more examples of JOINS before we move onto our final questions.
 
 ### The Final Questions
 
@@ -717,7 +736,7 @@ If you have completed all of these questions, you are ready to program with MySQ
 
 **11) SELECT name FROM fruits WHERE mid(taste,7,5) = 'Moist' Union SELECT name FROM veggies WHERE mid(taste,7,5) = 'Moist';**
 
-**12) UPDATE fruits,veggies SET fruits.price = (1.07 * fruits.price) , veggies.price = (1.07 * veggies.price);
+**12) UPDATE fruits,veggies SET fruits.price = (1.07 * fruits.price) , veggies.price = (1.07 * veggies.price);**
 
 **13) SELECT avg(fruits.quantity) as AvgFruit, avg(veggies.quantity) as AvgVeg FROM fruits,veggies;**
 
