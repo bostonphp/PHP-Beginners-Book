@@ -181,7 +181,7 @@ Did it work? It shouldn't have. If you remember, we had defined the first column
 And add one more row to our table.
 
      INSERT INTO FRUITS VALUES (003,"Raspberries",
-     "Red","Tart Moist","Juicy",".25",60,92,
+     "Red","Tangy Moist","Juicy",".25",60,92,
      "2011-05-09 10:15:00",200);
 
 Remember the syntax for inserting into a table is as follows:
@@ -517,11 +517,11 @@ The result should return the fibrous fruits.
 
 *6) Return the names of all of the fruits that have a price over $0.30 and a spongy texture, or a price under $0.20 and a juicy texture.*
 
-*7) Make a new column named users of type varchar(100) in the fruits table.*
+*7) Make a new column named ‘user’ of type varchar(100) in the fruits table.*
 
-*8) Make every single value in the user column the value ‘Toby’;*
+*8) Make every single value in the ‘user’ column the value ‘Toby’;*
 
-*9) Delete the column user in the fruits table.*
+*9) Delete the column ‘user’ in the fruits table.*
 
 ## MySQL/Databases – CONSTRAINTS and JOINS
 
@@ -597,23 +597,101 @@ Now let’s add some values to our table so that we can work with JOINS at our l
      SHELF_LIFE, LAST_PURCHASED, PURCHASED_QUANTITY ) VALUES ('Tomatoes',
      'Red','Tangy Moist','Juicy',.45,160, 72,'2011-05-12 11:00:00',200);
 
+### Working with JOINS
 
+Phew! That took a long time to set up. Now we can finally play with the **JOINS**. A **JOIN** is basically a **SELECT** statement with two or more tables instead of just one. To select an individual column, write the table name and column name separated by a period. Think of it as if your two tables are one big table, and you are just writing a normal **SELECT** statement. 
 
-## MySQL/Databases – JOINS pt. 2
+*MySQL used to have an actual statement called JOIN, but it has since been thrown away in favor of the new syntax which is much easier to use. We still call the operation JOIN in its memory.*
 
-## MySQL/Databases – CAST, and ‘as’
+For example, to return all of the foods with the same price in both tables, one simply needs to write;
 
-*another table needs to be made in joins with price as a float instead of a decimal*
+     SELECT veggies.name, fruits.name FROM fruits, veggies WHERE fruits.price = veggies.price;
 
-SELECT color,avg(price) FROM fruits GROUP BY color;
+To return all of the foods with the same color
 
-Run the command above. See anything interesting with the results? The averages aren't exactly what they should be. **.2/1 = .2, not .200000002980232**. So what gives? Is there something wrong with the database?
+     SELECT veggies.name, fruits.name FROM fruits, veggies WHERE fruits.color = veggies.color;
 
-Good question. The answer is both yes and no. Float is an approximate datatype, so the float values .20 and .200...029 are technically the same. We need to define how many digits we want the return values to display in order to correct this discrepancy. To do this, we have to use an often misunderstood computer science concept called a **CAST**.
+That’s all there is to it. We will discuss these concepts in more depth in the next chapter.
+
+## MySQL/Databases – Advanced JOINS, CAST, and ‘as’ 
+
+### CAST and ‘as’
+
+So you think you have **JOINS** down cold? Need a bit of a challenge? No problem. In this chapter you will learn a few more a techniques you will need to master **JOINS**.
+
+*Remember that you will always need some way to link the two tables together be it in a WHERE statement or HAVING statement. Without either one of these, you will get gibberish returned to you.
+
+To begin, we will go back to a basic table and work our way back to **JOINS**. Sometimes the results that you return with **SELECT** statements aren’t exactly in the format that you would like them to be. Take the next query for example:
+
+     SELECT AVG(quantity) FROM veggies;
+
+The result is technically correct (100.0000), but the four zeros following the number 100 makes the query not look very good. We need to define how many digits we to return in order to correct this discrepancy. To do this, we will have to use an often misunderstood computer science concept called a **CAST**.
 
 Think of a **CAST** function as if you were a wizard **casting** a spell on something else. Don't like that fireplace where it is? **CAST Fire-Sofado... and Poof!** Now it's a sweet Ottoman Sofa with a massage command and extra large cup holders. Think you have too many veggies and not enough nachos? **CAST Veggis-Reducto... and Poof!** Now you have a whole shelf lined with new bags of Doritos.
 
-Although the **CAST** function in a computer isn't nearly as cool as it would be outside of a computer, the concept is still the same. A **CAST** simply turns one type of data into another type of data. So as a computer wizard, you should be completely at ease doing even the most complicated of computer sorcery. Let's start with the problem we have in front of us.
+Although the **CAST** function in a computer isn't nearly as cool as it would be outside of a computer, the concept is still the same. A **CAST** simply turns one type of data into another type of data. So as a computer wizard, you should be completely at ease doing even the most complicated of computer sorcery. Let's start with the fireplace-like problem we have in front of us and magically turn:
+ 
+     SELECT AVG(quantity) FROM veggies;
+
+into a sweet Ottoman sofa result. All we will need to do is CAST the result of the average function as an integer to prevent the zeros from appearing in the first place. Here is what it should look like:
+
+     SELECT CAST(AVG(quantity) as Decimal(10,0)) FROM veggies;
+
+*Remember with the Decimal datatype that the first number refers to the amount of digits in the number while the second number refers to the number of decimal places represented. Since we do not want any of the decimal places represented, we put a zero as the second number.*
+
+The ‘as’ statement represented in the past few examples can also be used outside of the **CAST** function, usually to redefine the names of tables that are returned. An example of the ‘as’ function used like this would be something like:
+
+     SELECT name as Foods FROM fruits;
+
+The result will be all of rows in the column ‘name’ from table fruits, but the resulting table will be labeled ‘Foods’.
+
+### Addition, Subtraction, Multiplication, Division, and Modulus
+
+The last thing that I want to go over before the grand finale of this tutorial is the mathematical functions that can be used when attempting to return more relevant results in MySQL. For example, say that we want to return the amount of veggies that we have sold in our stores. We can easily return the relevant results with a quick math equation like so:
+
+     SELECT name, (PURCHASED_QUANTITY – QUANTITY) as Amount_Sold FROM veggies;
+
+We can see from the results that investing in pumpkins would have been a wise decision.
+
+Now, let’s see how much money we have made for each veggie so far. The concept is almost the same as the last query, but we have to add the price column to the equation.
+
+     SELECT name, (PRICE * (PURCHASED_QUANTITY – QUANTITY)) as Profits FROM veggies;
+
+Now if we sold a constant amount of veggies we had just purchased from when they are fresh until they expire, how many veggies would we need to sell an hour in order to sell them all?
+
+    SELECT name, (PURCHASED_QUANTITY / SHELF_LIFE) as VegsPerHr FROM veggies;
+
+I’m sure that you can figure out how to use modulus and addition in the same ways.
+
+*Remember, modulus is the remainder after you divide one thing by another and defined by the character ‘%’. For example, 5 % 2 = 1, because there is a remainder of 1. 13 % 9 = 4, because there is a remainder of 4.*
+
+## JOINS pt. 2
+
+### UNIONS
+
+**UNIONS** are used with normal **SELECT** statements  
+
+### The Final Questions
+
+Now is the moment of truth. In order to determine if you have learned anything from this tutorial, I have provided you with six more problems with which you will have to employ every technique you have learned in this tutorial so far. If you are unsure of a question, don’t just look at the bottom of the page. Go back a search for helpful hints in the tutorial in order to figure it out. Using your brain will help you out immensely in the future. Trust me.
+
+### Questions
+ 
+All of these problems can be solved in a single SQL statement
+
+*10) Return the most profitable fruit that has the same color as lettuce or tomatoes*
+
+*11) Return all of the foods with a moist taste*
+
+*12) There is new a food tax of 7%. Update all of the food prices*
+
+*13) Return the average current quantities of all fruits and veggies*
+
+*14) Return the range of food prices for fruits and veggies*
+
+*15) Return all of the foods with their prices in alphabetical order*
+
+If you have completed all of these questions, you are ready to program with MySQL in you PHP framework. Please view the PHP framework section in order to get started with the framework of your choice. I just wanted you to know that I am **very** proud of you.
 
 ## MySQL/Databases - Question Answers
 
@@ -634,3 +712,15 @@ Although the **CAST** function in a computer isn't nearly as cool as it would be
 **8) UPDATE fruits SET user = ‘Toby’;**
 
 **9) ALTER TABLE fruits DROP user;**
+
+**10) SELECT fruits.name, max(fruits.price*(fruits.purchased-fruits.quantity)) as ProfitsFruit FROM fruits,veggies WHERE fruits.color = veggies.color AND (veggies.name = 'lettuce' OR veggies.name = 'tomatoes');**
+
+**11) SELECT name FROM fruits WHERE mid(taste,7,5) = 'Moist' Union SELECT name FROM veggies WHERE mid(taste,7,5) = 'Moist';**
+
+**12) UPDATE fruits,veggies SET fruits.price = (1.07 * fruits.price) , veggies.price = (1.07 * veggies.price);
+
+**13) SELECT avg(fruits.quantity) as AvgFruit, avg(veggies.quantity) as AvgVeg FROM fruits,veggies;**
+
+**14) SELECT (max(fruits.price)-min(fruits.price)) AS RangeFruit, (max(veggies.price)-min(veggies.price)) AS RangeVeg FROM fruits, veggies;**
+
+**15) SELECT name,price from fruits Union SELECT name,price from veggies ORDER BY name asc;**
