@@ -818,7 +818,7 @@ Thank you for taking the time to read this tutorial, and validating the last two
 
 **9) ALTER TABLE fruits DROP user;**
 
-**10) SELECT fruits.name, max(fruits.price*(fruits.purchased-fruits.quantity)) as ProfitsFruit FROM fruits,veggies WHERE fruits.color = veggies.color AND (veggies.name = 'lettuce' OR veggies.name = 'tomatoes');**
+**10) SELECT fruits.name, max(fruits.price*(fruits.purchased_quantity-fruits.quantity)) as ProfitsFruit FROM fruits,veggies WHERE fruits.color = veggies.color AND (veggies.name = 'lettuce' OR veggies.name = 'tomatoes');**
 
 **11) SELECT name FROM fruits WHERE mid(taste,7,5) = 'Moist' Union SELECT name FROM veggies WHERE mid(taste,7,5) = 'Moist';**
 
@@ -830,4 +830,4 @@ Thank you for taking the time to read this tutorial, and validating the last two
 
 **15) SELECT name,price from fruits Union SELECT name,price from veggies ORDER BY name asc;**
 
-**16) SELECT name, max(PRICE*(PURCHASED_QUANTITY-QUANTITY )) AS Profits FROM veggies Union SELECT name, max(PRICE*(PURCHASED-QUANTITY )) AS Profits FROM fruits ORDER BY Profits desc limit 1**
+**16) SELECT name, max(PRICE*(PURCHASED_QUANTITY-QUANTITY )) AS Profits FROM veggies Union SELECT name, max(PRICE*( PURCHASED_QUANTITY -QUANTITY )) AS Profits FROM fruits ORDER BY Profits desc limit 1**
