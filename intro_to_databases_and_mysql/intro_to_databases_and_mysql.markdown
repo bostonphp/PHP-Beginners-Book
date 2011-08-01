@@ -344,7 +344,7 @@ If you look at the table above, you will find the mid() function that returns a 
 
 ### Embedded Functions
 
-Functions getting in bed with each other? What is this? Some kind of sick joke? Kinda.
+Functions getting in bed with each other? What is this? Some kind of sick joke?
 
 An embedded function is a function(s) within another function. While this may sound confusing at first, keep in mind that I am here to put your mind at ease. 
 
