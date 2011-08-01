@@ -830,4 +830,4 @@ Thank you for taking the time to read this tutorial, and validating the last two
 
 **15) SELECT name,price from fruits Union SELECT name,price from veggies ORDER BY name asc;**
 
-**16) SELECT name, max(PRICE*(PURCHASED_QUANTITY-QUANTITY )) AS Profits FROM veggies Union SELECT name, max(PRICE*(PURCHASED-QUANTITY )) AS Profits FROM fruits ORDER BY Profits desc limit 1
+**16) SELECT name, max(PRICE*(PURCHASED_QUANTITY-QUANTITY )) AS Profits FROM veggies Union SELECT name, max(PRICE*(PURCHASED-QUANTITY )) AS Profits FROM fruits ORDER BY Profits desc limit 1**
