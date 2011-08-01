@@ -249,17 +249,23 @@ The **ORDER BY** statement is probably one of the easiest commands to learn in M
 
      SELECT name FROM fruits ORDER BY id asc;
 
-The above statement should display the fruits in order of the column 'id' from smallest to largest. This is because the modifier **asc** is placed at the end of the command.
+The above statement should display the fruits in order of the column 'id' from smallest to largest. This is because the modifier **asc**, or **ascending**, is placed at the end of the command.
 
      SELECT name FROM fruits ORDER BY id desc;
 
-The above statement will display the fruits in order of the column 'id' from largest to smallest. This is what happens when the **desc** modifier is used. 
+The above statement will display the fruits in order of the column 'id' from largest to smallest. This is what happens when the **desc**, or **descending**, modifier is used. 
 
 The **ORDER BY** modifier can also be used with a **WHERE** statement like so:
 
      SELECT name FROM fruits WHERE price >= 0.25 ORDER BY id asc;
 
 Just remember that the **WHERE** command ALWAYS goes before the **ORDER BY** command. If you mix them up, you will get an error. 
+
+To limit how many results you receive in an ORDER BY statement, use the limit clause after you write ‘asc’ or ‘desc’. To pick only the first name alphabetically of one of the fruits, we would simply write;
+
+     SELECT name FROM fruits ORDER BY name asc limit 1;
+
+The number after limit determines how many results are returned.  
 
 ## MySQL/Databases - Static Functions and GROUP BY
 
@@ -276,6 +282,8 @@ I know that I have gone a bit more quickly than usual in the last few chapters, 
  max() | Returns the maximum value in a column
  min() | Returns the minimum value in a column
  sum() | Returns the sum of all numbers in a column
+greatest() | Selects the greatest of two numbers
+least() | Selects the lesser of two numbers
 ------- | --------------------
  ucase() | Returns the results in upper case
  lcase() | Returns the results in lower case
@@ -333,6 +341,60 @@ and be done with it.
 If you look at the table above, you will find the mid() function that returns a certain amount of characters from the data given to it. Unlike the other functions we have worked with, this function requires a bit more effort in order to run smoothly. The syntax requires that you enter the name of the variable, starting position, and length of the string into the function separated by commas. Since we want to grab the first three letters of the fruit name, I suggest that we arrange our function like so: **mid(name,1,3)**. I added the column **name** next to our function so that we can see the new results right next to the original results.
 
      SELECT name, mid(name,1,3) FROM fruits;
+
+### Embedded Functions
+
+Functions getting in bed with each other? What is this? Some kind of sick joke? Kinda.
+
+An embedded function is a function(s) within another function. While this may sound confusing at first, keep in mind that I am here to put your mind at ease. 
+
+Assuming that you have done some kind of algebra before reading this tutorial, it would be safe to say that you would know how to do the following math problem:
+
+     (2*(9-4)) = X
+
+From our knowledge, we know to work with the least operator first, which happens to be the minus sign. The result would be:
+
+     (2*(5)) = X  
+
+Now we take that 5 out of the parenthesis and multiply it by 2, giving us:
+
+     (10) = X
+
+This is exactly how embedded functions work in MySQL. Look at the following example:
+
+     SELECT greatest(max(price),min(quantity)) FROM fruits
+
+This statement will return the greatest price after comparing the max and min prices. 
+
+*Obviously the max price will always be returned. Bear with me. This is an example.*
+
+Now look at what MySQL does as it tries to figure out your command. It first returns the results from the max and min functions:
+
+     SELECT greatest(.29,.15) FROM fruits
+
+Then it runs the greatest function on the results
+
+     SELECT .29 FROM fruits = .29
+
+Now if you were a smart programmer, you would realize that you could put an infinite amount of functions into any other functions. You could even use **SELECT** statements embedded in functions, or even other select statements! Look at the next problem closely and ask yourself exactly what it does.
+
+     SELECT price FROM fruits WHERE price = greatest((SELECT price FROM fruits ORDER BY 
+     price desc limit 1),(SELECT price FROM fruits ORDER BY price asc limit 1));
+
+Give up? It does exactly the same thing as the previous example. Just using **SELECT** statements to return the values to the greatest function. Remember that **limit** only returns as many results as you say it can (in this case one). So, if we arrange the columns from lowest to highest, and highest to lowest, and only take the first results, it would be exactly the same as using the max and min statements. Let’s go through this slowly to figure out exactly what we are doing.
+
+     SELECT price FROM fruits WHERE price = greatest(({.29,.15,.25 } ORDER BY price desc limit 1)
+     ,({.29,.15,.25 } ORDER BY price asc limit 1));
+
+     SELECT price FROM fruits WHERE price = greatest(({.29,.25,.15}limit 1),({.15,.25,.29} limit 1));
+
+     SELECT price FROM fruits WHERE price = greatest(.29,.15);
+
+     SELECT price FROM fruits WHERE price = .29;
+
+     .29
+
+As you can see, we get to the exact same result with a completely different method. You do not have to employ these styles of coding, but it will certainly help you in the long run.
 
 ### Now for some problems
 
@@ -679,10 +741,13 @@ The best thing about the UNION statement is that the results are all unique. Not
 
 **UNION** statements can only work if the following four conditions are met by all of the tables involved.
 
-1)	The **SELECT** statement returns the same number of results for each table
-2)	Each resulting column from the **SELECT** statement has the same name. These can easily be changed with an ‘as’ statement
-3)	The resulting columns are in the same order
-4)	Each resulting column has the same datatype as every other resulting column in order. This can easily be changed with a **CAST** function
+1) The **SELECT** statement returns the same number of results for each table
+
+2) Each resulting column from the **SELECT** statement has the same name. These can easily be changed with an ‘as’ statement
+
+3) The resulting columns are in the same order
+
+4) Each resulting column has the same datatype as every other resulting column in order. This can easily be changed with a **CAST** function
 
 Basically you cannot create a **UNION** of two things that do not fit together.
 
@@ -690,9 +755,25 @@ Basically you cannot create a **UNION** of two things that do not fit together.
 
 Remember, **JOINS** are only applicable if there is something to compare the two tables to each other. If there is nothing to compare, you simply need to use a **UNION** statement, or, more drastically, create a brand new table with which to house your results. Let’s look at a few more examples of JOINS before we move onto our final questions.
 
+**JOINS** do not have to just be used for **SELECT** statements, they can be used for **UPDATE** and **ALTER** statements as well. Here is an example of how it would be used with an **UPDATE** statement. 
+
+    UPDATE fruits,veggies SET fruits.last_purchased = (now()) , veggies.last_purchased = (now());
+
+This command tells MySQL update all of the last_purchased columns in both tables so that the value in the column last_purchased equals the current date.
+
+**JOIN** statements can also be used in conjunction with the functions learned in previous chapters. Just remember that you have to write the table name and column name separated by a period whenever you are dealing with more than one table. Here is an example of a **JOIN** with functions.
+
+    SELECT greatest(max(fruits.price),max(veggies.price)) as HighestPrice FROM fruits,veggies;
+
+This statement returns the fruit or veggie with the highest price. Notice that we did not have to use the **WHERE** clause in this case since we already have the greatest function to tie both tables together. Think about how you would return the name of the priciest fruit with this kind of statement. It will come in handy for the final questions in this tutorial.
+
+An alternative for this kind of notation for a **JOIN** is called an embedded **SELECT** statement. 
+
+*Remember that there is no one right way to do anything in Computer Science. You are only limited by your imagination.*
+
 ### The Final Questions
 
-Now is the moment of truth. In order to determine if you have learned anything from this tutorial, I have provided you with six more problems with which you will have to employ every technique you have learned in this tutorial so far. If you are unsure of a question, don’t just look at the bottom of the page. Go back a search for helpful hints in the tutorial in order to figure it out. Using your brain will help you out immensely in the future. Trust me.
+Now is the moment of truth. In order to determine if you have learned anything from this tutorial, I have provided you with seven more problems with which you will have to employ every technique you have learned in this tutorial so far. If you are unsure of a question, don’t just look at the bottom of the page. Go back a search for helpful hints in the tutorial in order to figure it out. Using your brain will help you out immensely in the future. Trust me.
 
 ### Questions
  
@@ -710,7 +791,12 @@ All of these problems can be solved in a single SQL statement
 
 *15) Return all of the foods with their prices in alphabetical order*
 
-If you have completed all of these questions, you are ready to program with MySQL in you PHP framework. Please view the PHP framework section in order to get started with the framework of your choice. I just wanted you to know that I am **very** proud of you.
+*16) Return the name and profit of the most profitable fruit or vegetable*
+**Hint: See the mathematics section to see how this is done on just one table. This is the hardest question I am willing to ask. If you can figure it out without cheating, you will truly be an SQL wizard. **
+
+If you have completed all of these questions, you are ready to program with MySQL in you PHP framework. When you run an SQL command in a PHP framework, the result comes out as something called a **CURSOR**, or a temporary table with which to keep all of your data. Since most frameworks are different, it would be difficult to give any advice until you picked one. Please view the PHP framework section in order to get started. 
+
+Thank you for taking the time to read this tutorial, and validating the last two weeks of my life. For comments and/or suggestions, please send an email to: *mauvemoonman@gmail.com*
 
 ## MySQL/Databases - Question Answers
 
@@ -743,3 +829,5 @@ If you have completed all of these questions, you are ready to program with MySQ
 **14) SELECT (max(fruits.price)-min(fruits.price)) AS RangeFruit, (max(veggies.price)-min(veggies.price)) AS RangeVeg FROM fruits, veggies;**
 
 **15) SELECT name,price from fruits Union SELECT name,price from veggies ORDER BY name asc;**
+
+**16) SELECT name, max(PRICE*(PURCHASED_QUANTITY-QUANTITY )) AS Profits FROM veggies Union SELECT name, max(PRICE*(PURCHASED-QUANTITY )) AS Profits FROM fruits ORDER BY Profits desc limit 1
