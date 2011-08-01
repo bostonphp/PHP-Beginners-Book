@@ -84,7 +84,7 @@ Go back to the **SQL** tab and type the command:
 
 	USE grocery_store;
 
-This tells the MySQL database that you are going to work in the database **grocery_store** until you say otherwise. You will work within this structure throughout the next few chapters of this book.
+This tells the MySQL database that you are going to work in the database **grocery_store** until you say otherwise. You will work within this structure throughout the rest of the book.
 
 You have just created the database of a single fictional grocery store. We will develop this more in the next chapter.
 
