@@ -84,7 +84,7 @@ Go back to the **SQL** tab and type the command:
 
 	USE grocery_store;
 
-This tells the MySQL database that you are going to work in the database **grocery_store** until you say otherwise. You will work within this structure throughout the rest of the book.
+This tells the MySQL database that you are going to work in the database **grocery_store** until you say otherwise. You will work within this structure throughout the next few chapters of this book.
 
 You have just created the database of a single fictional grocery store. We will develop this more in the next chapter.
 
@@ -344,7 +344,7 @@ If you look at the table above, you will find the mid() function that returns a 
 
 ### Embedded Functions
 
-Functions getting in bed with each other? What is this? Some kind of sick joke?
+Functions getting in bed with each other? What is this? Some kind of sick joke? Kinda.
 
 An embedded function is a function(s) within another function. While this may sound confusing at first, keep in mind that I am here to put your mind at ease. 
 
@@ -378,13 +378,12 @@ Then it runs the greatest function on the results
 
 Now if you were a smart programmer, you would realize that you could put an infinite amount of functions into any other functions. You could even use **SELECT** statements embedded in functions, or even other select statements! Look at the next problem closely and ask yourself exactly what it does.
 
-     SELECT price FROM fruits WHERE price = greatest((SELECT price FROM fruits ORDER BY 
-     price desc limit 1),(SELECT price FROM fruits ORDER BY price asc limit 1));
+     SELECT price FROM fruits WHERE price = greatest((SELECT price FROM fruits ORDER BY price asc limit 1),(SELECT price FROM fruits ORDER BY price desc limit 1));
 
 Give up? It does exactly the same thing as the previous example. Just using **SELECT** statements to return the values to the greatest function. Remember that **limit** only returns as many results as you say it can (in this case one). So, if we arrange the columns from lowest to highest, and highest to lowest, and only take the first results, it would be exactly the same as using the max and min statements. Let’s go through this slowly to figure out exactly what we are doing.
 
-     SELECT price FROM fruits WHERE price = greatest(({.29,.15,.25 } ORDER BY price desc limit 1)
-     ,({.29,.15,.25 } ORDER BY price asc limit 1));
+     SELECT price FROM fruits WHERE price = greatest(({.29,.15,.25 } ORDER BY price asc limit 1)
+     ,({.29,.15,.25 } ORDER BY price desc limit 1));
 
      SELECT price FROM fruits WHERE price = greatest(({.29,.25,.15}limit 1),({.15,.25,.29} limit 1));
 
@@ -771,9 +770,47 @@ An alternative for this kind of notation for a **JOIN** is called an embedded **
 
 *Remember that there is no one right way to do anything in Computer Science. You are only limited by your imagination.*
 
+### INNER vs OUTER JOINS
+
+The terms **INNER JOINS** and **OUTER JOINS** have all but faded away into the annals of history, but pretentious computer scientists love to ask what the difference is between them. I have been in many a job interview where this question has come up. Let me see if I can explain this concept as succinctly and thoroughly as possible.
+
+As explained before, the **JOIN** concept joins two or more tables together. **INNER JOINS** and **OUTER JOINS** are used to explain exactly what the **JOIN** captures when two tables are returned. Imagine it like a Venn diagram encompassing both tables. The **INNER JOIN** is used to describe the middle part of the diagram where both tables intersect, while the **OUTER JOIN** is used to describe all or some parts of the Venn diagram, **INCLUDING** the middle part of the Venn diagram. Imagine two tables with a set of numbers:
+
+A | B 
+:-----------|:------------
+1 | 4
+2 | 5
+3 | 6
+4 | 7
+5 | 8
+
+An **INNER JOIN** would look like:
+
+A | B 
+:-----------|:------------
+4 | 4
+5 | 5
+
+*Remember, an **INNER JOIN** only returns values are common in **BOTH** tables
+
+A full **OUTER JOIN** would look like:
+
+A | B 
+:-----------|:------------
+1 | null
+2 | null
+3 | null
+4 | 4
+5 | 5
+null | 6
+null | 7
+null | 8
+
+*A full **OUTER JOIN** returns all of the values*
+
 ### The Final Questions
 
-Now is the moment of truth. In order to determine if you have learned anything from this tutorial, I have provided you with seven more problems with which you will have to employ every technique you have learned in this tutorial so far. If you are unsure of a question, don’t just look at the bottom of the page. Go back a search for helpful hints in the tutorial in order to figure it out. Using your brain will help you out immensely in the future. Trust me.
+Now is the moment of truth. In order to determine if you have learned anything from this tutorial, I have provided you with six more problems with which you will have to employ every technique you have learned in this tutorial so far. If you are unsure of a question, don’t just look at the bottom of the page. Go back a search for helpful hints in the tutorial in order to figure it out. Using your brain will help you out immensely in the future. Trust me.
 
 ### Questions
  
@@ -798,6 +835,26 @@ If you have completed all of these questions, you are ready to program with MySQ
 
 Thank you for taking the time to read this tutorial, and validating the last two weeks of my life. For comments and/or suggestions, please send an email to: *mauvemoonman@gmail.com*
 
+## MySQL/Databases – Things I Did Not Talk About, But You Should Probably Know
+
+Below you will find some of the things I have chosen not to talk about in this tutorial and the reason for doing so. 
+
+### Permissions and Views
+
+Used by database administrators to control who can view and has access to certain portions of the database. Chose not to include, because it is not necessary in smaller websites where there are relatively few people with database access. 
+
+### Triggers
+
+Something has to make someone pull the trigger of a gun, just like something has to make an SQL trigger statement fire. Triggers are statements that only fire when a certain condition has been met, such as the date being the person’s birthday, or one’s bank account being overdrawn. They are not included in this tutorial, because they require a bit more of an advanced grasp of computer programming than I am willing to give in this tutorial.
+
+### UDFS (User Defined FunctionS)
+
+Like the static functions defined earlier in this tutorial, but made by the user in SQL. Again, they require a bit more programming experience to understand.
+
+### Stored Procedures
+
+Almost exactly like UDFS, except these functions are made in another language, and moved into SQL. They require a lot more programming experience to understand.
+
 ## MySQL/Databases - Question Answers
 
 **1) SELECT color, sum(quantity) FROM fruits GROUP BY color;**
@@ -818,7 +875,7 @@ Thank you for taking the time to read this tutorial, and validating the last two
 
 **9) ALTER TABLE fruits DROP user;**
 
-**10) SELECT fruits.name, max(fruits.price*(fruits.purchased_quantity-fruits.quantity)) as ProfitsFruit FROM fruits,veggies WHERE fruits.color = veggies.color AND (veggies.name = 'lettuce' OR veggies.name = 'tomatoes');**
+**10) SELECT fruits.name, max(fruits.price*(fruits.purchased-fruits.quantity)) as ProfitsFruit FROM fruits,veggies WHERE fruits.color = veggies.color AND (veggies.name = 'lettuce' OR veggies.name = 'tomatoes');**
 
 **11) SELECT name FROM fruits WHERE mid(taste,7,5) = 'Moist' Union SELECT name FROM veggies WHERE mid(taste,7,5) = 'Moist';**
 
@@ -830,4 +887,4 @@ Thank you for taking the time to read this tutorial, and validating the last two
 
 **15) SELECT name,price from fruits Union SELECT name,price from veggies ORDER BY name asc;**
 
-**16) SELECT name, max(PRICE*(PURCHASED_QUANTITY-QUANTITY )) AS Profits FROM veggies Union SELECT name, max(PRICE*( PURCHASED_QUANTITY -QUANTITY )) AS Profits FROM fruits ORDER BY Profits desc limit 1**
+**16) SELECT name, max(PRICE*(PURCHASED_QUANTITY-QUANTITY )) AS Profits FROM veggies Union SELECT name, max(PRICE*(PURCHASED-QUANTITY )) AS Profits FROM fruits ORDER BY Profits desc limit 1
