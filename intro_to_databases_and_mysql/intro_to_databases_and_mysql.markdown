@@ -810,9 +810,11 @@ null | 8
 
 ### LEFT and RIGHT JOINS
 
-The only reason that **JOINS** may still be used is due to the slightly useful application of the **LEFT** and **RIGHT JOINS**. What these commands do is return all of the values of one column, while only returning the matching columns for the other. Some examples of this would be to print out to the profits for all of the days of the year even if there was no profit for a particular day (and therefore, no entry in the database). 
+The only reason that **JOINS** may still be used is due to the slightly useful application of the **LEFT** and **RIGHT JOINS**. These types of **JOINS** are technically a partial types of **OUTER JOIN** as they combine values that are not in necessarily in common with both tables. 
 
-In the scope of our grocery store, we could reasonable make a query that would return all of the fruits that have the first letter as a particular letter in the alphabet table. First we need to make a table with all of the letters in the alphabet. 
+As you could have probably guessed, the **LEFT JOIN** command, in respect to a Venn diagram, **JOINS** the left part of the circle with the part that both circles intersect. The **RIGHT JOIN** command **JOINS** the part where both circles connect to the right circle. Some examples of this being used in everyday life would be to print out to the profits for all of the days of the year even if there was no profit for a particular day (and therefore, no entry in the database). 
+
+In the scope of our grocery store, we could reasonably make a query that would return all of the fruits that have the first letter as a particular letter in the alphabet table. First we need to make a table with all of the letters in the alphabet. 
 
      CREATE TABLE LETTERS (id int primary key auto_increment, letter varchar(1));
      INSERT INTO LETTERS (letter) VALUES (‘A’),(’B’),(’C’),(’D’),(’E’),(’F’),(’G’),
@@ -828,7 +830,7 @@ Here is an example of how to do the same thing with the fruits and the **RIGHT J
      Select letters.letter as letter, fruits.name as foods from fruits right join letters
       on mid(fruits.name,1,1) = letters.letter;
 
-*The only difference between the **LEFT JOIN** and **RIGHT JOIN** is the order by which the tables are referenced to determine which table is fully evaluated and which is partially evaluated.*
+*The only difference between the **LEFT JOIN** and **RIGHT JOIN** is the order by which the tables are referenced to determine which table is fully evaluated and which is partially evaluated. Also, remember that you must use the keyword ‘on’ instead of having or where in order for these queries to work.*
 
 Here is an example of both tables being listed alphabetically.
 
