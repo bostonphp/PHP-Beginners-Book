@@ -808,6 +808,31 @@ null | 8
 
 *A full **OUTER JOIN** returns all of the values*
 
+### LEFT and RIGHT JOINS
+
+The only reason that **JOINS** may still be used is due to the slightly useful application of the **LEFT** and **RIGHT JOINS**. What these commands do is return all of the values of one column, while only returning the matching columns for the other. Some examples of this would be to print out to the profits for all of the days of the year even if there was no profit for a particular day (and therefore, no entry in the database). 
+
+In the scope of our grocery store, we could reasonable make a query that would return all of the fruits that have the first letter as a particular letter in the alphabet table. First we need to make a table with all of the letters in the alphabet. 
+
+     CREATE TABLE LETTERS (id int primary key auto_increment, letter varchar(1));
+     INSERT INTO LETTERS (letter) VALUES (‘A’),(’B’),(’C’),(’D’),(’E’),(’F’),(’G’),(’H’),(’I’),(’J’),(’K’),(’L’),(’M’),(’N’),(’O’),(’P’),(’Q’),(’R’),(’S’),(’T’),(’U’),(’V’),(’W’),(’X’),(’Y’),(’Z’);
+
+Now we can use the new commands that we have just learned. Here is a quick example with the **LEFT JOIN** command. 
+
+     Select letters.letter as letter, veggies.name as foods from letters left join veggies on mid(veggies.name,1,1) = letters.letter;
+
+Here is an example of how to do the same thing with the fruits and the **RIGHT JOIN** command.
+
+     Select letters.letter as letter, fruits.name as foods from fruits right join letters on mid(fruits.name,1,1) = letters.letter;
+
+*The only difference between the **LEFT JOIN** and **RIGHT JOIN** is the order by which the tables are referenced to determine which table is fully evaluated and which is partially evaluated.*
+
+Here is an example of both tables being listed alphabetically.
+
+     Select letters.letter as letter, veggies.name as foods from letters left join veggies on mid(veggies.name,1,1) = letters.letter union Select letters.letter as letter, fruits.name as foods from fruits right join letters on mid(fruits.name,1,1) = letters.letter order by letter asc
+
+Now you know how to use **LEFT** and **RIGHT JOINS**. I will not ask you any questions over them, as I find them to be pretty stupid commands. Since you are going to be using embedded SQL anyways, I see no point in adding them to the list of things you need to know.
+
 ### The Final Questions
 
 Now is the moment of truth. In order to determine if you have learned anything from this tutorial, I have provided you with six more problems with which you will have to employ every technique you have learned in this tutorial so far. If you are unsure of a question, don’t just look at the bottom of the page. Go back a search for helpful hints in the tutorial in order to figure it out. Using your brain will help you out immensely in the future. Trust me.
