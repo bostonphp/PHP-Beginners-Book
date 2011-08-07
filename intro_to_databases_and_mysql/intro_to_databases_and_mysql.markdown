@@ -640,7 +640,7 @@ Look closely at the table we have just created. Do you notice anything different
 CONSTRAINT | Function 
 :-----------|:------------
 NOT NULL | Prevents any NULL value from being placed in the column
-PRIMARY KEY | Makes sure that every value is unique in the column. Each table needs to have one of these. You can still create a table without a PRIMARY KEY, but it is bad form. There can *”be only one”* column defined by a PRIMARY KEY.
+PRIMARY KEY | Makes sure that every value is unique in the column. Each table needs to have one of these. You can still create a table without a PRIMARY KEY, but it is bad form. There can *"be only one"* column defined by a PRIMARY KEY.
 UNIQUE | Makes sure that every value is unique in the column. Unlike the PRIMARY KEY, there can be more than one column defined as 'UNIQUE' in a table
 DEFAULT | Used to define a value if one has not been inserted into the database. We used it above to insert 0 as a default value if nothing is put into the column 'price'.
 AUTO_INCREMENT | Used to automatically add a number to the last rows value when a new row is created. The default value for AUTO_INCREMENT is 1, but can be changed by the command AUTO_INCREMENT = n, where n is the number by which you would like to increment by. For example, if the last row had the value 6, and my AUTO_INCREMENT is set to 2, my next row would be 8.
@@ -800,7 +800,7 @@ This statement returns the fruit or veggie with the highest price. Notice that w
 
 An alternative for this kind of notation for a **JOIN** is called an embedded **SELECT** statement **JOIN**. These can be useful as they help the programmer connect tables in a way that is much easier to follow. 
 
-*For a better understanding of this alternative method, simply type “embedded select statements” into Google and look at some examples. Remember that there is no one right way to do anything in Computer Science. You are only limited by your imagination.*
+*For a better understanding of this alternative method, simply type "embedded select statements" into Google and look at some examples. Remember that there is no one right way to do anything in Computer Science. You are only limited by your imagination.*
 
 ### INNER vs OUTER JOINS
 
@@ -899,9 +899,9 @@ All of these problems can be solved in a single SQL statement
 
 If you have completed all of these questions, you are ready to program with MySQL in you PHP framework. When you run an SQL command in a PHP framework, the result comes out as something called a **CURSOR**, or a temporary table with which to keep all of your data. Since most frameworks are different, it would be difficult to give any advice until you picked one. Please view the PHP framework section in order to get started. 
 
-Thank you for taking the time to read this tutorial, and validating the last two weeks of my life. For comments and/or suggestions, please send an email to: *mauvemoonman@gmail.com*
+Thank you for taking the time to read this tutorial, and validating the last two weeks of my life. For comments and/or suggestions, please send an email to: [mauvemoonman@gmail.com](mailto:mauvemoonman@gmail.com)
 
-## MySQL/Databases - Things I Did Not Talk About, But You Should Probably Know
+## MySQL/Databases - Things I Did	 Not Talk About, But You Should Probably Know
 
 Below you will find some of the things I have chosen not to talk about in this tutorial and the reason for doing so. 
 
@@ -923,34 +923,34 @@ Almost exactly like UDFS, except these functions are made in another language, a
 
 ## MySQL/Databases - Question Answers
 
-**1) SELECT color, sum(quantity) FROM fruits GROUP BY color;**
+1. SELECT color, sum(quantity) FROM fruits GROUP BY color;**
 
-**2) SELECT name FROM fruits ORDER BY name asc;**
+2. SELECT name FROM fruits ORDER BY name asc;**
 
-**3) SELECT max(purchased_quantity),min(purchased_quantity) FROM fruits;**
+3. SELECT max(purchased_quantity),min(purchased_quantity) FROM fruits;**
 
-**4) SELECT color,avg(length(name)) FROM fruits GROUP BY color;**
+4. SELECT color,avg(length(name)) FROM fruits GROUP BY color;**
 
-**5) SELECT name FROM fruits WHERE color = 'Yellow' GROUP BY name HAVING mid(name,1,1) = 'P';**
+5. SELECT name FROM fruits WHERE color = 'Yellow' GROUP BY name HAVING mid(name,1,1) = 'P';**
 
-**6) SELECT name FROM fruits WHERE ((texture = 'spongy') AND (price > 0.30)) OR ((texture = 'juicy') AND (price < 0.20));**
+6. SELECT name FROM fruits WHERE ((texture = 'spongy') AND (price > 0.30)) OR ((texture = 'juicy') AND (price < 0.20));**
 
-**7) ALTER TABLE fruits ADD user varchar(100);**
+7. ALTER TABLE fruits ADD user varchar(100);**
 
-**8) UPDATE fruits SET user = 'Toby';**
+8. UPDATE fruits SET user = 'Toby';**
 
-**9) ALTER TABLE fruits DROP user;**
+9. ALTER TABLE fruits DROP user;**
 
-**10) SELECT fruits.name, max(fruits.price*(fruits. purchased_quantity-fruits.quantity)) as ProfitsFruit FROM fruits,veggies WHERE fruits.color = veggies.color AND (veggies.name = 'lettuce' OR veggies.name = 'tomatoes');**
+10. SELECT fruits.name, max(fruits.price*(fruits. purchased_quantity-fruits.quantity)) as ProfitsFruit FROM fruits,veggies WHERE fruits.color = veggies.color AND (veggies.name = 'lettuce' OR veggies.name = 'tomatoes');**
 
-**11) SELECT name FROM fruits WHERE mid(taste,7,5) = 'Moist' Union SELECT name FROM veggies WHERE mid(taste,7,5) = 'Moist';**
+11. SELECT name FROM fruits WHERE mid(taste,7,5) = 'Moist' Union SELECT name FROM veggies WHERE mid(taste,7,5) = 'Moist';**
 
-**12) UPDATE fruits,veggies SET fruits.price = (1.07 * fruits.price) , veggies.price = (1.07 * veggies.price);**
+12. UPDATE fruits,veggies SET fruits.price = (1.07 * fruits.price) , veggies.price = (1.07 * veggies.price);**
 
-**13) SELECT avg(fruits.quantity) as AvgFruit, avg(veggies.quantity) as AvgVeg FROM fruits,veggies;**
+13. SELECT avg(fruits.quantity) as AvgFruit, avg(veggies.quantity) as AvgVeg FROM fruits,veggies;**
 
-**14) SELECT (max(fruits.price)-min(fruits.price)) AS RangeFruit, (max(veggies.price)-min(veggies.price)) AS RangeVeg FROM fruits, veggies;**
+14. SELECT (max(fruits.price)-min(fruits.price)) AS RangeFruit, (max(veggies.price)-min(veggies.price)) AS RangeVeg FROM fruits, veggies;**
 
-**15) SELECT name,price from fruits Union SELECT name,price from veggies ORDER BY name asc;**
+15. SELECT name,price from fruits Union SELECT name,price from veggies ORDER BY name asc;**
 
-**16) SELECT name, max(PRICE * (purchased_quantity -QUANTITY )) AS Profits FROM veggies Union SELECT name, max(PRICE * (purchased_quantity -QUANTITY )) AS Profits FROM fruits ORDER BY Profits desc limit 1**
+16. SELECT name, max(PRICE * (purchased_quantity -QUANTITY )) AS Profits FROM veggies Union SELECT name, max(PRICE * (purchased_quantity -QUANTITY )) AS Profits FROM fruits ORDER BY Profits desc limit 1**
