@@ -4,11 +4,11 @@ This chapter is written assuming that you, the user, have successfully installed
 
 ### What are databases?
 
-Let’s begin our tutorial with our test subject, Lisa, who has a box of crayons. She wants to organize them so that anytime she catalogs something, those things will appear in the database as having a color attributed to that certain type of crayon. Since nobody had thought of arranging objects like this to date, she must use SQL to create this arrangement herself. 
+Let's begin our tutorial with our test subject, Lisa, who has a box of crayons. She wants to organize them so that anytime she catalogs something, those things will appear in the database as having a color attributed to that certain type of crayon. Since nobody had thought of arranging objects like this to date, she must use SQL to create this arrangement herself. 
 
-*Databases help to organize things that haven’t been thought of yet. They allow one to use their creativity to group things together in a meaningful way.*
+*Databases help to organize things that haven't been thought of yet. They allow one to use their creativity to group things together in a meaningful way.*
 
-Our second subject, Joe, collects rocks, baseball cards, and rocks. He puts his sports cars in a garage, his rocks in a box in the basement, and his baseball cards in plastic sleeves on a shelf in the living room. It would not make much sense for Joe to put them all in one place, as it would be hard to find any particular item. What if all of Joe’s sports cars, rocks, and baseball cards were on the shelf in his living room? In addition to being very inconvenient to remove any one item from his living room, it would be very confusing as to what and how many items he had to begin with. The same principle applies to electronic data.
+Our second subject, Joe, collects rocks, baseball cards, and rocks. He puts his sports cars in a garage, his rocks in a box in the basement, and his baseball cards in plastic sleeves on a shelf in the living room. It would not make much sense for Joe to put them all in one place, as it would be hard to find any particular item. What if all of Joe's sports cars, rocks, and baseball cards were on the shelf in his living room? In addition to being very inconvenient to remove any one item from his living room, it would be very confusing as to what and how many items he had to begin with. The same principle applies to electronic data.
 
 "Databases" are simply an organized collection of data, usually in electronic form. They are composed of smaller parts called "tables". These tables are composed of even smaller parts called "rows" and "columns" similar to what one would see in an Excel spreadsheet (or any spreadsheet for that matter). The columns section of each table declares the characteristics of each table while each row contains unique data for each element in the table. It sounds complicated but is actually quite simple. Take the example outlined below:
 
@@ -224,7 +224,7 @@ This kind of syntax (where the return columns are specified) becomes especially 
 
 ### WHERE Statements
 
-So far you have learned how to get blocks of information from a table, but you still have no idea how to turn those results into something relevant such as selecting all of the fruit prices greater than 25 cents, or displaying all of the "Red" fruits. This is where the **WHERE** statement comes into play. The **WHERE** statement gives a specific set of criteria to the MySQL database so that the results are much more controlled and relevant to what you want. For example, say that you want to select the names of all of the fruits with a ‘Red’ color. You would want to type in the following statement in the compiler.
+So far you have learned how to get blocks of information from a table, but you still have no idea how to turn those results into something relevant such as selecting all of the fruit prices greater than 25 cents, or displaying all of the "Red" fruits. This is where the **WHERE** statement comes into play. The **WHERE** statement gives a specific set of criteria to the MySQL database so that the results are much more controlled and relevant to what you want. For example, say that you want to select the names of all of the fruits with a 'Red' color. You would want to type in the following statement in the compiler.
 
      SELECT name FROM fruits WHERE color = 'Red';
 
@@ -273,7 +273,7 @@ The **ORDER BY** modifier can also be used with a **WHERE** statement like so:
 
 Just remember that the **WHERE** command ALWAYS goes before the **ORDER BY** command. If you mix them up, you will get an error. 
 
-To limit how many results you receive in an ORDER BY statement, use the limit clause after you write ‘asc’ or ‘desc’. To pick only the first name alphabetically of one of the fruits, we would simply write;
+To limit how many results you receive in an ORDER BY statement, use the limit clause after you write 'asc' or 'desc'. To pick only the first name alphabetically of one of the fruits, we would simply write;
 
      SELECT name FROM fruits ORDER BY name asc limit 1;
 
@@ -392,7 +392,7 @@ Now if you were a smart programmer, you would realize that you could put an infi
 
      SELECT price FROM fruits WHERE price = greatest((SELECT price FROM fruits ORDER BY price asc limit 1),(SELECT price FROM fruits ORDER BY price desc limit 1));
 
-Give up? It does exactly the same thing as the previous example. Just using **SELECT** statements to return the values to the greatest function. Remember that **limit** only returns as many results as you say it can (in this case one). So, if we arrange the columns from lowest to highest, and highest to lowest, and only take the first results, it would be exactly the same as using the max and min statements. Let’s go through this slowly to figure out exactly what we are doing.
+Give up? It does exactly the same thing as the previous example. Just using **SELECT** statements to return the values to the greatest function. Remember that **limit** only returns as many results as you say it can (in this case one). So, if we arrange the columns from lowest to highest, and highest to lowest, and only take the first results, it would be exactly the same as using the max and min statements. Let's go through this slowly to figure out exactly what we are doing.
 
      SELECT price FROM fruits WHERE price = greatest(({.29,.15,.25 } ORDER BY price asc limit 1)
      ,({.29,.15,.25 } ORDER BY price desc limit 1));
@@ -552,29 +552,29 @@ Here is an example of a **WHERE** statement:
 
     SELECT name FROM fruits WHERE color = 'Red';
 
-This statement implies that the **SELECT** statement is looking to return the name of any row that has a color equal to ‘Red’. If the color is not equal to ‘Red’, the statement returns **false** and nothing is returned. If the color is equal to ‘Red’, the statement returns **true**. 
+This statement implies that the **SELECT** statement is looking to return the name of any row that has a color equal to 'Red'. If the color is not equal to 'Red', the statement returns **false** and nothing is returned. If the color is equal to 'Red', the statement returns **true**. 
 
-The AND and OR statements work along these principles. They join together two or more conditions, such as color = ‘Red’, to make a bigger condition. For the AND statement to return **true** all of the conditions in the statement must individually return **true**. For the OR statement to return **true** only one of the conditions in the statement must return **true**. An example of this is below.
+The AND and OR statements work along these principles. They join together two or more conditions, such as color = 'Red', to make a bigger condition. For the AND statement to return **true** all of the conditions in the statement must individually return **true**. For the OR statement to return **true** only one of the conditions in the statement must return **true**. An example of this is below.
 
 Try out the two statements below individually. Which one do you think will give you the most results?
 
-     SELECT name FROM fruits WHERE (color = ‘Red’) AND (texture = ‘Juicy’);
+     SELECT name FROM fruits WHERE (color = 'Red') AND (texture = 'Juicy');
 
-     SELECT name FROM fruits WHERE (color = ‘Red’) OR (texture = ‘Juicy’);
+     SELECT name FROM fruits WHERE (color = 'Red') OR (texture = 'Juicy');
 
-*Although they aren’t necessarily needed, I find that it is easier to enclose my different conditions in parenthesis to avoid any unnecessary confusion.*
+*Although they aren't necessarily needed, I find that it is easier to enclose my different conditions in parenthesis to avoid any unnecessary confusion.*
 
-If you haven’t figured it out yet, the **OR** statement will yield the most results. This is because **OR** returns the red fruits, the juicy fruits, and the juicy red fruits. The **AND** statement will only return the juicy red fruits.
+If you haven't figured it out yet, the **OR** statement will yield the most results. This is because **OR** returns the red fruits, the juicy fruits, and the juicy red fruits. The **AND** statement will only return the juicy red fruits.
 
-Let’s first try out a few examples, before I will give you some practice problems to see what you have learned in the past few sections.
+Let's first try out a few examples, before I will give you some practice problems to see what you have learned in the past few sections.
 
 *1) Return the names of the fruits that have a spongy texture and a price above $0.30*
 
 This problem is almost exactly like the examples that we had before, but working with different columns. We can see that we will need to use the **AND** statement with the texture and price columns. The rest is fairly straight forward.
 
-     SELECT name FROM fruits WHERE (texture = ‘Spongy’) AND (price > 0.30);
+     SELECT name FROM fruits WHERE (texture = 'Spongy') AND (price > 0.30);
 
-The result should be ‘Mangos’
+The result should be 'Mangos'
 
 *2) Return the type of textured fruit with an average price greater than $0.32 or a combined quantity less than 60*
 
@@ -590,17 +590,17 @@ The result should return the fibrous fruits.
 
 *Don't cheat. If you actually want to learn this, you are only hurting yourself.*
 
-*5) Return the names of all of the yellow fruits whose names begin with a ‘P’.*
+*5) Return the names of all of the yellow fruits whose names begin with a 'P'.*
 
 *6) Return the names of all of the fruits that have a price over $0.30 and a spongy texture, or a price under $0.20 and a juicy texture.*
 
-*7) Make a new column named ‘user’ of type varchar(100) in the fruits table.*
+*7) Make a new column named 'user' of type varchar(100) in the fruits table.*
 
-*8) Make every single value in the ‘user’ column the value ‘Toby’;*
+*8) Make every single value in the 'user' column the value 'Toby';*
 
-*9) Delete the column ‘user’ in the fruits table.*
+*9) Delete the column 'user' in the fruits table.*
 
-## MySQL/Databases – CONSTRAINTS and JOINS
+## MySQL/Databases - CONSTRAINTS and JOINS
 
 ### JOINS INTRO
 
@@ -608,15 +608,15 @@ So far we have just worked with one table in our queries in order to get the inf
 
 The first is, what do the two tables have in common? Do they have the same user names we can query? Are they both arranged by colors, dates, or prices? In order to join two tables, you *cough* usually need to find some sort of commonality between them.
 
-*Commonality means “something in common”.*
+*Commonality means "something in common".*
 
-The second is, if they don’t have anything in common, what do you need to do to give them something in common? Do you remember the example from the very start of the tutorial when we were referencing Joe’s cars, rocks, and baseball cards? What do you think these three things would have in common? I can think of a few off the top of my head including: a color, a size, a weight, a height, a name, a value, a terminal velocity, etc. Without these columns in each of the tables, we would be unable to answer any of the silly questions that come into our heads.
+The second is, if they don't have anything in common, what do you need to do to give them something in common? Do you remember the example from the very start of the tutorial when we were referencing Joe's cars, rocks, and baseball cards? What do you think these three things would have in common? I can think of a few off the top of my head including: a color, a size, a weight, a height, a name, a value, a terminal velocity, etc. Without these columns in each of the tables, we would be unable to answer any of the silly questions that come into our heads.
 
 Which is more expensive? A brand new Porsche, or my ten most valuable baseball cards? 
 
 If I stacked all of my baseball cards in a line, how many rocks would I have to stack to go an equal distance?
 
-Which rocks will match my new Ford pickup’s color?
+Which rocks will match my new Ford pickup's color?
 
  ### Creating Our New Table with Constraints
 
@@ -627,11 +627,11 @@ In order to join two tables, we will need to add a second table to our grocery s
      decimal(10,2), QUANTITY int DEFAULT 0, SHELF_LIFE int, LAST_PURCHASED datetime, 
      PURCHASED_QUANTITY int, CHECK (PRICE > 0));
 
-Look closely at the table we have just created. Do you notice anything different compared to the fruits table we created earlier? If you didn’t, you should look again. What we added to our table would be called **CONSTRAINTS**.
+Look closely at the table we have just created. Do you notice anything different compared to the fruits table we created earlier? If you didn't, you should look again. What we added to our table would be called **CONSTRAINTS**.
 
-**CONSTRAINTS** are simply commands that one adds to their table to make sure that people don’t screw up them up further down the line. Sometimes **CONSTRAINTS** can even make our lives easier. Take, for example, the **AUTO_INCREMENT CONSTRAINT** we added to our table. This tells the MySQL compiler to add one to this column each time a new row is created. This means that we no longer have to insert those pesky numbers ourselves each time we want to create a new row!
+**CONSTRAINTS** are simply commands that one adds to their table to make sure that people don't screw up them up further down the line. Sometimes **CONSTRAINTS** can even make our lives easier. Take, for example, the **AUTO_INCREMENT CONSTRAINT** we added to our table. This tells the MySQL compiler to add one to this column each time a new row is created. This means that we no longer have to insert those pesky numbers ourselves each time we want to create a new row!
 
-*For those that don’t know too much about computing, a compiler is a way for the computer to translate what you are saying into computer code. Kind of like what a translator does when you go to a foreign country with a different language.*
+*For those that don't know too much about computing, a compiler is a way for the computer to translate what you are saying into computer code. Kind of like what a translator does when you go to a foreign country with a different language.*
 
  Here are a list of the most common **CONSTRAINTS**, and what they do. 
 
@@ -641,16 +641,16 @@ CONSTRAINT | Function
 :-----------|:------------
 NOT NULL | Prevents any NULL value from being placed in the column
 PRIMARY KEY | Makes sure that every value is unique in the column. Each table needs to have one of these. You can still create a table without a PRIMARY KEY, but it is bad form. There can *”be only one”* column defined by a PRIMARY KEY.
-UNIQUE | Makes sure that every value is unique in the column. Unlike the PRIMARY KEY, there can be more than one column defined as ‘UNIQUE’ in a table
-DEFAULT | Used to define a value if one has not been inserted into the database. We used it above to insert 0 as a default value if nothing is put into the column ‘price’.
+UNIQUE | Makes sure that every value is unique in the column. Unlike the PRIMARY KEY, there can be more than one column defined as 'UNIQUE' in a table
+DEFAULT | Used to define a value if one has not been inserted into the database. We used it above to insert 0 as a default value if nothing is put into the column 'price'.
 AUTO_INCREMENT | Used to automatically add a number to the last rows value when a new row is created. The default value for AUTO_INCREMENT is 1, but can be changed by the command AUTO_INCREMENT = n, where n is the number by which you would like to increment by. For example, if the last row had the value 6, and my AUTO_INCREMENT is set to 2, my next row would be 8.
-CHECK | Used to make sure of a condition before a new row can be added. We implemented it in our new table to make sure that fruits weren’t being given away for free before they were inserted into the table.
+CHECK | Used to make sure of a condition before a new row can be added. We implemented it in our new table to make sure that fruits weren't being given away for free before they were inserted into the table.
 
 Not too hard right? Think of **CONSTRAINTS** as a little reminder that help you as you screw up from time to time. 
 
 ### Adding Value to Our Table
 
-Now let’s add some values to our table so that we can work with JOINS at our leisure. Copy and paste the following commands into the SQL command box and click enter. 
+Now let's add some values to our table so that we can work with JOINS at our leisure. Copy and paste the following commands into the SQL command box and click enter. 
 
      INSERT INTO VEGGIES ( NAME, COLOR, TASTE, TEXTURE, PRICE, QUANTITY, 
      SHELF_LIFE, LAST_PURCHASED, PURCHASED_QUANTITY ) VALUES ('Cucumbers'
@@ -702,17 +702,17 @@ To return all of the foods with the same color
 
      SELECT veggies.name, fruits.name FROM fruits, veggies WHERE fruits.color = veggies.color;
 
-That’s all there is to it. We will discuss these concepts in more depth in the next chapter.
+That's all there is to it. We will discuss these concepts in more depth in the next chapter.
 
-## MySQL/Databases – CAST, and ‘as’ 
+## MySQL/Databases - CAST, and 'as' 
 
-### CAST and ‘as’
+### CAST and 'as'
 
 So you think you have **JOINS** down cold? Need a bit of a challenge? No problem. In this chapter you will learn a few more a techniques you will need to master **JOINS**.
 
 *Remember that you will almost always need some way to link the two tables together be it in a WHERE statement or HAVING statement. Without either one of these, you will get gibberish returned to you.
 
-To begin, we will go back to a basic table and work our way back to **JOINS**. Sometimes the results that you return with **SELECT** statements aren’t exactly in the format that you would like them to be. Take the next query for example:
+To begin, we will go back to a basic table and work our way back to **JOINS**. Sometimes the results that you return with **SELECT** statements aren't exactly in the format that you would like them to be. Take the next query for example:
 
      SELECT AVG(quantity) FROM veggies;
 
@@ -730,33 +730,33 @@ All we will need to do is CAST the result of the average function as an integer 
 
 *Remember with the Decimal datatype that the first number refers to the amount of digits in the number while the second number refers to the number of decimal places represented. Since we do not want any of the decimal places represented, we put a zero as the second number.*
 
-The ‘as’ statement represented in the past few examples can also be used outside of the **CAST** function, usually to redefine the names of tables that are returned. An example of the ‘as’ function used like this would be something like:
+The 'as' statement represented in the past few examples can also be used outside of the **CAST** function, usually to redefine the names of tables that are returned. An example of the 'as' function used like this would be something like:
 
      SELECT name as Foods FROM fruits;
 
-The result will be all of rows in the column ‘name’ from table fruits, but the resulting table will be labeled ‘Foods’.
+The result will be all of rows in the column 'name' from table fruits, but the resulting table will be labeled 'Foods'.
 
 ### Addition, Subtraction, Multiplication, Division, and Modulus
 
 The last thing that I want to go over before the grand finale of this tutorial is the mathematical functions that can be used when attempting to return more relevant results in MySQL. For example, say that we want to return the amount of veggies that we have sold in our stores. We can easily return the relevant results with a quick math equation like so:
 
-     SELECT name, (PURCHASED_QUANTITY – QUANTITY) as Amount_Sold FROM veggies;
+     SELECT name, (PURCHASED_QUANTITY - QUANTITY) as Amount_Sold FROM veggies;
 
 We can see from the results that investing in pumpkins would have been a wise decision.
 
-Now, let’s see how much money we have made for each veggie so far. The concept is almost the same as the last query, but we have to add the price column to the equation.
+Now, let's see how much money we have made for each veggie so far. The concept is almost the same as the last query, but we have to add the price column to the equation.
 
-     SELECT name, (PRICE * (PURCHASED_QUANTITY – QUANTITY)) as Profits FROM veggies;
+     SELECT name, (PRICE * (PURCHASED_QUANTITY - QUANTITY)) as Profits FROM veggies;
 
 Now if we sold a constant amount of veggies we had just purchased from when they are fresh until they expire, how many veggies would we need to sell an hour in order to sell them all?
 
     SELECT name, (PURCHASED_QUANTITY / SHELF_LIFE) as VegsPerHr FROM veggies;
 
-I’m sure that you can figure out how to use modulus and addition in the same ways.
+I'm sure that you can figure out how to use modulus and addition in the same ways.
 
-*Remember, modulus is the remainder after you divide one thing by another and defined by the character ‘%’. For example, 5 % 2 = 1, because there is a remainder of 1. 13 % 9 = 4, because there is a remainder of 4.*
+*Remember, modulus is the remainder after you divide one thing by another and defined by the character '%'. For example, 5 % 2 = 1, because there is a remainder of 1. 13 % 9 = 4, because there is a remainder of 4.*
 
-## MySQL/Databases – UNIONS and JOINS pt. 2
+## MySQL/Databases - UNIONS and JOINS pt. 2
 
 ### UNIONS
 
@@ -772,7 +772,7 @@ The best thing about the UNION statement is that the results are all unique. Not
 
 1) The **SELECT** statement returns the same number of columns for each table
 
-2) Each resulting column from the **SELECT** statement has the same name. These can easily be changed with an ‘as’ statement
+2) Each resulting column from the **SELECT** statement has the same name. These can easily be changed with an 'as' statement
 
 3) The resulting columns are in the same order
 
@@ -782,7 +782,7 @@ Basically you cannot create a **UNION** of two things that do not fit together.
 
 ### JOINS pt. 2
 
-Remember, **JOINS** are only applicable if there is something to compare the two tables to each other. If there is nothing to compare, you simply need to use a **UNION** statement, or, more drastically, create a brand new table with which to house your results. Let’s look at a few more examples of JOINS before we move onto our final questions.
+Remember, **JOINS** are only applicable if there is something to compare the two tables to each other. If there is nothing to compare, you simply need to use a **UNION** statement, or, more drastically, create a brand new table with which to house your results. Let's look at a few more examples of JOINS before we move onto our final questions.
 
 **JOINS** do not have to just be used for **SELECT** statements, they can be used for **UPDATE** and **ALTER** statements as well. Here is an example of how it would be used with an **UPDATE** statement. 
 
@@ -796,7 +796,7 @@ This command tells MySQL update all of the last_purchased columns in both tables
 
 This statement returns the fruit or veggie with the highest price. Notice that we did not have to use the **WHERE** clause in this case since we already have the greatest function to tie both tables together. Think about how you would return the name of the priciest fruit with this kind of statement. It will come in handy for the final questions in this tutorial.
 
-*Hint: It’s not as easy as you think*
+*Hint: It's not as easy as you think*
 
 An alternative for this kind of notation for a **JOIN** is called an embedded **SELECT** statement **JOIN**. These can be useful as they help the programmer connect tables in a way that is much easier to follow. 
 
@@ -849,8 +849,8 @@ As you could have probably guessed, the **LEFT JOIN** command, in respect to a V
 In the scope of our grocery store, we could reasonably make a query that would return all of the fruits that have the first letter as a particular letter in the alphabet table. First we need to make a table with all of the letters in the alphabet. 
 
      CREATE TABLE LETTERS (id int primary key auto_increment, letter varchar(1));
-     INSERT INTO LETTERS (letter) VALUES (‘A’),(’B’),(’C’),(’D’),(’E’),(’F’),(’G’),
-     (’H’),(’I’),(’J’),(’K’),(’L’),(’M’),(’N’),(’O’),(’P’),(’Q’),(’R’),(’S’),(’T’),(’U’),(’V’),(’W’),(’X’),(’Y’),(’Z’);
+     INSERT INTO LETTERS (letter) VALUES ('A'),('B'),('C'),('D'),('E'),('F'),('G'),
+     ('H'),('I'),('J'),('K'),('L'),('M'),('N'),('O'),('P'),('Q'),('R'),('S'),('T'),('U'),('V'),('W'),('X'),('Y'),('Z');
 
 Now we can use the new commands that we have just learned. Here is a quick example with the **LEFT JOIN** command. 
 
@@ -875,7 +875,7 @@ Now you know how to use **LEFT** and **RIGHT JOINS**. I will not ask you any que
 
 ### The Final Questions
 
-Now is the moment of truth. In order to determine if you have learned anything from this tutorial, I have provided you with six more problems with which you will have to employ every technique you have learned in this tutorial so far. If you are unsure of a question, don’t just look at the bottom of the page. Go back a search for helpful hints in the tutorial in order to figure it out. Using your brain will help you out immensely in the future. Trust me.
+Now is the moment of truth. In order to determine if you have learned anything from this tutorial, I have provided you with six more problems with which you will have to employ every technique you have learned in this tutorial so far. If you are unsure of a question, don't just look at the bottom of the page. Go back a search for helpful hints in the tutorial in order to figure it out. Using your brain will help you out immensely in the future. Trust me.
 
 ### Questions
  
@@ -901,7 +901,7 @@ If you have completed all of these questions, you are ready to program with MySQ
 
 Thank you for taking the time to read this tutorial, and validating the last two weeks of my life. For comments and/or suggestions, please send an email to: *mauvemoonman@gmail.com*
 
-## MySQL/Databases – Things I Did Not Talk About, But You Should Probably Know
+## MySQL/Databases - Things I Did Not Talk About, But You Should Probably Know
 
 Below you will find some of the things I have chosen not to talk about in this tutorial and the reason for doing so. 
 
@@ -911,7 +911,7 @@ Used by database administrators to control who can view and has access to certai
 
 ### Triggers
 
-Something has to make someone pull the trigger of a gun, just like something has to make an SQL trigger statement fire. Triggers are statements that only fire when a certain condition has been met, such as the date being the person’s birthday, or one’s bank account being overdrawn. They are not included in this tutorial, because they require a bit more of an advanced grasp of computer programming than I am willing to give in this tutorial.
+Something has to make someone pull the trigger of a gun, just like something has to make an SQL trigger statement fire. Triggers are statements that only fire when a certain condition has been met, such as the date being the person's birthday, or one's bank account being overdrawn. They are not included in this tutorial, because they require a bit more of an advanced grasp of computer programming than I am willing to give in this tutorial.
 
 ### UDFS (User Defined FunctionS)
 
@@ -931,13 +931,13 @@ Almost exactly like UDFS, except these functions are made in another language, a
 
 **4) SELECT color,avg(length(name)) FROM fruits GROUP BY color;**
 
-**5) SELECT name FROM fruits WHERE color = ‘Yellow’ GROUP BY name HAVING mid(name,1,1) = ‘P’;**
+**5) SELECT name FROM fruits WHERE color = 'Yellow' GROUP BY name HAVING mid(name,1,1) = 'P';**
 
-**6) SELECT name FROM fruits WHERE ((texture = ‘spongy’) AND (price > 0.30)) OR ((texture = ‘juicy’) AND (price < 0.20));**
+**6) SELECT name FROM fruits WHERE ((texture = 'spongy') AND (price > 0.30)) OR ((texture = 'juicy') AND (price < 0.20));**
 
 **7) ALTER TABLE fruits ADD user varchar(100);**
 
-**8) UPDATE fruits SET user = ‘Toby’;**
+**8) UPDATE fruits SET user = 'Toby';**
 
 **9) ALTER TABLE fruits DROP user;**
 
