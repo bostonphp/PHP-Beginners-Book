@@ -1,10 +1,16 @@
 ## MySQL/Databases - Why MySQL?
-This chapter is written assuming that you, the user, has successfully installed the WAMP, XAMP, or MAMP packages. If you have not, please refer to the previous chapters entitled WAMP, XAMP, and MAMP configuration so that you can successfully test and implement the commands outlined in this tutorial. We will begin this chapter assuming that the reader has absolutely no knowledge of MySQL or databases.
+
+This chapter is written assuming that you, the user, have successfully installed the WAMP, XAMP, or MAMP packages. If you have not, please refer to the previous chapters entitled WAMP, XAMP, and MAMP configuration so that you can successfully test and implement the commands outlined in this tutorial. We will begin this chapter assuming that the reader has absolutely no knowledge of MySQL or databases.
 
 ### What are databases?
-Have you ever collected anything? Rocks? Baseball cards? Sports cars? Where would one normally put these things? One person might put the sports cars in a garage, the rocks in a box in the basement, and the baseball cards in plastic sleeves on a shelf in the living room. It would not make much sense to put them all in one place, as it would be hard to find any particular item. What if all of your sports cars, rocks, and baseball cards were on the shelf in your living room? In addition to being very inconvenient to remove any one item from your living room, it would be confusing what and how many items you had to begin with. The same applies to electronic data.
 
-"Databases" are simply an organized collection of data, usually in electronic form. They are composed of smaller parts called "tables". These tables are composed of even smaller parts called "rows" and "columns" similar to what one would see in a Excel spreadsheet (or any spreadsheet for that matter). The columns section of each table declares the characteristics of each table while each row contains unique data for each element in the table. It sounds complicated but it is actually quite simple. Take the example outlined below:
+Let’s begin our tutorial with our test subject, Lisa, who has a box of crayons. She wants to organize them so that anytime she catalogs something, those things will appear in the database as having a color attributed to that certain type of crayon. Since nobody had thought of arranging objects like this to date, she must use SQL to create this arrangement herself. 
+
+*Databases help to organize things that haven’t been thought of yet. They allow one to use their creativity to group things together in a meaningful way.*
+
+Our second subject, Joe, collects rocks, baseball cards, and rocks. He puts his sports cars in a garage, his rocks in a box in the basement, and his baseball cards in plastic sleeves on a shelf in the living room. It would not make much sense for Joe to put them all in one place, as it would be hard to find any particular item. What if all of Joe’s sports cars, rocks, and baseball cards were on the shelf in his living room? In addition to being very inconvenient to remove any one item from his living room, it would be very confusing as to what and how many items he had to begin with. The same principle applies to electronic data.
+
+"Databases" are simply an organized collection of data, usually in electronic form. They are composed of smaller parts called "tables". These tables are composed of even smaller parts called "rows" and "columns" similar to what one would see in an Excel spreadsheet (or any spreadsheet for that matter). The columns section of each table declares the characteristics of each table while each row contains unique data for each element in the table. It sounds complicated but is actually quite simple. Take the example outlined below:
 
 #### Table Rocks
 
@@ -25,15 +31,15 @@ We can clearly see that the elements in this table have the six column propertie
 
 See. There's nothing to worry about. As a review, let us go over the basic structure of the MySQL database with colorful metaphors.
 
-If the MySQL Database was a state...
+If MySQL was a state...
 
-* A database in the MySQL Database would be a house in that state
+* A database in MySQL would be a house in that state
 * A table in the database would be a room in that house
 * A row in the table would be an object belonging in that room
 
-If the MySQL Database was a chain of stores...
+If MySQL was a chain of stores...
 
-* A database in the MySQL Database would be a single store in that chain
+* A database in MySQL would be a single store in that chain
 * A table in the database would be a type of product sold at that store (such as a fruit)
 * A row in the table would be a specific product sold (such as an apple)
 
@@ -47,7 +53,7 @@ Here is a quick review of what we have learned.
 4. Databases are a collection of tables.
 
 ## MySQL/Databases - Where do I start?
-Alright. You've made it through the last chapter. Are you proud of yourself? I sure am! Give yourself a pat on the back. This next chapter will be a tad more difficult as it requires the user to do other things as well as read this helpful instruction manual. 
+Alright, you've made it through the last chapter. Are you proud of yourself? I sure am! Give yourself a pat on the back. This next chapter will be a tad more difficult as it requires the user to do other things as well as read this helpful instruction manual. 
 
 #### Navigating to your WAMP program
 Please follow the steps outlined below:
@@ -65,26 +71,26 @@ Please follow the steps outlined below:
 2. Type or paste the word **localhost** into where you would normally type a website address, and press enter.
 
 #### Congratulations! You did it!
-At this point you should see a page that says **XAMPP for Windows** in the top left corner, with a list of commands down the left side. Click on the word **phpMyAdmin** on the navigation bar on the left hand side of the screen. 
+At this point you should see a page that says **XAMPP for Windows** in the top left corner, with a list of commands down the left side. Click the word **phpMyAdmin** on the navigation bar on the left hand side of the screen. 
 
 *Was there an error? Don't panic. Just type in **https://localhost**. You should now be able to click on **phpMyAdmin** without any more hassles. If there is still a problem, you may have to uninstall and reinstall WAMP*
 
 ### Using phpMyAdmin
-Alright. By now you should be on a tacky dark blue and grey screen with **phpMyAdmin** on the upper left side. At the top of the screen, you should see a bunch of tabs directly underneath the word **localhost**. Click on the **SQL** tab.
+Alright, by now you should be on a tacky dark blue and grey screen with **phpMyAdmin** on the upper left side. At the top of the screen, you should see a bunch of tabs directly underneath the word **localhost**. Click on the **SQL** tab.
 
-*NOTE: Because this tutorial focuses mainly on programming with embedded SQL in PHP, we will not be using any of the fun, efficient, and easy to use syntax phpMyAdmin offers. This is mainly because you will not actually be using this framework for the selects, inserts, updates, and deletes implemented in your awesome webpage. You will use these commands directly in the php framework of your choice.*
+*Because this tutorial focuses mainly on programming with embedded SQL in PHP, we will not be using any of the fun, efficient, and easy to use syntax phpMyAdmin offers. This is mainly because you will not actually be using this framework for the selects, inserts, updates, and deletes implemented in your awesome webpage. You will use these commands directly in the php framework of your choice.*
 
-You should see a rectangular text area in front of you with a button labeled **go** in the bottom right corner of the box. Type the command:
+You should see a rectangular text area in front of you with a button labeled **go** in the bottom right corner of the box. Type the following command into the text area and press **go**.
 
 	CREATE DATABASE grocery_store; 
 
-into the text area, and press **go**. If you typed in the command right, you will have created the database **grocery_store** in your MySQL database.
+If you typed in the command right, you will have created the database **grocery_store** in your MySQL database.
 
 Go back to the **SQL** tab and type the command:
 
 	USE grocery_store;
 
-This tells the MySQL database that you are going to work in the database **grocery_store** until you say otherwise. You will work within this structure throughout the next few chapters of this book.
+*This tells the MySQL database that you are going to work in the database **grocery_store** until you say otherwise. You will work within this structure throughout the next few chapters of this book.*
 
 You have just created the database of a single fictional grocery store. We will develop this more in the next chapter.
 
@@ -134,25 +140,21 @@ Let's look back at our characteristics of fruits to decide what kind of datatype
 * Fruit last purchased - A certain date and time when the fruit was last bought. **datetime**
 * Fruit purchased quantity - Consists of numbers without a decimal point. **int**
 
-That about sums it up, now we just have to put these columns in the correct order. Since the **Fruit store ID** is the only truly unique element in the list, we will make this the "Primary Key".
+That about sums up the table that we need to create. Now we just have to put these columns in the correct order. Since the **Fruit store ID** is the only truly unique element in the list, we will make this the "Primary Key".
 
-*Defining a column with a primary key means that the column will only be able to have unique values (i.e. nothing can repeat itself). Some examples of this in everyday life are license plate numbers, credit card numbers, and social security numbers. All of these values work to make sure that somebody can't impersonate someone else, and allow them access to certain privileges that are not entitled to them. The same concept applies to tables in databases. Whenever possible, it is good practice to make sure that the table you are creating contains some form of primary key, to give something to uniquely identify a row. This will be discussed more in future sections*
+*Defining a column with a primary key means that the column will only be able to have unique values (i.e. nothing can repeat itself). Some examples of this in everyday life are license plate numbers, credit card numbers, and social security numbers. All of these values work to make sure that somebody can't impersonate someone else, and allow them access to certain privileges that are not entitled to them. The same concept applies to tables in databases. Whenever possible, it is good practice to make sure that the table you are creating contains some form of primary key, to give something to uniquely identify a row.*
 
 ### How do I make a table with this?
-Good question. It may seem like I am rambling on a bit here, but I assure you that my writing has some purpose. In your window with phpMyAdmin click on the **SQL** tab to bring up the command box again. Make sure that you see **localhost -> grocery_store** above the box. If you do not, just click on the **grocery_store** link on the right side and then the **SQL** tab to get yourself there. 
+Good question. It may seem like I am rambling on a bit here, but I assure you that my writing has some purpose. In your window with phpMyAdmin, click on the **SQL** tab to bring up the command box again. Make sure that you see **localhost -> grocery_store** above the box. If you do not, just click on the **grocery_store** link on the right side and then the **SQL** tab to get yourself there. 
 
-Type the command:
-
-	CREATE TABLE FRUITS(*);
-
-into the command box, but do not press enter. You will receive and error. Replace the star in the parentheses the names and variable types that we have outlined above. 
+Type the following command into the box and click **go**. 
 
      CREATE TABLE FRUITS(ID int PRIMARY KEY, NAME varchar(50), 
      COLOR varchar(50), TASTE varchar(100), TEXTURE varchar(100), 
      PRICE decimal(10,2), QUANTITY int, SHELF_LIFE int, LAST_PURCHASED datetime, 
      PURCHASED_QUANTITY int);
 
-Just press enter, and you should be all set. Congratulations! You have created your very first table.
+Congratulations! You have created your very first table.
 
 ## MySQL/Databases - INSERT and SELECT
 
@@ -200,7 +202,7 @@ Let's start out with a simple SELECT statement. In phpMyAdmin click on the **gro
 
      SELECT * FROM fruits;
 
-*In general, the "*" in computer science refers to "all", so the result of the command above should return all columns of the table **fruits**.* 
+*In general, the "*" in computer science refers to "all", so the result of the command above should return all rows and columns of the table **fruits**.* 
 
 If you typed out this statement correctly, you should see the entire contents of your table **fruits**. To select only certain columns of a table, type out all of the columns you want to see in that table separated by a comma. Type in the following command and press **Go**.
 
@@ -810,7 +812,7 @@ null | 8
 
 ### LEFT and RIGHT JOINS
 
-The only reason that **JOINS** may still be used is due to the slightly useful application of the **LEFT** and **RIGHT JOINS**. These types of **JOINS** are technically a partial types of **OUTER JOIN** as they combine values that are not in necessarily in common with both tables. 
+The only reason that **JOINS** may still be used is due to the slightly useful application of the **LEFT** and **RIGHT JOINS**. These types of **JOINS** are technically a partial type of **OUTER JOIN** as they combine values that are not in necessarily in common with both tables. 
 
 As you could have probably guessed, the **LEFT JOIN** command, in respect to a Venn diagram, **JOINS** the left part of the circle with the part that both circles intersect. The **RIGHT JOIN** command **JOINS** the part where both circles connect to the right circle. Some examples of this being used in everyday life would be to print out to the profits for all of the days of the year even if there was no profit for a particular day (and therefore, no entry in the database). 
 
@@ -830,7 +832,7 @@ Here is an example of how to do the same thing with the fruits and the **RIGHT J
      Select letters.letter as letter, fruits.name as foods from fruits right join letters
       on mid(fruits.name,1,1) = letters.letter;
 
-*The only difference between the **LEFT JOIN** and **RIGHT JOIN** is the order by which the tables are referenced to determine which table is fully evaluated and which is partially evaluated. Also, remember that you must use the keyword ‘on’ instead of having or where in order for these queries to work.*
+*The only difference between the **LEFT JOIN** and **RIGHT JOIN** is the order by which the tables are referenced to determine which table is fully evaluated and which is partially evaluated. Also, remember that you must use the keyword **ON** instead of **HAVING** or **WHERE** in order for these queries to work.*
 
 Here is an example of both tables being listed alphabetically.
 
