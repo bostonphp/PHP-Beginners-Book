@@ -433,9 +433,11 @@ I know that you have been dreading doing any real work for a while now, but ther
 *2) Select the names of the fruits in alphabetical order*
 
 *3) Select the maximum and minimum amount of fruits purchased*
+
 **Hint: You have to use two functions you have not used before**
 
 *4) Find the color of fruit with the longest average name length*
+
 **Hint: This is a tricky one. It will require you to put a function within a function. First figure out what you need to do, and then see if there are any functions to help you out**
 
 ## MySQL/Databases - HAVING
@@ -892,7 +894,8 @@ All of these problems can be solved in a single SQL statement
 *15) Return all of the foods with their prices in alphabetical order*
 
 *16) Return the name and profit of the most profitable fruit or vegetable*
-**Hint: See the mathematics section to see how this is done on just one table. This is the hardest question I am willing to ask. If you can figure it out without cheating, you will truly be an SQL wizard. **
+
+**Hint: See the mathematics section to see how this is done on just one table. This is the hardest question I am willing to ask. If you can figure it out without cheating, you will truly be an SQL wizard.**
 
 If you have completed all of these questions, you are ready to program with MySQL in you PHP framework. When you run an SQL command in a PHP framework, the result comes out as something called a **CURSOR**, or a temporary table with which to keep all of your data. Since most frameworks are different, it would be difficult to give any advice until you picked one. Please view the PHP framework section in order to get started. 
 
