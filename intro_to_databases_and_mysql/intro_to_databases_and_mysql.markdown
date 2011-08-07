@@ -194,6 +194,16 @@ Don't worry if you mess up. MySQL will warn and prevent you from running incorre
 
 *You can also specify which columns you would like to insert instead of inserting them all at once. This will be discussed in greater detail in the JOINS chapter.*
 
+To insert more than one value into a table with one command, simply separate each group of values by a comma. Here is an example of this with the rows that we have already inserted.
+
+     INSERT INTO FRUITS VALUES (001,"Bananas","Yellow",
+     "Sweet Dry","Spongy",".29",100,72,"2011-05-08 
+     12:00:00",100),(002,"Strawberries",
+     "Red","Tangy Moist","Smooth",".15",50,48,
+     "2011-05-08 12:00:00",50),(003,"Raspberries",
+     "Red","Tangy Moist","Juicy",".25",60,92,
+     "2011-05-09 10:15:00",200);
+
 ### SELECT Statements
 
 The syntax of MySQL is pretty straight forward. We have seen so far to use INSERT statements to insert something into a table and CREATE statements to create a brand new table (or database). It doesn't take much imagination to figure out that the SELECT statement selects a value or group of values from a table and return that value(s) to the user. 
@@ -214,7 +224,7 @@ This kind of syntax (where the return columns are specified) becomes especially 
 
 ### WHERE Statements
 
-So far you have learned how to get blocks of information from a table, but you still have no idea how to turn those results into something relevant such as selecting all of the fruit prices greater than 25 cents, or displaying all of the "Red" fruits. This is where the **WHERE** statement comes into play. The **WHERE** statement gives a specific set of criteria to the MySQL database so that the results are much more controlled and relevant to what you want. For example, say that you want to select the names of all of the fruits with a **Red** color. You would want to type in the following statement in the compiler.
+So far you have learned how to get blocks of information from a table, but you still have no idea how to turn those results into something relevant such as selecting all of the fruit prices greater than 25 cents, or displaying all of the "Red" fruits. This is where the **WHERE** statement comes into play. The **WHERE** statement gives a specific set of criteria to the MySQL database so that the results are much more controlled and relevant to what you want. For example, say that you want to select the names of all of the fruits with a ‘Red’ color. You would want to type in the following statement in the compiler.
 
      SELECT name FROM fruits WHERE color = 'Red';
 
@@ -324,7 +334,7 @@ Did you get **yellow** as having a higher average price? Actually the answer was
 
 Well, OK. We know that we need to use the quantity column (where the number of fruits are stored) and SUM() function (to add up the numbers) in the table above for this next question. The only problem I see is that we have nothing to use in the GROUP BY statement, and didn't I say that we always need to use the GROUP BY statement with functions like these? (See above).
 
-If you had looked, you would have realized that I did not that one has to use GROUP BY statements all of the time, but simply in most cases. This example is one of the exceptions. Since it is only returning one row, you don't actually need any GROUP BY statement to clarify how the rows will be divided.
+If you had looked, you would have realized that I did not say that one has to use GROUP BY statements all of the time, but simply in most cases. This example is one of the exceptions. Since it is only returning one row, you don't actually need any GROUP BY statement to clarify how the rows will be divided.
 
      SELECT sum(quantity) FROM fruits;
 
@@ -332,7 +342,7 @@ You should have gotten 210. I'm not lying this time.
 
 *3) You would like to know how many different types of fruits you own*
 
-It would sure be awesome to have some kind of *counting* function so that we could simply *count* the number of **ids** in our table... I can't remember, do we have one of those functions we can use? Something to *count* things? If we did, we could always just run a statement like:
+It would sure be awesome to have some kind of **counting** function so that we could simply *count* the number of **ids** in our table... I can't remember, do we have one of those functions we can use? Something to **count** things? If we did, we could always just run a statement like:
 
      SELECT count(id) FROM fruits;
 
@@ -346,7 +356,7 @@ If you look at the table above, you will find the mid() function that returns a 
 
 ### Embedded Functions
 
-Functions getting in bed with each other? What is this? Some kind of sick joke? Kinda.
+Functions getting in bed with each other? What is this, some kind of sick joke? Not really
 
 An embedded function is a function(s) within another function. While this may sound confusing at first, keep in mind that I am here to put your mind at ease. 
 
@@ -360,7 +370,7 @@ From our knowledge, we know to work with the least operator first, which happens
 
 Now we take that 5 out of the parenthesis and multiply it by 2, giving us:
 
-     (10) = X
+     10 = X
 
 This is exactly how embedded functions work in MySQL. Look at the following example:
 
@@ -376,7 +386,7 @@ Now look at what MySQL does as it tries to figure out your command. It first ret
 
 Then it runs the greatest function on the results
 
-     SELECT .29 FROM fruits = .29
+     SELECT .29 FROM fruits
 
 Now if you were a smart programmer, you would realize that you could put an infinite amount of functions into any other functions. You could even use **SELECT** statements embedded in functions, or even other select statements! Look at the next problem closely and ask yourself exactly what it does.
 
@@ -452,39 +462,39 @@ Let's start off with the last example in our table, as it gives a good layout of
  
 Wow. I know what I'm doing and that still looks scary. Let's try a few more examples just to get into the habit of knowing when to use these two commands.
 
-*Return the colors of the fruits with quantities greater than 100 including 100
+*1) Return the colors of the fruits with quantities greater than 100 including 100*
 
 Since you do not have to use any functions for this statement, you will need the **WHERE** statement
 
      SELECT color,quantity FROM fruits WHERE quantity >= 100;
 
-*Return the colors of fruits whose combined quantities are greater than 100 including 100
+*2) Return the colors of fruits whose combined quantities are greater than 100 including 100*
 
 I see the words 'combined quantities' in the question, which means that we are going to have to take the sum of the column quantities. As usual we are taking the sum of each fruit color. 
 
      SELECT color,sum(quantity) FROM fruits GROUP BY color HAVING sum(quantity) >= 100;
 
-*Return the names and colors of fruits whose greatest name within that color is greater than or equal to 'Mango'
+*3) Return the names and colors of fruits whose greatest names within that color are greater than or equal to 'Mango'*
 
 The result should return the fruit name closest to 'Z' for each color as long as it is below the word 'Mango', in which case it will not return anything.
 
      SELECT color,max(name) FROM fruits GROUP BY color HAVING max(name) >= 'Mango';
 
-*Return the names and colors of fruits whose greatest name within that color is greater than or equal to 'Mango' and whose color is not Red
+*4) Return the names and colors of fruits whose greatest name within that color is greater than or equal to 'Mango' and whose color is not Red*
 
 This is a derivation on the last problem. We just need to put a **WHERE** statement between the **FROM** and **GROUP BY** statements in order to make this work.
 
      SELECT color,max(name) FROM fruits WHERE color != 'Red' GROUP BY color HAVING max(name) >= 'Mango';
 
-*Remember, the '!=' symbol means 'not equal to' in computer science language. For future reference, '!' symbol simply means 'not'.*
+*Remember, the '!=' symbol means 'not equal to' in computer science language. For future reference, the '!' symbol simply means 'not'.*
 
 ## MySQL/Databases - UPDATE and ALTER
 
 ### UPDATE
 
-How are you doing so far? Tired from all of the sweet programming you have been doing lately? Thinking about taking a break? Well think again. I want to tell you about an awesome statement called **UPDATE**. I put this towards the end of the tutorial because it provides a break from the more complicated functions.
+How are you doing so far? Tired from all of the sweet programming you have been doing lately? Thinking about taking a break? Well think again. I want to tell you about an awesome statement called **UPDATE**. I put this towards the middle of the tutorial because it provides a break from the more complicated functions.
 
-So what does the **UPDATE** command do exactly? Why, it updates a value or values in a table with new values. Besides the **SELECT** statement, you will use **UPDATE** far more often than any other kind of statement. The syntax is as follows:
+What does the **UPDATE** command do exactly? Why, it updates a value or values in a table with new values. Besides the **SELECT** statement, you will use **UPDATE** far more often than any other kind of statement. The syntax is as follows:
 
      UPDATE {Table Name} SET {Value1 = Value2} WHERE {Value3 Inequality Value4};
 
@@ -524,15 +534,17 @@ Let's say that the column name doesn't quite convey what we want to represent in
 
       ALTER TABLE fruits CHANGE unnecessary_column other_column int;
 
-Now we don't want to have the column that we created anymore. I seems like it contains a lot of unnecessary information a we would like to get rid of it. All we would have to do is run the following command. The database will give you a warning to make sure that you actually want to delete the column. Click OK.
+Now we don't want to have the column that we created anymore. It seems like it contains a lot of unnecessary information and we would like to get rid of it. All we would have to do is run the following command.
 
      ALTER TABLE fruits DROP other_column;
+
+The database will give you a warning to make sure that you actually want to delete the column. Click OK.
 
 You did it! The column is gone, and you didn't screw anything up (hopefully). Because the column was being deleted anyways, we did not have to define the datatype in the column before we dropped it.
 
 ## MySQL/Databases - AND/OR
 
-The **AND** and **OR** modifiers are used **ONLY** in conjunction with the **HAVING** and **WHERE** statements discussed previously in this tutorial. To understand exactly what AND and OR statements do, we first need to dissect what exactly happens when we use **HAVING** and **WHERE** statements.
+The **AND** and **OR** modifiers are used **ONLY** in conjunction with the **HAVING** and **WHERE** statements discussed previously in this tutorial. To understand exactly what **AND** and **OR** statements do, we first need to dissect what exactly happens when we use **HAVING** and **WHERE** statements.
 
 Here is an example of a **WHERE** statement:
 
@@ -548,7 +560,7 @@ Try out the two statements below individually. Which one do you think will give 
 
      SELECT name FROM fruits WHERE (color = ‘Red’) OR (texture = ‘Juicy’);
 
-*Although they aren’t necessarily needed, I find that it is easier to enclose my different conditionals in parenthesis to avoid any unnecessary confusion.*
+*Although they aren’t necessarily needed, I find that it is easier to enclose my different conditions in parenthesis to avoid any unnecessary confusion.*
 
 If you haven’t figured it out yet, the **OR** statement will yield the most results. This is because **OR** returns the red fruits, the juicy fruits, and the juicy red fruits. The **AND** statement will only return the juicy red fruits.
 
@@ -592,11 +604,11 @@ The result should return the fibrous fruits.
 
 So far we have just worked with one table in our queries in order to get the information that we need, but what if we have two or more tables? Do we have to query each of the tables individually? The answer is no, not usually, but you do need to think about a few things. 
 
-The first is, what do the two tables have in common? Do they have the same user names we can query? Are they both arranged by colors, dates, or prices? In order to join two tables you, *cough*, usually need to find some sort of commonality between them.
+The first is, what do the two tables have in common? Do they have the same user names we can query? Are they both arranged by colors, dates, or prices? In order to join two tables, you *cough* usually need to find some sort of commonality between them.
 
 *Commonality means “something in common”.*
 
-The second is, if they don’t have anything in common, what do you need to do to give them something in common? Do you remember the example from the very start of the tutorial when we were referencing cars, rocks, and baseball cards? What do you think these three things would have in common? I can think of a few off the top of my head including: a color, a size, a weight, a height, a name, a value, a terminal velocity, etc. Without these columns in each of the tables, we would be unable to answer any of the silly questions that come into our heads.
+The second is, if they don’t have anything in common, what do you need to do to give them something in common? Do you remember the example from the very start of the tutorial when we were referencing Joe’s cars, rocks, and baseball cards? What do you think these three things would have in common? I can think of a few off the top of my head including: a color, a size, a weight, a height, a name, a value, a terminal velocity, etc. Without these columns in each of the tables, we would be unable to answer any of the silly questions that come into our heads.
 
 Which is more expensive? A brand new Porsche, or my ten most valuable baseball cards? 
 
@@ -606,7 +618,7 @@ Which rocks will match my new Ford pickup’s color?
 
  ### Creating Our New Table with Constraints
 
-In order to join two tables, we will need to add a second table to our grocery store database. Copy the code below into the SQL tab, and press go.
+In order to join two tables, we will need to add a second table to our grocery store database. Copy the code below into the SQL tab, and click **go**.
 
      CREATE TABLE VEGGIES(ID int PRIMARY KEY NOT NULL AUTO_INCREMENT, NAME varchar(50) 
      NOT NULL, COLOR varchar(50), TASTE varchar(100), TEXTURE varchar(100), PRICE 
@@ -617,7 +629,7 @@ Look closely at the table we have just created. Do you notice anything different
 
 **CONSTRAINTS** are simply commands that one adds to their table to make sure that people don’t screw up them up further down the line. Sometimes **CONSTRAINTS** can even make our lives easier. Take, for example, the **AUTO_INCREMENT CONSTRAINT** we added to our table. This tells the MySQL compiler to add one to this column each time a new row is created. This means that we no longer have to insert those pesky numbers ourselves each time we want to create a new row!
 
-*For those that don’t know too much about computing, a compiler is a way for the computer to translate what you are saying into computer code. Kind of like what a translator does when you go to a country where you don’t understand the language.*
+*For those that don’t know too much about computing, a compiler is a way for the computer to translate what you are saying into computer code. Kind of like what a translator does when you go to a foreign country with a different language.*
 
  Here are a list of the most common **CONSTRAINTS**, and what they do. 
 
@@ -626,7 +638,7 @@ Look closely at the table we have just created. Do you notice anything different
 CONSTRAINT | Function 
 :-----------|:------------
 NOT NULL | Prevents any NULL value from being placed in the column
-PRIMARY KEY | Makes sure that every value is unique in the column. Each table needs to have one of these. You can still create a table without a PRIMARY KEY, but it is bad form. There can only be one column defined by a PRIMARY KEY.
+PRIMARY KEY | Makes sure that every value is unique in the column. Each table needs to have one of these. You can still create a table without a PRIMARY KEY, but it is bad form. There can *”be only one”* column defined by a PRIMARY KEY.
 UNIQUE | Makes sure that every value is unique in the column. Unlike the PRIMARY KEY, there can be more than one column defined as ‘UNIQUE’ in a table
 DEFAULT | Used to define a value if one has not been inserted into the database. We used it above to insert 0 as a default value if nothing is put into the column ‘price’.
 AUTO_INCREMENT | Used to automatically add a number to the last rows value when a new row is created. The default value for AUTO_INCREMENT is 1, but can be changed by the command AUTO_INCREMENT = n, where n is the number by which you would like to increment by. For example, if the last row had the value 6, and my AUTO_INCREMENT is set to 2, my next row would be 8.
@@ -660,6 +672,20 @@ Now let’s add some values to our table so that we can work with JOINS at our l
      SHELF_LIFE, LAST_PURCHASED, PURCHASED_QUANTITY ) VALUES ('Tomatoes',
      'Red','Tangy Moist','Juicy',.45,160, 72,'2011-05-12 11:00:00',200);
 
+You could also insert the same values into the database in the following way.
+
+     INSERT INTO VEGGIES ( NAME, COLOR, TASTE, TEXTURE, PRICE, QUANTITY, 
+     SHELF_LIFE, LAST_PURCHASED, PURCHASED_QUANTITY ) VALUES ('Cucumbers'
+     ,'Green','Bland Moist','Juicy',.40,120, 24,'2011-05-06 02:00:00',150),('Potatoes'
+     ,'Brown','Bland Dry','Spongy',.35,100, 48,'2011-05-07 03:00:00',180),('Squash',
+     'Yellow','Bland Moist','Fibrous',.30,80, 96,'2011-05-08 04:00:00',250),('Pumpkins',
+     'Orange','Bland Moist','Fibrous',.25,60, 108,'2011-05-09 05:00:00',350),('Lettuce',
+     'Green','Bland Moist','Fibrous',.20,40, 78,'2011-05-10 09:00:00',70),('Eggplants',
+     'Purple','Bland Moist','Spongy',.15,140, 164,'2011-05-11 10:00:00',190),('Tomatoes',
+     'Red','Tangy Moist','Juicy',.45,160, 72,'2011-05-12 11:00:00',200);
+
+Why do you think this works? See the **INSERT** section again if you are having trouble understanding.
+
 ### Working with JOINS
 
 Phew! That took a long time to set up. Now we can finally play with the **JOINS**. A **JOIN** is basically a **SELECT** statement with two or more tables instead of just one. To select an individual column, write the table name and column name separated by a period. Think of it as if your two tables are one big table, and you are just writing a normal **SELECT** statement. 
@@ -676,13 +702,13 @@ To return all of the foods with the same color
 
 That’s all there is to it. We will discuss these concepts in more depth in the next chapter.
 
-## MySQL/Databases – Advanced JOINS, CAST, and ‘as’ 
+## MySQL/Databases – CAST, and ‘as’ 
 
 ### CAST and ‘as’
 
 So you think you have **JOINS** down cold? Need a bit of a challenge? No problem. In this chapter you will learn a few more a techniques you will need to master **JOINS**.
 
-*Remember that you will always need some way to link the two tables together be it in a WHERE statement or HAVING statement. Without either one of these, you will get gibberish returned to you.
+*Remember that you will almost always need some way to link the two tables together be it in a WHERE statement or HAVING statement. Without either one of these, you will get gibberish returned to you.
 
 To begin, we will go back to a basic table and work our way back to **JOINS**. Sometimes the results that you return with **SELECT** statements aren’t exactly in the format that you would like them to be. Take the next query for example:
 
@@ -692,11 +718,11 @@ The result is technically correct (100.0000), but the four zeros following the n
 
 Think of a **CAST** function as if you were a wizard **casting** a spell on something else. Don't like that fireplace where it is? **CAST Fire-Sofado... and Poof!** Now it's a sweet Ottoman Sofa with a massage command and extra large cup holders. Think you have too many veggies and not enough nachos? **CAST Veggis-Reducto... and Poof!** Now you have a whole shelf lined with new bags of Doritos.
 
-Although the **CAST** function in a computer isn't nearly as cool as it would be outside of a computer, the concept is still the same. A **CAST** simply turns one type of data into another type of data. So as a computer wizard, you should be completely at ease doing even the most complicated of computer sorcery. Let's start with the fireplace-like problem we have in front of us and magically turn:
+Although the **CAST** function in a computer isn't nearly as cool as it would be outside of a computer, the concept is still the same. A **CAST** simply turns one type of data into another type of data. So as a computer wizard, you should be completely at ease doing even the most complicated of computer sorcery. Let's start with the fireplace-like problem we have in front of us and magically turn the following result into a sweet Ottoman sofa result.
  
      SELECT AVG(quantity) FROM veggies;
 
-into a sweet Ottoman sofa result. All we will need to do is CAST the result of the average function as an integer to prevent the zeros from appearing in the first place. Here is what it should look like:
+All we will need to do is CAST the result of the average function as an integer to prevent the zeros from appearing in the first place. Here is what it should look like.
 
      SELECT CAST(AVG(quantity) as Decimal(10,0)) FROM veggies;
 
@@ -728,7 +754,7 @@ I’m sure that you can figure out how to use modulus and addition in the same w
 
 *Remember, modulus is the remainder after you divide one thing by another and defined by the character ‘%’. For example, 5 % 2 = 1, because there is a remainder of 1. 13 % 9 = 4, because there is a remainder of 4.*
 
-## JOINS pt. 2
+## MySQL/Databases – UNIONS and JOINS pt. 2
 
 ### UNIONS
 
@@ -742,7 +768,7 @@ The best thing about the UNION statement is that the results are all unique. Not
 
 **UNION** statements can only work if the following four conditions are met by all of the tables involved.
 
-1) The **SELECT** statement returns the same number of results for each table
+1) The **SELECT** statement returns the same number of columns for each table
 
 2) Each resulting column from the **SELECT** statement has the same name. These can easily be changed with an ‘as’ statement
 
@@ -768,9 +794,11 @@ This command tells MySQL update all of the last_purchased columns in both tables
 
 This statement returns the fruit or veggie with the highest price. Notice that we did not have to use the **WHERE** clause in this case since we already have the greatest function to tie both tables together. Think about how you would return the name of the priciest fruit with this kind of statement. It will come in handy for the final questions in this tutorial.
 
-An alternative for this kind of notation for a **JOIN** is called an embedded **SELECT** statement. 
+*Hint: It’s not as easy as you think*
 
-*Remember that there is no one right way to do anything in Computer Science. You are only limited by your imagination.*
+An alternative for this kind of notation for a **JOIN** is called an embedded **SELECT** statement **JOIN**. These can be useful as they help the programmer connect tables in a way that is much easier to follow. 
+
+*For a better understanding of this alternative method, simply type “embedded select statements” into Google and look at some examples. Remember that there is no one right way to do anything in Computer Science. You are only limited by your imagination.*
 
 ### INNER vs OUTER JOINS
 
@@ -910,7 +938,7 @@ Almost exactly like UDFS, except these functions are made in another language, a
 
 **9) ALTER TABLE fruits DROP user;**
 
-**10) SELECT fruits.name, max(fruits.price*(fruits.purchased-fruits.quantity)) as ProfitsFruit FROM fruits,veggies WHERE fruits.color = veggies.color AND (veggies.name = 'lettuce' OR veggies.name = 'tomatoes');**
+**10) SELECT fruits.name, max(fruits.price*(fruits. purchased_quantity-fruits.quantity)) as ProfitsFruit FROM fruits,veggies WHERE fruits.color = veggies.color AND (veggies.name = 'lettuce' OR veggies.name = 'tomatoes');**
 
 **11) SELECT name FROM fruits WHERE mid(taste,7,5) = 'Moist' Union SELECT name FROM veggies WHERE mid(taste,7,5) = 'Moist';**
 
@@ -922,4 +950,4 @@ Almost exactly like UDFS, except these functions are made in another language, a
 
 **15) SELECT name,price from fruits Union SELECT name,price from veggies ORDER BY name asc;**
 
-**16) SELECT name, max(PRICE*(PURCHASED_QUANTITY-QUANTITY )) AS Profits FROM veggies Union SELECT name, max(PRICE*(PURCHASED-QUANTITY )) AS Profits FROM fruits ORDER BY Profits desc limit 1**
+**16) SELECT name, max(PRICE*(purchased_quantity -QUANTITY )) AS Profits FROM veggies Union SELECT name, max(PRICE*(purchased_quantity -QUANTITY )) AS Profits FROM fruits ORDER BY Profits desc limit 1**
