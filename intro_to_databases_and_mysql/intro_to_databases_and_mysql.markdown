@@ -90,6 +90,9 @@ You should see a rectangular text area in front of you with a button labeled **g
 
 	CREATE DATABASE grocery_store; 
 
+![Alt text][cap5]
+![Alt text][cap6]
+
 If you typed in the command right, you will have created the database **grocery_store** in your MySQL database.
 
 Go back to the **SQL** tab and type the command:
@@ -961,7 +964,9 @@ Almost exactly like UDFS, except these functions are made in another language, a
 
 16. SELECT name, max(PRICE * (purchased_quantity -QUANTITY )) AS Profits FROM veggies Union SELECT name, max(PRICE * (purchased_quantity -QUANTITY )) AS Profits FROM fruits ORDER BY Profits desc limit 1;
 
-[cap1]: http://i.imgur.com/qH98g.jpg
-[cap2]: http://i.imgur.com/vHcGJ.jpg
-[cap3]: http://i.imgur.com/Ci6kd.jpg
-[cap4]: http://i.imgur.com/EQmln.jpg
+[cap1]: http://i.imgur.com/PRcgI.jpg
+[cap2]: http://i.imgur.com/d4lfR.jpg
+[cap3]: http://i.imgur.com/4FNRY.jpg
+[cap4]: http://i.imgur.com/1XEab.jpg
+[cap5]: http://i.imgur.com/p9EGB.jpg
+[cap6]: http://i.imgur.com/qY7s5.jpg
