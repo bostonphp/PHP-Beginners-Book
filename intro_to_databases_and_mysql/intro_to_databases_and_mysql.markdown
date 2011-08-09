@@ -964,9 +964,9 @@ Almost exactly like UDFS, except these functions are made in another language, a
 
 16. SELECT name, max(PRICE * (purchased_quantity -QUANTITY )) AS Profits FROM veggies Union SELECT name, max(PRICE * (purchased_quantity -QUANTITY )) AS Profits FROM fruits ORDER BY Profits desc limit 1;
 
-[cap1]: http://i.imgur.com/PRcgI.jpg
-[cap2]: http://i.imgur.com/d4lfR.jpg
-[cap3]: http://i.imgur.com/4FNRY.jpg
-[cap4]: http://i.imgur.com/1XEab.jpg
-[cap5]: http://i.imgur.com/p9EGB.jpg
-[cap6]: http://i.imgur.com/qY7s5.jpg
+[cap6]: http://i.imgur.com/PRcgI.jpg
+[cap5]: http://i.imgur.com/d4lfR.jpg
+[cap4]: http://i.imgur.com/4FNRY.jpg
+[cap3]: http://i.imgur.com/1XEab.jpg
+[cap2]: http://i.imgur.com/p9EGB.jpg
+[cap1]: http://i.imgur.com/qY7s5.jpg
