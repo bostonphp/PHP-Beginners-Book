@@ -73,7 +73,6 @@ Please follow the steps outlined below:
 #### Congratulations! You did it!
 At this point you should see a page that says **XAMPP for Windows** in the top left corner, with a list of commands down the left side. Click the word **phpMyAdmin** on the navigation bar on the left hand side of the screen. 
 
-![Alt text][cap1]
 ![Alt text][cap2]
 
 *Was there an error? Don't panic. Just type in **https://localhost**. You should now be able to click on **phpMyAdmin** without any more hassles. If there is still a problem, you may have to uninstall and reinstall WAMP*
@@ -81,7 +80,6 @@ At this point you should see a page that says **XAMPP for Windows** in the top l
 ### Using phpMyAdmin
 Alright, by now you should be on a tacky dark blue and grey screen with **phpMyAdmin** on the upper left side. At the top of the screen, you should see a bunch of tabs directly underneath the word **localhost**. Click on the **SQL** tab.
 
-![Alt text][cap3]
 ![Alt text][cap4]
 
 *Because this tutorial focuses mainly on programming with embedded SQL in PHP, we will not be using any of the fun, efficient, and easy to use syntax phpMyAdmin offers. This is mainly because you will not actually be using this framework for the selects, inserts, updates, and deletes implemented in your awesome webpage. You will use these commands directly in the php framework of your choice.*
@@ -90,7 +88,6 @@ You should see a rectangular text area in front of you with a button labeled **g
 
 	CREATE DATABASE grocery_store; 
 
-![Alt text][cap5]
 ![Alt text][cap6]
 
 If you typed in the command right, you will have created the database **grocery_store** in your MySQL database.
