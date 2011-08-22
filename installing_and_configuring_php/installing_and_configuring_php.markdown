@@ -11,23 +11,23 @@ Sound complicated? It would be, if the only way to get PHP, Apache and MySQL (no
 
 A web development stack software generally comprises:
 
-	- An operating system, of course. AMP development stacks are readily available for Windows, Mac OS X, Linux and other Unix-like OSes.
-	- A web server. [Apache](http://www.mysql.com/) is the "A" in "AMP", and the world's most widely deployed and used webserver.
-	- A database manager. [MySQL](http://www.mysql.com/) is the "M" in "AMP".
-	- A programming language. PHP is one of three programming languages used for web development, the others being [Python](http://www.python.org/) and [Perl](http://www.perl.org/).
-	- Various utilities for getting it all to work together, including:
-		- [phpMyAdmin](http://www.phpmyadmin.net/), GUI front-end for working with MySQL databases
-		- file transfer client and server software
-		- graphics and font utilities
+- An operating system, of course. AMP development stacks are readily available for Windows, Mac OS X, Linux and other Unix-like OSes.
+- A web server. [Apache](http://www.mysql.com/) is the "A" in "AMP", and the world's most widely deployed and used webserver.
+- A database manager. [MySQL](http://www.mysql.com/) is the "M" in "AMP".
+- A programming language. PHP is one of three programming languages used for web development, the others being [Python](http://www.python.org/) and [Perl](http://www.perl.org/).
+- Various utilities for getting it all to work together, including:
+  - [phpMyAdmin](http://www.phpmyadmin.net/), GUI front-end for working with MySQL databases
+  - file transfer client and server software
+  - graphics and font utilities
 
 The most widely used (and supported) AMP stack projects include:
 
-	- **LAMP**
-	- **[WAMP]()**
-	- **[MAMP]()**
-	- **[XAMPP]()**
+- **LAMP**
+- **[WAMP]()**
+- **[MAMP]()**
+- **[XAMPP]()**
 
-
+--------------
 
 
 1. Installing PHP, and what else?
