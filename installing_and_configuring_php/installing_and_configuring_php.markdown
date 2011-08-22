@@ -1,3 +1,61 @@
+## Installing and Configuring PHP
+
+As noted in Chapter 2 (see "What you will need"), to execute and test PHP scripts you need a bit more than just PHP itself: a web server is required--and a database server will probably come in handy, too. In this chapter you'll learn how to quickly and easily install all the software you need to test and run your PHP scripts on your own computer.
+
+PHP by itself can be useful (for example, to write desktop/non-networked applications; see [General Installation Considerations](http://www.php.net/manual/en/install.general.php)), but most developers use PHP to produce web content--which calls for installing a web server like [Apache](http://httpd.apache.org/) at a minimum if you want to be able quickly and easily test your code locally. While a database server is not technically required, web content complex enough to need PHP will also likely require a relational database like [MySQL](http://www.mysql.com/).
+
+Sound complicated? It would be, if the only way to get PHP, Apache and MySQL (not to mention various other assorted utilities that make PHP development much easier) was to download and install and configure each and every component separately. You *could* do it that way, if you had a lot of time and a very high tolerance for frustration. For the rest of us, though, an **AMP** stack is the way to go.
+
+
+### The AMP Development Stack
+
+A web development stack software generally comprises:
+
+	- An operating system, of course. AMP development stacks are readily available for Windows, Mac OS X, Linux and other Unix-like OSes.
+	- A web server. [Apache](http://www.mysql.com/) is the "A" in "AMP", and the world's most widely deployed and used webserver.
+	- A database manager. [MySQL](http://www.mysql.com/) is the "M" in "AMP".
+	- A programming language. PHP is one of three programming languages used for web development, the others being [Python](http://www.python.org/) and [Perl](http://www.perl.org/).
+	- Various utilities for getting it all to work together, including:
+		- [phpMyAdmin](http://www.phpmyadmin.net/), GUI front-end for working with MySQL databases
+		- file transfer client and server software
+		- graphics and font utilities
+
+The most widely used (and supported) AMP stack projects include:
+
+	- **LAMP**
+	- **[WAMP]()**
+	- **[MAMP]()**
+	- **[XAMPP]()**
+
+
+
+
+1. Installing PHP, and what else?
+   - **It's not just PHP** You can install *just* PHP, but that's probably not what you want
+	 - what does PHP do by itself?
+	 - would anyone want to do this?
+   - **What else do you need?** PHP usually comes as a part of a toolkit that includes other programs you'll need to create dynamic web content.
+   - The *AMP stack is all you need (just about)
+	 - '*' stands for your OS
+	 - A for Apache
+	 - M for MySQL
+	 - P for PHP (and sometimes more)
+
+2. Installing Apache, MySQL, and PHP (and more)
+   - Which stack?
+	 - **XAMPP** may be the easiest option
+	 - Other options:
+	   - LAMP
+	   - WAMP
+	   - MAMP
+
+3. Configuring AMP
+
+=====
+
+
+
+=====
 Let's get your computer ready so you can start learning and creating PHP scripts.
 
 One of the easies ways for you to install PHP is to use a PHP distribution application like WAMP, MAMP, or XAMP. These applications come bundled with all the components you will need:
