@@ -73,7 +73,7 @@ Notice that the overall layout didn't change that much.  The &lt;p&gt;s were cha
 
 
 ### HTML 5
-HTML5 has dramatically helped the semantic landscape by adding a number of new elements that can, and should reduce the number of _divs_ and _spans_ in your document. With the new _header_, _section_, _footer_, _nav_, _article_, and _aside_ elements you can eliminate things such as _<div id="nav">_.  
+HTML5 has dramatically helped the semantic landscape by adding a number of new elements that can, and should reduce the number of _divs_ and _spans_ in your document. With the new _header_, _section_, _footer_, _nav_, _article_, and _aside_ elements you can eliminate things such as _&lt;div id="nav">_.  
 
 Let's revist the example of using the menu elements and see what it looks like if we use the _&lt;nav>_ element:
 
