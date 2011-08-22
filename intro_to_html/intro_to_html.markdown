@@ -73,7 +73,7 @@ Notice that the overall layout didn't change that much.  The &lt;p&gt;s were cha
 
 
 ### HTML 5
-HTML5 has dramatically helped the semantic landscape by adding a number of new elements that can, and should reduce the number of _divs_ and _spans_ in your document. With the new _header_, _section_, _footer_, _nav_, _article_, and _aside_ elements you can eliminate things such as _&lt;div id="nav">_.  
+HTML5 has dramatically helped the semantic landscape by adding a number of new elements that can, and should reduce the number of _divs_ and _spans_ in your document. With the new _header_, _section_, _footer_, _nav_, _article_, and _aside_ elements you can eliminate things such as _<div id="nav">_.  
 
 Let's revist the example of using the menu elements and see what it looks like if we use the _&lt;nav>_ element:
 
@@ -136,5 +136,39 @@ Prior to
 ## Links
 ## Lists
 ## Tables
-	&lt;table&gt;
-	&lt;/table&gt;
+###Tables should not be used for layout
+For several years, web designers used tables as the only way to structure web pages, and in a lot of cases they were badly overused. For complicated sites, it wasn't uncommon to have nested tables sometimes be 4 - 5 levels deep.  A nightmare for anyone trying to maintain or update that site.  As with the famous spacer.gif a majority of what tables do for layout can, and should, be done using CSS.  
+
+HTML tables should only be used for rendering data that belongs naturally in a grid or in other words where the data describe a number of objects that have the same properties.  For example if it makes sense to display the data in Microsoft Excel, us a table.
+
+In addition to all this, there are few other good reasons not to use tables for layout:
+
+* Tables tend to 'break' on various browsers (IE being one notable culprit)
+* Tables greatly increase the HTML/content ratio, meaning that for each table there is an addition 10 - 14 characters used, even if the 'content' is an image. And that's just for a single cell!
+* Tables create accessibility nightmares.  Because tables are inherently meant to be read left to right one row at a time, using them for layout can cause screen readers to read content out of order and cause confusion for the users.
+
+Correct Semantic use of Tables in HTML
+It is true that there remain a few things that are easier to do using tables.
+The main benefit of tables is that all cells in a row, and all cells in a column, stretch together as the row or column stretches.
+This effect is sometimes achievable in CSS, sometimes achievable with difficulty, and sometimes impossible.
+
+###Table Basics 
+The basic elements of tables are:
+
+	<table> </table>
+The opening and closing table tags.
+
+	<thead> </thead>
+The start and end of the table head section, which includes column headers
+
+	<th> </th>
+A table heading cell, which is a column header or row header
+
+	<tbody> </tbody>
+The start and end of the main body of the table, which contains the actual data
+
+	<tr> </tr>
+Table row; used in both the table head and table body
+
+	<td> </td>
+Table cell (stands for "table data"), which holds the actual data
