@@ -1,9 +1,19 @@
 ## How
 ## Why
 ## Tools
+HTML is unique among other the various other web technologies in the sense that the only think you need to build a site is a simple text editor.  Something as simple as vi or Notepad will suffice.  You don't need a server sitting in some warehouse in Virginia or ... You don't even need web server software like Apache of IIS. You can simply save the file and open it directly in a web browser. 
 ## Basic Structure
+
 ### Bare Minimum
 #### DocType
+If a webpage is missing a DOCTYPE tag or has some sort of “transitional” doctype tag, the page will be rendered in what is called 'Quirks' mode.  For example if you are using IE7 and run across a page that has no doctype specified, IE7 will assume it’s an old, outdated page, and will render the page just as it looked in IE6.  That’s quirks mode.  
+
+So it is important to have a doctype tag if you want your webpage to display in Standards mode, as expected.
+
+As a general rule you want to always build for Standards mode.  
+
+	<!doctype html>
+	
 #### Head
 #### Title
 #### Body
