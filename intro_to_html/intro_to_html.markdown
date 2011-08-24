@@ -15,7 +15,32 @@ As a general rule you want to always build for Standards mode.
 	<!doctype html>
 	
 #### Head
-#### Title
+the head of the document is where the title and meta information will go.  Generally you would put any CSS styles, script tags, and link tags to external files.  It is no longer a requirement to put them here (it was never a *requirement*, but has always been strongly encouraged)
+
+##### Meta Tags
+The Meta tag, along with the link tag, are the unique in that they are the only HTML tags that require neither a closing tag or a closing / at the end of the tag and are still considered syntactically correct.
+
+The other thing about meta tags are they are the only tag that, generally speaking, has no effect on the layout or processing of the page, they are used to give information about the page and/or site being viewed.
+The meta tag is essentially a key/value pair, and each tag can only contain one pair of values.  For example if you wanted search engines or others to know who the author of a site is you could use:
+	
+	<meta name=author content="BostonPHP Group">
+	
+Other common names are 
+
+* application name - 
+* description - 
+* generator - string that identifies one of the software packages used to generate the document.  Should not be used on hand-authored pages.
+* keywords -  set of comma-separated tokens, each of which is a keyword relevant to the page
+
+Here is what a tool called "SiteMaker 2000" could include in its output, in the page's head element, to identify itself as the tool used to generate the page:
+
+	<meta name=generator content="SiteMaker 2000 v8.2">
+	
+You are not required to use any of these metadata names and can make up your own, however it is strongly encouraged to use the pre-defined ones since every browser and software packages used to build sites knows about them and can use them.  The best solution is to use a combination of pre-defined and user-defined names.  Going back to the SiteMaker 2000 example above it could easily be written as such:
+
+	<meta name=generator content="SiteMaker 2000">
+	<meta name=version content="8.2">
+
 #### Body
 	<!DOCTYPE html>
  	<html>
@@ -28,6 +53,7 @@ As a general rule you want to always build for Standards mode.
  		The body text goes here.
  	</body>
  	</html>
+
 ## Semantics
 Anyone who has written code (of any kind) for any length of time knows there are two types of code that is painful to work on.  Someone elses code, and code you wrote months ago.
 
