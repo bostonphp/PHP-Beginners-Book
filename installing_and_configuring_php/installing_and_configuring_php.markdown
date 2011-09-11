@@ -12,7 +12,7 @@ Sound complicated? It would be, if the only way to get PHP, Apache and MySQL (no
 A web development stack software generally comprises:
 
 - An operating system, of course. AMP development stacks are readily available for Windows, Mac OS X, Linux and other Unix-like OSes.
-- A web server. [Apache](http://www.mysql.com/) is the "A" in "AMP", and the world's most widely deployed and used webserver.
+- A web server. [Apache](http://www.apachefriends.org/en/xampp.html) is the "A" in "AMP", and the world's most widely deployed and used webserver.
 - A database manager. [MySQL](http://www.mysql.com/) is the "M" in "AMP".
 - A programming language. PHP is one of three programming languages used for web development, the others being [Python](http://www.python.org/) and [Perl](http://www.perl.org/).
 - Various utilities for getting it all to work together, including:
@@ -22,10 +22,10 @@ A web development stack software generally comprises:
 
 The most widely used (and supported) AMP stack projects include:
 
+- **[XAMPP](http://www.apachefriends.org/en/xampp.html)**
 - **LAMP**
 - **WAMP**
 - **[MAMP](http://www.mamp.info/en/mamp/index.html)**
-- **[XAMPP](http://www.apachefriends.org/en/xampp.html)**
 
 ==========
 Let's get your computer ready so you can start learning and creating PHP scripts.
