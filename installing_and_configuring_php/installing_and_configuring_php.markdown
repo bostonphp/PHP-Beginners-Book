@@ -22,40 +22,14 @@ A web development stack software generally comprises:
 
 The most widely used (and supported) AMP stack projects include:
 
-- **LAMP**
+- **[LAMP]()**
 - **[WAMP]()**
 - **[MAMP]()**
 - **[XAMPP]()**
 
---------------
 
 
-1. Installing PHP, and what else?
-   - **It's not just PHP** You can install *just* PHP, but that's probably not what you want
-	 - what does PHP do by itself?
-	 - would anyone want to do this?
-   - **What else do you need?** PHP usually comes as a part of a toolkit that includes other programs you'll need to create dynamic web content.
-   - The *AMP stack is all you need (just about)
-	 - '*' stands for your OS
-	 - A for Apache
-	 - M for MySQL
-	 - P for PHP (and sometimes more)
-
-2. Installing Apache, MySQL, and PHP (and more)
-   - Which stack?
-	 - **XAMPP** may be the easiest option
-	 - Other options:
-	   - LAMP
-	   - WAMP
-	   - MAMP
-
-3. Configuring AMP
-
-=====
-
-
-
-=====
+========
 Let's get your computer ready so you can start learning and creating PHP scripts.
 
 One of the easies ways for you to install PHP is to use a PHP distribution application like WAMP, MAMP, or XAMP. These applications come bundled with all the components you will need:
