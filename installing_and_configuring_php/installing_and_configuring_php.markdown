@@ -23,9 +23,9 @@ A web development stack software generally comprises:
 The most widely used (and supported) AMP stack projects include:
 
 - **LAMP**
-- **[WAMP]()**
-- **[MAMP]()**
-- **[XAMPP]()**
+- **WAMP**
+- **[MAMP](http://www.mamp.info/en/mamp/index.html)**
+- **[XAMPP](http://www.apachefriends.org/en/xampp.html)**
 
 ==========
 Let's get your computer ready so you can start learning and creating PHP scripts.
