@@ -1,77 +1,48 @@
 ## Installing and Configuring PHP
 
-As noted in Chapter 2 (see "What you will need"), to execute and test PHP scripts you need a bit more than just PHP itself: a web server is required--and a database server will probably come in handy, too. In this chapter you'll learn how to quickly and easily install all the software you need to test and run your PHP scripts on your own computer.
+As noted in Chapter 2 (see "What you will need"), to execute and test PHP scripts you need more than just PHP itself. To display web content, [web server](https://secure.wikimedia.org/wikipedia/en/wiki/Web_server) is required. To access data for display on your web pages, a [database server](https://secure.wikimedia.org/wikipedia/en/wiki/Database_management_system) is required.
 
-PHP by itself can be useful (for example, to write desktop/non-networked applications; see [General Installation Considerations](http://www.php.net/manual/en/install.general.php)), but most developers use PHP to produce web content--which calls for installing a web server like [Apache](http://httpd.apache.org/) at a minimum if you want to be able quickly and easily test your code locally. While a database server is not technically required, web content complex enough to need PHP will also likely require a relational database like [MySQL](http://www.mysql.com/).
+PHP by itself can be useful (for example, to write desktop/non-networked applications; see [General Installation Considerations](http://www.php.net/manual/en/install.general.php)). However, most PHP development is for web content based on data extracted from a database.
 
-Sound complicated? It would be, if the only way to get PHP, Apache and MySQL (not to mention various other assorted utilities that make PHP development much easier) was to download and install and configure each and every component separately. You *could* do it that way, if you had a lot of time and a very high tolerance for frustration. For the rest of us, though, an **AMP** stack is the way to go.
+In this chapter you'll learn how to quickly and easily install PHP, the [Apache](https://httpd.apache.org/) web server, and the [MySQL](https://www.mysql.com/) database server, as well as additional utilities that will make it possible to easily test and run PHP scripts on your own computer.
 
 
-### The AMP Development Stack
+Sound complicated? It would be, if the only way to get PHP, Apache and MySQL (not to mention various other assorted utilities that make PHP development much easier) was to download and install and configure each and every component separately. You *could* do it that way, if you had a lot of time and a very high tolerance for frustration. For the rest of us, though, a PHP development stack is the way to go.
 
-A web development stack software generally comprises:
 
-- An operating system, of course. AMP development stacks are readily available for Windows, Mac OS X, Linux and other Unix-like OSes.
-- A web server. [Apache](http://www.apachefriends.org/en/xampp.html) is the "A" in "AMP", and the world's most widely deployed and used webserver.
-- A database manager. [MySQL](http://www.mysql.com/) is the "M" in "AMP".
-- A programming language. PHP is one of three programming languages used for web development, the others being [Python](http://www.python.org/) and [Perl](http://www.perl.org/).
-- Various utilities for getting it all to work together, including:
-  - [phpMyAdmin](http://www.phpmyadmin.net/), GUI front-end for working with MySQL databases
-  - file transfer client and server software
-  - graphics and font utilities
+### The Development Stack
 
-The most widely used (and supported) AMP stack projects include:
+The phrase "web development software stack" refers to the full suite of software used to develop web content. The earliest use of the term came in the late 1990s, with *LAMP* referring to the combination of Linux, Apache, MySQL/PHP and PHP/Perl/Python. One of the benefits of using LAMP is that all components are [free/open source software](https://secure.wikimedia.org/wikipedia/en/wiki/Free_and_open_source_software), meaning that the software is available at no cost and the source code is also freely available.
 
-- **[XAMPP](http://www.apachefriends.org/en/xampp.html)**
-- **LAMP**
-- **WAMP**
-- **[MAMP](http://www.mamp.info/en/mamp/index.html)**
 
-==========
-Let's get your computer ready so you can start learning and creating PHP scripts.
+The four components of any dev stack are:
 
-One of the easies ways for you to install PHP is to use a PHP distribution application like WAMP, MAMP, or XAMP. These applications come bundled with all the components you will need:
+- *Operating system*: Linux, Windows, Mac OS X, Solaris and other BSD/*nix OSes are all commonly used by web developers. Since web content is meant to be platform independent, web developers (or their employers) may choose the OS they prefer; there should be no difference in the results to end users.
+- *Web server*: Any web server will do, as long as it can execute PHP scripts. Most PHP development is done for Apache servers, but [Microsoft IIS](https://www.iis.net/) is also a common choice (for Windows developers).
+- *Database*: A DBMS (database management system) is not strictly required, but most web content that is complex enough to require programming will also require a DBMS to manage web content.
+- *Programming language*: PHP is one of three "P" programming languages commonly used for web development, the others being [Perl](http://www.perl.org/) and [Python](http://www.python.org/).
 
-- **Apache web server:** This allows your computer to serve HTML pages through your browser.
-- **MySQL:** This is a database that stores and persists information collected from your application
-- **PHP:** This is the PHP interpreter and a module of Apache 
 
-Let's dive a little deeper into each of these sections to understand them more.
+In addition, most developers find invaluable a number of utilities for getting it all to work together, including:
 
-### Apache Web Server
-Apache is a free and open source web server that is probably the most popular web server in the world today. Its sole purpose is to serve web pages through something called an HTTP connection. Ever notice that in a url, that it always starts with HTTP? That stands for Hyper Text Transfer Protocol, and its a fancy term for the way that web pages are transmitted to your browser. Apache runs as a service, and listens in on a port (usually port 80) for a url request when it is asked.
+- [phpMyAdmin](http://www.phpmyadmin.net/), GUI front-end for working with MySQL databases
+- file transfer client and server software
+- graphics and font utilities
 
-**Here is what is does in a nutshell**
 
-1. Listen to a URL http request 
-2. When received, fetch the file from the disk
-3. Process the file, and do something to it if needed
-4. Send it to the users computer (browser)
+### Installing the XAMPP Development Stack
 
-### MySQL Database
-MySQL is a type of Database that is free and open source which is why it is so popular. Databases make it very easy to store and retrieve data from your server. The do this with a command language known as Structured Query Language (SQL).
 
-Let's say you want to have a web form that collects the users first name. In your PHP script you would save the data with the following SQL command:
+**[XAMPP](http://www.apachefriends.org/en/xampp.html)**
 
-	INSERT INTO users SET name='Michael';  
-	
-Later, when you want to retrieve the users that are stored in your database, you would use the following SQL command:
 
-	SELECT name FROM users;	
+==============
 
-This would return all the users name stored in the database.
+#### Quiz
 
-### PHP Interpreter
-PHP is many times installed and integrated into Apache. When webpage with the extension of .php is read by Apache, then the file is scanned looking for PHP open and closed tags. Whenever these tags are found, the PHP interpreter is used and control is handled by your program.
+1. What is a web server? What does it do?
+2. What is a DBMS? What does it do?
+3. What is open source software? What advantages does it have over proprietary software for web development?
 
-### Installing as a Package
-Download one of the following PHP package distributions for your computer.
 
-|Platform|Software|
-|-|-|
-|Windows|Download and install [WAMP](http://www.wampserver.com/en) and follow the instructions on their site for installation.|
-|Mac|Download and install [MAMP](http://www.mamp.info/en) and follow the instructions. I use this myself on my MacBook and really like it.|
-|Linux|Download and install [XAMPP](http://www.apachefriends.org/en/xampp.html) and follow the instructions.|
-
-### Installing manually
-I usually don't recommend this for beginners because I don't want you to get stuck and spend hours getting it to work. I want you to learn to program, not to be a systems engineer or administrator. However if you insist, this next section should be helpful.
+==============
