@@ -1,18 +1,15 @@
 ## Installing and Configuring PHP
 
-As noted in Chapter 2 (see "What you will need"), to execute and test PHP scripts you need more than just PHP itself. To display web content, [web server](https://secure.wikimedia.org/wikipedia/en/wiki/Web_server) is required. To access data for display on your web pages, a [database server](https://secure.wikimedia.org/wikipedia/en/wiki/Database_management_system) is required.
+While PHP by itself can be useful (for example, to write desktop/non-networked applications; see [General Installation Considerations](http://www.php.net/manual/en/install.general.php)), most PHP development is for web content based on data extracted from a database.
 
-PHP by itself can be useful (for example, to write desktop/non-networked applications; see [General Installation Considerations](http://www.php.net/manual/en/install.general.php)). However, most PHP development is for web content based on data extracted from a database.
+As noted in Chapter 2 (see "What you will need"), to execute and test PHP scripts you need more than just PHP itself. To display web content, a [web server](https://secure.wikimedia.org/wikipedia/en/wiki/Web_server) is required. To access, edit, and update data for display on your web pages, a [database management system](https://secure.wikimedia.org/wikipedia/en/wiki/Database_management_system) is required.
 
-In this chapter you'll learn how to quickly and easily install PHP, the [Apache](https://httpd.apache.org/) web server, and the [MySQL](https://www.mysql.com/) database server, as well as additional utilities that will make it possible to easily test and run PHP scripts on your own computer.
-
-
-Sound complicated? It would be, if the only way to get PHP, Apache and MySQL (not to mention various other assorted utilities that make PHP development much easier) was to download and install and configure each and every component separately. You *could* do it that way, if you had a lot of time and a very high tolerance for frustration. For the rest of us, though, a PHP development stack is the way to go.
+In this chapter you'll learn how to use the **[XAMPP](http://www.apachefriends.org/en/xampp.html)** web development stack to quickly and easily install PHP, the [Apache](https://httpd.apache.org/) web server, the [MySQL](https://www.mysql.com/) database server, and some additional utilities that will allow you to write, test and run PHP scripts on your own computer.
 
 
 ### The Development Stack
 
-The phrase "web development software stack" refers to the full suite of software used to develop web content. The earliest use of the term came in the late 1990s, with *LAMP* referring to the combination of Linux, Apache, MySQL/PHP and PHP/Perl/Python. One of the benefits of using LAMP is that all components are [free/open source software](https://secure.wikimedia.org/wikipedia/en/wiki/Free_and_open_source_software), meaning that the software is available at no cost and the source code is also freely available.
+The term "web development software stack" refers to the full suite of software used to develop web content; in other words, all the software, from the operating system up. The earliest use of the term came in the late 1990s, with *LAMP* referring to the combination of Linux, Apache, MySQL/PHP and PHP/Perl/Python. One of the benefits of using LAMP is that all components are [free/open source software](https://secure.wikimedia.org/wikipedia/en/wiki/Free_and_open_source_software), meaning that the software is available at no cost and the source code is also freely available for anyone to review or modify.
 
 
 The four components of any dev stack are:
@@ -26,8 +23,8 @@ The four components of any dev stack are:
 In addition, most developers find invaluable a number of utilities for getting it all to work together, including:
 
 - [phpMyAdmin](http://www.phpmyadmin.net/), GUI front-end for working with MySQL databases
-- file transfer client and server software
-- graphics and font utilities
+- [FTP](https://secure.wikimedia.org/wikipedia/en/wiki/File_Transfer_Protocol) file transfer client and server software
+- other utilities depending on the OS
 
 
 ### Installing the XAMPP Development Stack
