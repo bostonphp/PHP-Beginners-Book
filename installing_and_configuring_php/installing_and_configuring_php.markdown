@@ -1,6 +1,5 @@
-## Installing and Configuring PHP
 
-While PHP by itself can be useful (for example, to write desktop/non-networked applications; see [General Installation Considerations](http://www.php.net/manual/en/install.general.php)), most PHP development is for web content based on data extracted from a database.
+While PHP by itself can be useful (for example, to write desktop/non-networked applications; see [General Installation Considerations](http://www.php.net/manual/en/install.general.php) in the PHP documentation), most PHP development is for web content based on data extracted from a database.
 
 As noted in Chapter 2 (see "What you will need"), to execute and test PHP scripts you need more than just PHP itself. To display web content, a [web server](https://secure.wikimedia.org/wikipedia/en/wiki/Web_server) is required. To access, edit, and update data for display on your web pages, a [database management system](https://secure.wikimedia.org/wikipedia/en/wiki/Database_management_system) is required.
 
@@ -13,7 +12,7 @@ In this chapter you'll learn:
 - How to check that your web development stack installation and configuration was successful.
 
 
-### The Development Stack
+## The Development Stack
 
 The term "web development software stack" refers to the full suite of software used to develop web content; in other words, all the software, from the operating system up. The earliest use of the term came in the late 1990s, with *LAMP* referring to the combination of Linux, Apache, MySQL/PHP and PHP/Perl/Python. One of the benefits of using LAMP is that all components are [free/open source software](https://secure.wikimedia.org/wikipedia/en/wiki/Free_and_open_source_software), meaning that the software is available at no cost and the source code is also freely available for anyone to review or modify.
 
@@ -33,7 +32,7 @@ In addition, most developers find invaluable a number of utilities for getting i
 - other utilities depending on the OS
 
 
-### Can You Develop on Your Web Host Account?
+## Can You Develop on Your Web Host Account?
 
 If you are going to use PHP to develop web content for publication on a webserver hosted through a web hosting provider, it is possible (but not recommended) to use that account for development. Doing so allows you to skip the whole software installation process, but it means you can only develop when you have internet access. It is also risky to run development code on a "live" server.
 
@@ -44,7 +43,7 @@ If you do choose (against all advice) to develop on a web hosting account, you'l
 In any case, you'll need to verify that your web hosting provider is running a current version of PHP.
 
 
-### Checking PHP Version
+## Checking PHP Version
 
 The first step is to confirm that your hosting provider is running a current stable version of PHP. This should be as simple as checking your provider's web site; however, you can check with a one-line PHP script. 
 
@@ -54,7 +53,7 @@ Use your editor to create a file called `phpversion.php` and enter just the foll
 
 Save the file, move it to your hosted web server, and open it with a browser (the URL should be something like `www.example.com/phpversion.php` if the file is in the website's root directory). The resulting web page should contain three numbers in dotted decimal notation. Check here for the [current stable version of PHP](http://php.net/downloads.php). As of this writing (09/13/2011), PHP 5.3.X is the only supported series, and the current stable version is 5.3.8.
 
-#### Did That Work?
+### Did That Work?
 
 If it did, great! Congratulations, you've written your first successful PHP script. Be sure to remove the script; it's a good habit to remove any extraneous code like that script from your web servers.
 
@@ -68,7 +67,7 @@ If it didn't work, also great! Congratulations, you're ready to embark on your f
 For extra credit, try using the PHP command `phpinfo()` instead of `phpversion()` and see what you get. Again, be sure to remove the script after you've verified that it works; `phpinfo()` provides a lot more information, some of which could be used against you by a malicious user.
 
 
-### Installing the XAMPP Development Stack
+## Installing the XAMPP Development Stack
 
 Installing [XAMPP](http://www.apachefriends.org/en/xampp.html) is quite simple:
 
@@ -82,20 +81,19 @@ For more specific help with particular problems, try the [XAMPP forums](http://w
 By design, XAMPP is intended to be fully functional right out of the box. The default configuration should work on your system without any tweaking. However, the default XAMPP configuration is designed to be easy to use with all options turned on, **not** a foolproof or secure configuration suitable for productions systems. It **is** meant to be appropriate for quickly getting up and developing on an isolated system.
 
 
-#### Installing XAMPP on Linux
+### Installing XAMPP on Linux
 
-#### Installing XAMPP on Windows
+### Installing XAMPP on Windows
 
-#### Installing XAMPP on Mac OS X
+### Installing XAMPP on Mac OS X
+
+### Other AMP Stack Options
 
 
-==============
-
-#### Quiz
+## Quiz
 
 1. What is a web server? What does it do?
 2. What is a DBMS? What does it do?
 3. What is open source software? What advantages does it have over proprietary software for web development?
 
 
-==============
