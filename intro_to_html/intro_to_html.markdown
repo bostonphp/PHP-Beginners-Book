@@ -9,17 +9,29 @@ Yes, however it can only be helpful if you have a basic understanding of what HT
 
 HTML is the building block of the web.  It is used to define how a document should be laid our or displayed.  Languages like Javascript were created to manipulate the elements of HTML and CSS is used to define or alter how a particular element is displayed or renders.
 
-Because of this it is vital to have at least a basic understanding of HTML, how it works and what it does.  All HTML based documents are the some.  They are composed of tags that define parts of the document, everything from a chunk of text that should be bolded to an entire area of the page that contains tabular data.
+Because of this it is vital to have at least a basic understanding of HTML, how it works and what it does.  
+## How are we going to learn this?
+HTML is also probably the easiest of the so called _web languages_.  One of the reasons for this is the fact there is no logic or programming involved.  You just need to learn the elements and how they work.  Another is because there is a multitude of ways to mark up a document to achieve the desired outcome.  You technically don't **have** to use a `<p>` element to designate a paragraph, you can use a `<div>` or some other block level element.
+
+The goal with this chapter is to not only give you a solid foundation of information
+
+To help with this we will be building a typical blog page as we go along.  
 ## Tools
 Writing, editing and testing HTML is incredibly easy, and chances are you already have everything you need.  HTML is unique among other the various other web technologies in the sense that the only think you need to build a site is a computer, a text editor and a browser.  Something as simple as vi or Notepad will suffice.  You don't need a server or any special software at all. You don't even need web server software like Apache or IIS. You can simply save the file and open it directly in your browser. 
 ## Basic Structure
-HTML uses elements[^1] to markup certain portions of text.  These can include headings, subtitles, bold or underlined text and, of course, links. HTML documents read from left to right and top to bottom. 
+All HTML based documents are the some.  They are composed of tags that define parts of the document, everything from a chunk of text that should be bolded to an entire area of the page that contains tabular data.
+HTML uses elements to markup certain portions of text.  These can include headings, subtitles, bold or underlined text and, of course, links. HTML documents read from left to right and top to bottom. 
 
 Elements are composed of tags (with attributes) and text. Tags are the parts of the document you see enclosed in the &lt; and &gt;. For example here is a paragraph element:
 
 	<p>This is the first paragraph.</p>
 	
-In this example the `<p>` and `</p>` are the tags, they are used to delineate the text contained within as a paragraph. 
+In this example the `<p>` and `</p>` are the tags, they are used to delineate the text contained within as a paragraph. Something worth pointing out here is that you don't have to put everything on a single line.  The code above works just as well as this:
+
+	<p>
+		This is the first paragraph
+	</p>
+In fact the indentation isn't needed either, it's there for readability.  Keep in mind someone will have to edit this in the future.  It's helpful to do everything you can not to piss off your future self.
 
 All tag formats are the same. They begin with a less-than sign: &lt; and end with a greater-than sign: &lt;. Always. No exceptions. What goes inside the < and > is the tag name. Learning HTML is learning the specific tags needed.
 
