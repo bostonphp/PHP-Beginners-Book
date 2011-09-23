@@ -13,9 +13,9 @@ Because of this it is vital to have at least a basic understanding of HTML, how 
 ## How are we going to learn this?
 HTML is also probably the easiest of the so called _web languages_.  One of the reasons for this is the fact there is no logic or programming involved.  You just need to learn the elements and how they work.  Another is because there is a multitude of ways to mark up a document to achieve the desired outcome.  You technically don't **have** to use a `<p>` element to designate a paragraph, you can use a `<div>` or some other block level element.
 
-The goal with this chapter is to not only give you a solid foundation of information
+The goal with this chapter is to not only give you a solid foundation of information on what the elements are and how to use them but also when and where they should be used.  It is infinitely better to use the `<p>` element to delineate a a paragraph rather than the `<div>`.
 
-To help with this we will be building a typical blog page as we go along.  
+To help with this we will be building a typical blog page as we go along.  It will be based on a live site and if you have a blog running you can easily adapt it to your site if you wish, although you will probably want to make some styling changes, but that's another chapter.
 ## Tools
 Writing, editing and testing HTML is incredibly easy, and chances are you already have everything you need.  HTML is unique among other the various other web technologies in the sense that the only think you need to build a site is a computer, a text editor and a browser.  Something as simple as vi or Notepad will suffice.  You don't need a server or any special software at all. You don't even need web server software like Apache or IIS. You can simply save the file and open it directly in your browser. 
 ## Basic Structure
@@ -31,13 +31,13 @@ In this example the `<p>` and `</p>` are the tags, they are used to delineate th
 	<p>
 		This is the first paragraph
 	</p>
+	
 In fact the indentation isn't needed either, it's there for readability.  Keep in mind someone will have to edit this in the future.  It's helpful to do everything you can not to piss off your future self.
 
 All tag formats are the same. They begin with a less-than sign: &lt; and end with a greater-than sign: &lt;. Always. No exceptions. What goes inside the < and > is the tag name. Learning HTML is learning the specific tags needed.
 
 Not all elements have both an opening and closing piece.  For example `<br>` doesn't have a corresponding `</br>`, neither does `<hr>`.  
 
-Some elements 
 
 ### Bare Minimum
 HTML pages can be as simple or complex as you want.  Everything from
