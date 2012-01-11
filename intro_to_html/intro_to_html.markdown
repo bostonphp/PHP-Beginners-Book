@@ -1,7 +1,12 @@
 ## What is HTML
-HTML stands for *HyperText Markup Language* is a tag based language used to *markup* a document that web browsers then interpret and compose text, images and other material into visual or audible web pages.  HTML was first mentioned way back in 1991 by Tim Berners-Lee and originally consisted of 20 elements.  Since then it has grown constantly adding form, tables, image maps and spawned CSS as a way to separate layout from presentation.  HTML itself is composed of several components , including elements, and their attributes as well as character-based data types, character references and entity references.  We will get into each of these components more in-depth later on.
+The first component of any web page is the tag-based markup language of HTML. The Hyper Text Markup Language (HTML) has a sordid history but has come into its own in the last few years. After a lengthy experimentation with the XML-based XHTML variant the industry has accepted that HTML is the future of the web.
+
+Markup defines the structure and outline of a document and offers a structured content. Markup is not intended to define the look and feel of the content on the page beyond rudimentary concepts such as headers, paragraphs, and lists. The presentation attributes of HTML have all been deprecated and style should be contained in style sheets.
+
+HTML stands for *HyperText Markup Language* and was first mentioned way back in 1991 by Tim Berners-Lee and originally consisted of 20 elements.  Since then it has grown constantly adding form, tables, image maps and spawned CSS as a way to separate layout from presentation.  HTML itself is composed of several components, including elements, and their attributes as well as character-based data types, character references and entity references.  We will get into each of these components more in-depth later on.
 
 Some people refer to elements as tags (e.g., "the P tag"). Remember that the element consists of a start tag, content, and an end *tag*, and the tag (be it start or end tag) is a component of the element. For instance, the HEAD element is always present, even though both start and end HEAD tags may be missing in the markup.
+
 ## Why learn HTML
 The first question you are probably asking yourself is 'Why do I need to learn HTML?  I write PHP.  Doesnt that generate HTML?'
 
@@ -154,6 +159,8 @@ Table row; used in both the table head and table body
 Table cell (stands for "table data"), which holds the actual data
 
 ## HTML5
+HTML5 is the latest version of HTML and XHTML. The HTML5 draft specification defines a single language that can be written in HTML and XML. It is an attempt to solve several issues found in previous iterations of HTML and addresses the needs of Web Applications, an area previously not adequately covered by HTML. 
+
 ### header
 ### nav
 ### article
