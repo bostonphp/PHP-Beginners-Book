@@ -868,7 +868,7 @@ Here is an example of how to do the same thing with the fruits and the **RIGHT J
      Select letters.letter as letter, fruits.name as foods from fruits right join letters
       on mid(fruits.name,1,1) = letters.letter;
 
-*The only difference between the **LEFT JOIN** and **RIGHT JOIN** is the order by which the tables are referenced to determine which table is fully evaluated and which is partially evaluated. Also, remember that you must use the keyword **ON** instead of **HAVING** or **WHERE** in order for these queries to work.*
+*The only difference between the **LEFT JOIN** and **RIGHT JOIN** is the order by which the tables are referenced to determine which table is fully evaluated and which is partially evaluated. Also, remember that you must use the keyword **ON** after the table is created in order for these queries to work.*
 
 Here is an example of both tables being listed alphabetically.
 
@@ -877,7 +877,7 @@ Here is an example of both tables being listed alphabetically.
      fruits.name as foods from fruits right join letters on mid(fruits.name,1,1) = 
      letters.letter order by letter asc
 
-Now you know how to use **LEFT** and **RIGHT JOINS**. I will not ask you any questions over them, as I find them to be pretty stupid commands. Since you are going to be using embedded SQL anyways, I see no point in adding them to the list of things you need to know.
+Now you know how to use **LEFT** and **RIGHT JOINS**. I will not ask you any questions over them, as I find them a bit more advanced for a beginner's SQL guide. I see no point in making this more confusing than it actually is. Make sure that you have a good grasp of the basics first.
 
 ### The Final Questions
 
