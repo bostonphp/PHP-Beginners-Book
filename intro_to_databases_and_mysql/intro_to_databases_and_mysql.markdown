@@ -740,7 +740,7 @@ The 'as' statement represented in the past few examples can also be used outside
 
      SELECT name as Foods FROM fruits;
 
-The result will be all of rows in the column 'name' from table fruits, but the resulting table will be labeled 'Foods'.
+The result will be all of rows in the column 'name' from table fruits, but the resulting column will be labeled 'Foods' instead of 'name'.
 
 ### Addition, Subtraction, Multiplication, Division, and Modulus
 
