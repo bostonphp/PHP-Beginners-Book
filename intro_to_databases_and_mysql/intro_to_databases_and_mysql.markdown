@@ -868,7 +868,7 @@ Here is an example of how to do the same thing with the fruits and the **RIGHT J
      Select letters.letter as letter, fruits.name as foods from fruits right join letters
       on mid(fruits.name,1,1) = letters.letter;
 
-*The only difference between the **LEFT JOIN** and **RIGHT JOIN** is the order by which the tables are referenced to determine which table is fully evaluated and which is partially evaluated. Also, remember that you must use the keyword **ON** after the table is created in order for these queries to work.*
+*The only difference between the* **LEFT JOIN** *and* **RIGHT JOIN** *is the order by which the tables are referenced to determine which table is fully evaluated and which is partially evaluated. Also, remember that you must use the keyword* **ON** *after the table is created in order for these queries to work.*
 
 Here is an example of both tables being listed alphabetically.
 
